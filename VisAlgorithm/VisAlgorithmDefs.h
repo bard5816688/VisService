@@ -9,3 +9,4 @@ namespace VisAlgorithm {                                                      \
 #include <vector>
 #include <chrono>
 #include <memory>
+#include <variant>

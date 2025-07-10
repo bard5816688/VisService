@@ -63,15 +63,6 @@ private:
 	friend class HImageMixin<Image>;
 };
 
-
-struct Region : public HalconCpp::HRegion
-{
-};
-
-struct Tuple : public HalconCpp::HTuple
-{
-};
-
 VISALGORITHM_NAMESPACE_END
 
 #include "BasicType.inl"
