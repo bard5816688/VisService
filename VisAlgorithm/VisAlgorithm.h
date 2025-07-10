@@ -1,4 +1,4 @@
 #pragma once
 
-#include "Basic/BasicType.h"
+#include "Image.h"
 #include "Matching/ShapeModel.h"
