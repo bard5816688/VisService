@@ -32,8 +32,7 @@ public:
     }
 
 private:
-    HalconCpp::HTuple hTuple_;
-    //底层也可以替换或同时使用VisTuple(自定义/其他Dll提供的Tuple类型)
+    HalconCpp::HTuple hTuple_;//底层也可以替换为VisTuple(自定义/其他Dll提供的Tuple类型)   
 };
 
 Tuple::Tuple()

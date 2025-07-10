@@ -1,10 +1,31 @@
-#pragma once
-
-#include "BasicType.h"
+#include "VisImage.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-inline int Image::GetBytesPerPixel(PixelFormat format)
+VisImage::VisImage()
+	: width_(0)
+	, height_(0)
+	, pixelFormat_(PixelFormat::Unknown)
+	, dataSize_(0)
+	, frameId_(0)
+{
+}
+
+VisImage::VisImage(uint32_t width, uint32_t height, PixelFormat format)
+	: width_(width)
+	, height_(height)
+	, pixelFormat_(format)
+	, frameId_(0)
+{
+	dataSize_ = width * height * GetBytesPerPixel(format);
+	data_ = std::make_shared<uint8_t>();
+}
+
+VisImage::~VisImage()
+{
+}
+
+int VisImage::GetBytesPerPixel(PixelFormat format)
 {
 	switch (format)
 	{
@@ -26,23 +47,6 @@ inline int Image::GetBytesPerPixel(PixelFormat format)
 		return 4;
 	default:
 		return 0;
-	}
-}
-
-template<typename Derived>
-void HImageMixin<Derived>::GenImageExtern()
-{
-	Derived* derived = static_cast<Derived*>(this);
-	if (!derived->data_)
-		return;
-
-	switch (derived->pixelFormat_)
-	{
-	case PixelFormat::Mono8:
-		hImage_.GenImage1Extern("byte", derived->width_, derived->height_, derived->data_.get(), nullptr);
-		break;
-	default:
-		break;
 	}
 }
 

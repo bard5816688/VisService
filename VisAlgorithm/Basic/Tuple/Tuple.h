@@ -1,7 +1,6 @@
 #pragma once
 
 #include "VisAlgorithmDefs.h"
-#include "HTuple.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -32,6 +31,7 @@ public:
 	~Tuple();
 	Tuple& Append(const Tuple& tuple);
 	TupleElementType Type(size_t idx);
+
 	template<typename T>
 		requires std::is_arithmetic_v<T> || std::is_same_v<T, std::string>
 	T At(size_t index) const;

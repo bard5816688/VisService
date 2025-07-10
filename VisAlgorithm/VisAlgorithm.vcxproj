@@ -137,26 +137,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Basic\Region\HRegion.h" />
+    <ClInclude Include="Basic\Image\ImageInternal.h" />
+    <ClInclude Include="Basic\Region\RegionInternal.h" />
     <ClInclude Include="Basic\Tuple\TupleInternal.h" />
+    <ClInclude Include="Basic\Image\Image.h" />
     <ClInclude Include="Matching\ShapeModel.h" />
     <ClInclude Include="Basic\Region\Region.h" />
     <ClInclude Include="Basic\Tuple\Tuple.h" />
     <ClInclude Include="VisAlgorithmDefs.h" />
     <ClInclude Include="VisAlgorithm.h" />
-    <ClInclude Include="Basic\BasicType.h" />
     <ClInclude Include="Basic\Region\VisRegion.h" />
+    <ClInclude Include="Basic\Image\VisImage.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Basic\BasicType.cpp" />
-    <ClCompile Include="Basic\Region\HRegion.cpp" />
+    <ClCompile Include="Basic\Image\Image.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Basic\Region\Region.cpp" />
     <ClCompile Include="Basic\Region\VisRegion.cpp" />
     <ClCompile Include="Basic\Tuple\Tuple.cpp" />
+    <ClCompile Include="Basic\Image\VisImage.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic\BasicType.inl" />
     <None Include="Basic\Tuple\Tuple.inl" />
     <None Include="Matching\ShapeMode.inl" />
   </ItemGroup>

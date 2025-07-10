@@ -1,47 +1,25 @@
 #pragma once
 
-#include "HRegion.h"
-#include "VisRegion.h"
+#include "VisAlgorithmDefs.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-class Region : public HRegion, public VisRegion
+class RegionImpl;
+using RegionImplPtr = std::shared_ptr<RegionImpl>;
+
+class Region
 {
 public:
-	Region()
-		: HRegion()
-		, VisRegion()
-	{
+	Region();
+	Region(double row1, double column1, double row2, double column2);
+	Region(double row, double column, double radius);
+	int64_t AreaCenter(double* row, double* column) const;
 
-	}
-
-	Region(double row1, double column1, double row2, double column2)
-		: HRegion(row1, column1, row2, column2)
-		, VisRegion(row1, column1, row2, column2)
-	{
-
-	}
-
-	Region(double row, double column, double radius)
-		: HRegion(row, column, radius)
-		, VisRegion(row, column, radius)
-	{
-
-	}
-
-	~Region()
-	{
-
-	}
-
-#ifdef  VISALGORITHM_EXPORTS
-
-	HRegionInstancePtr GetHRegionInstancePtr()
-	{
-		return hRegion_;
-	}
-
-#endif //  VISALGORITHM_EXPORTS
+#ifdef VISALGORITHM_EXPORTS
+	RegionImplPtr ImplPtr() const;
+#endif
+private:
+	RegionImplPtr regionImpl_;
 };
 
 VISALGORITHM_NAMESPACE_END

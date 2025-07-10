@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Basic\BasicType.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="VisAlgorithmDefs.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -30,9 +27,6 @@
     <ClInclude Include="Basic\Region\Region.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Region\HRegion.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Basic\Region\VisRegion.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -42,18 +36,24 @@
     <ClInclude Include="Basic\Tuple\TupleInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Basic\Region\RegionInternal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\Image\Image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\Image\VisImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\Image\ImageInternal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\BasicType.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Basic\Region\Region.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Basic\Region\HRegion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Basic\Region\VisRegion.cpp">
@@ -62,11 +62,14 @@
     <ClCompile Include="Basic\Tuple\Tuple.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Basic\Image\Image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic\Image\VisImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Basic\BasicType.inl">
-      <Filter>头文件</Filter>
-    </None>
     <None Include="Matching\ShapeMode.inl">
       <Filter>头文件</Filter>
     </None>
