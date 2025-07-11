@@ -27,9 +27,6 @@
     <ClInclude Include="Basic\Region\Region.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Region\VisRegion.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Basic\Tuple\Tuple.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -57,15 +54,15 @@
     <ClInclude Include="Matching\ShapeModelStrategyConcept.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Basic\Region\VisRegion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Basic\Region\Region.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Basic\Region\VisRegion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Basic\Tuple\Tuple.cpp">
@@ -81,6 +78,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Matching\VisShapeModelStrtegy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Basic\Region\VisRegion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
+#include "ShapeModelStrategyConcept.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

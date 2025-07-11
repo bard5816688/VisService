@@ -19,7 +19,7 @@ struct CreateShapeModelParams
 };
 
 template<typename T>
-concept ShapeModelStrategy = requires(
+concept IsShapeModelStrategy = requires(
     T                       t, 
     const char*             fileName, 
     CreateShapeModelParams  cp
