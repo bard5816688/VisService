@@ -5,21 +5,26 @@
 VISALGORITHM_NAMESPACE_BEGIN
 
 class RegionImpl;
-using RegionImplPtr = std::shared_ptr<RegionImpl>;
 
-class Region
+class VisAlgorithmApi Region
 {
 public:
 	Region();
 	Region(double row1, double column1, double row2, double column2);
 	Region(double row, double column, double radius);
+	~Region();
+	Region(const Region& other);
+	Region& operator=(const Region& other);
+	Region(Region&& other) noexcept;
+	Region& operator=(Region&& other) noexcept;
+
 	int64_t AreaCenter(double* row, double* column) const;
 
 #ifdef VISALGORITHM_EXPORTS
-	RegionImplPtr ImplPtr() const;
+	RegionImpl* ImplPtr() const;
 #endif
 private:
-	RegionImplPtr regionImpl_;
+	RegionImpl* regionImpl_;
 };
 
 VISALGORITHM_NAMESPACE_END

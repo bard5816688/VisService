@@ -1,0 +1,6 @@
+#include "VisShapeModelStrategy.h"
+
+VISALGORITHM_NAMESPACE_BEGIN
+
+
+VISALGORITHM_NAMESPACE_END

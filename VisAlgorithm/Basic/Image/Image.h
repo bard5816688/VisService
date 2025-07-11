@@ -1,33 +1,36 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
 #include "Tuple.h"
 #include "Region.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
 class ImageImpl;
-using ImageImplPtr = std::shared_ptr<ImageImpl>;
 
-class Image
+class VisAlgorithmApi Image
 {
+	using ClearProc = void(__cdecl*)(void*);
+
 public:
 	Image();
-	Image(const char* type, uint32_t width, uint32_t height);
+	Image(const char* type, int64_t width, int64_t height);
 	Image(const char* type, int64_t width, int64_t height, void* pixelPointer);
+	Image(const char* type, int64_t width, int64_t height, void* pixelPointer, ClearProc clearProc);
 	~Image();
-	int64_t Width();
-	int64_t Height();
-	std::shared_ptr<uint8_t> Data();
-	std::string Format();
-	//Tuple CountChannls() const;
+	Image(const Image& other);
+	Image& operator=(const Image& other);
+	Image(Image&& other) noexcept;
+	Image& operator=(Image&& other) noexcept;
+	Tuple Width();
+	Tuple Height();
+	Tuple CountChannels() const;
 
 
 #ifdef VISALGORITHM_EXPORTS
-	ImageImplPtr ImplPtr() const;
+	ImageImpl* ImplPtr() const;
 #endif
 private:
-	ImageImplPtr imageImpl_;
+	ImageImpl* imageImpl_;
 };
 
 VISALGORITHM_NAMESPACE_END

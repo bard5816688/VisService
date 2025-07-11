@@ -73,7 +73,7 @@ struct RegionRun
 class VisRegion
 {
 public:
-	VisRegion() = default;
+	VisRegion();
 	VisRegion(double row1, double column1, double row2, double column2);
 	VisRegion(double row, double column, double radius);
 	~VisRegion() = default;

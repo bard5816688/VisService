@@ -2,7 +2,7 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-VisRegion::VisRegion(double row1, double column1, double row2, double column2)
+VisRegion::VisRegion()
 {
 }
 

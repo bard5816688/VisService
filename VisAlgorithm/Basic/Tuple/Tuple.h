@@ -4,13 +4,7 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-using TupleElement = std::variant
-<
-	std::monostate,
-	int,
-	double,
-	std::string,
->;
+using TupleElement = std::variant<std::monostate, int, double, std::string>;
 
 enum class TupleElementType
 {
@@ -20,30 +14,37 @@ enum class TupleElementType
 	String,
 };
 
-struct TupleImpl;
-using TupleImplPtr = std::shared_ptr<TupleImpl>;
+class TupleImpl;
 
-class Tuple
+class VisAlgorithmApi Tuple
 {
 public:
 	Tuple();
-	Tuple(const TupleElement& value);
+	Tuple(const TupleElement& element);
 	~Tuple();
+	Tuple(const Tuple& other);
+	Tuple& operator=(const Tuple& other);
+	Tuple(Tuple&& other) noexcept;
+	Tuple& operator=(Tuple&& other) noexcept;
+	
 	Tuple& Append(const Tuple& tuple);
 	TupleElementType Type(size_t idx);
 
 	template<typename T>
 		requires std::is_arithmetic_v<T> || std::is_same_v<T, std::string>
-	T At(size_t index) const;
+	T Get(size_t index) const;
 
 public:
 	static Tuple FromVector(const std::vector<TupleElement>& values);
 
 #ifdef VISALGORITHM_EXPORTS
-	TupleImplPtr ImplPtr() const;
+	TupleImpl* ImplPtr() const;
 #endif
 private:
-	TupleImplPtr tupleImpl_;
+	TupleElement At(size_t index) const;
+
+private:
+	TupleImpl* tupleImpl_;
 
 };
 
