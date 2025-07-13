@@ -1,5 +1,5 @@
 #include "TupleInternal.h"
-#include "HalconCpp.h"
+#include "BasicReturnInternal.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -27,25 +27,6 @@ public:
 					hTuple_ = HalconCpp::HTuple(value);
 				}
 			}, element);
-	}
-
-	TupleElement At(size_t idx)
-	{
-		HalconCpp::HTupleElementType elementType = hTuple_[idx].Type();
-		switch (elementType)
-		{
-		case HalconCpp::eElementTypeLong:
-			return TupleElement(hTuple_[idx].I());
-		case HalconCpp::eElementTypeDouble:
-			return TupleElement(hTuple_[idx].D());
-		case HalconCpp::eElementTypeString:
-			return TupleElement(hTuple_[idx].S().Text());
-		case HalconCpp::eElementTypeHandle:
-		case HalconCpp::eElementTypeMixed:
-		case HalconCpp::eElementTypeUndef:
-		default:
-			return std::monostate();
-		}
 	}
 
 	HalconCpp::HTuple hTuple_;//底层也可以替换为VisTuple(自定义/其他Dll提供的Tuple类型)   
@@ -106,8 +87,13 @@ Tuple& Tuple::Append(const Tuple& tuple)
 	return *this;
 }
 
-TupleElementType Tuple::Type(size_t idx)
+Result<TupleElementType> Tuple::Type(size_t idx)
 {
+	if (idx >= tupleImpl_->hTuple_.Length())
+	{
+		return VISALGORITHM_ERROR("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
+	}
+
 	HalconCpp::HTupleElementType elementType = tupleImpl_->hTuple_[idx].Type();
 	switch (elementType)
 	{
@@ -140,9 +126,27 @@ TupleImpl* Tuple::ImplPtr() const
 	return tupleImpl_;
 }
 
-TupleElement Tuple::At(size_t index) const
+Result<TupleElement> Tuple::At(size_t idx) const
 {
-	return tupleImpl_->At(index);
+	if (idx >= tupleImpl_->hTuple_.Length())
+	{
+		return VISALGORITHM_ERROR("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
+	}
+	HalconCpp::HTupleElementType elementType = tupleImpl_->hTuple_[idx].Type();
+	switch (elementType)
+	{
+	case HalconCpp::eElementTypeLong:
+		return TupleElement(tupleImpl_->hTuple_[idx].I());
+	case HalconCpp::eElementTypeDouble:
+		return TupleElement(tupleImpl_->hTuple_[idx].D());
+	case HalconCpp::eElementTypeString:
+		return TupleElement(tupleImpl_->hTuple_[idx].S().Text());
+	case HalconCpp::eElementTypeHandle:
+	case HalconCpp::eElementTypeMixed:
+	case HalconCpp::eElementTypeUndef:
+	default:
+		return std::monostate();
+	}
 }
 
 HalconCpp::HTuple GetHTuple(const Tuple& tuple)
@@ -155,6 +159,11 @@ Tuple FromHTuple(const HalconCpp::HTuple& hTuple)
 	Tuple tuple;
 	tuple.ImplPtr()->hTuple_ = hTuple;
 	return tuple;
+}
+
+Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& result)
+{
+	return result.transform(FromHTuple);
 }
 
 VISALGORITHM_NAMESPACE_END

@@ -1,6 +1,8 @@
 #pragma once
-
-#include "VisAlgorithmDefs.h"
+#include "BasicDefs.h"
+#include "BasicReturn.h"
+#include "Tuple.h"
+#include "Region.h"
 #include "Image.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
@@ -25,8 +27,8 @@ concept IsShapeModelStrategy = requires(
     CreateShapeModelParams  cp
     )
 {
-	{ t.ReadShapeModel(fileName) }  -> std::same_as<void>;
-	{ t.CreateShapeModel(cp) }      -> std::same_as<void>;
+	{ t.ReadShapeModel(fileName) }  -> std::same_as<ResultVoid>;
+	{ t.CreateShapeModel(cp) }      -> std::same_as<ResultVoid>;
 };
 
 

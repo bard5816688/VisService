@@ -1,6 +1,5 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
 #include "HShapeModelStrategy.h"
 #include "VisShapeModelStrategy.h"
 
@@ -11,8 +10,8 @@ template<IsShapeModelStrategy Strategy>
 class ShapeModel 
 {
 public:
-	void ReadShapeModel(const char* fileName);
-	void CreateShapeModel(const CreateShapeModelParams& params);
+	ResultVoid ReadShapeModel(const char* fileName);
+	ResultVoid CreateShapeModel(const CreateShapeModelParams& params);
 
 private:
     Strategy strategy_;

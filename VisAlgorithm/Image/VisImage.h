@@ -1,6 +1,10 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
+#include <memory>
+#include <chrono>
+#include "BasicReturn.h"
+#include "Tuple.h"
+#include "Region.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

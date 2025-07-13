@@ -5,15 +5,15 @@
 VISALGORITHM_NAMESPACE_BEGIN
 
 template<IsShapeModelStrategy Strategy>
-void ShapeModel<Strategy>::ReadShapeModel(const char* fileName)
+ResultVoid ShapeModel<Strategy>::ReadShapeModel(const char* fileName)
 {
-	strategy_.ReadShapeModel(fileName);
+	return strategy_.ReadShapeModel(fileName);
 }
 
 template<IsShapeModelStrategy Strategy>
-void ShapeModel<Strategy>::CreateShapeModel(const CreateShapeModelParams& params)
+ResultVoid ShapeModel<Strategy>::CreateShapeModel(const CreateShapeModelParams& params)
 {
-	strategy_.CreateShapeModel(params);
+	return strategy_.CreateShapeModel(params);
 }
 
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "BasicReturn.h"
 #include "Tuple.h"
 #include "Region.h"
 
@@ -21,9 +22,10 @@ public:
 	Image& operator=(const Image& other);
 	Image(Image&& other) noexcept;
 	Image& operator=(Image&& other) noexcept;
-	Tuple Width();
-	Tuple Height();
-	Tuple CountChannels() const;
+
+	Result<Tuple> Width();
+	Result<Tuple> Height();
+	Result<Tuple> CountChannels() const;
 
 
 #ifdef VISALGORITHM_EXPORTS

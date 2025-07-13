@@ -1,6 +1,7 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
+#include "BasicReturn.h"
+#include "Tuple.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -18,7 +19,7 @@ public:
 	Region(Region&& other) noexcept;
 	Region& operator=(Region&& other) noexcept;
 
-	int64_t AreaCenter(double* row, double* column) const;
+	Result<int64_t> AreaCenter(double* row, double* column) const;
 
 #ifdef VISALGORITHM_EXPORTS
 	RegionImpl* ImplPtr() const;

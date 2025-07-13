@@ -1,5 +1,7 @@
 #pragma once
-#include "VisAlgorithmDefs.h"
+
+#include <memory>
+#include "BasicReturn.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

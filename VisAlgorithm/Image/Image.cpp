@@ -1,6 +1,7 @@
 #include "ImageInternal.h"
 #include "TupleInternal.h"
 #include "RegionInternal.h"
+#include "BasicReturnInternal.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -70,20 +71,19 @@ Image& Image::operator=(Image&& other) noexcept
 	return *this;
 }
 
-Tuple Image::Width()
+Result<Tuple> Image::Width()
 {
-	return FromHTuple(imageImpl_->hImage_.Width());
+	return ResultFromHTuple(WRAP_HALCON_TRY(imageImpl_->hImage_.Width()));
 }
 
-Tuple Image::Height()
+Result<Tuple> Image::Height()
 {
-	return FromHTuple(imageImpl_->hImage_.Height());
+	return ResultFromHTuple(WRAP_HALCON_TRY(imageImpl_->hImage_.Height()));
 }
 
-Tuple Image::CountChannels() const
+Result<Tuple> Image::CountChannels() const
 {
-	return FromHTuple(imageImpl_->hImage_.CountChannels());
-	return Tuple();
+	return ResultFromHTuple(WRAP_HALCON_TRY(imageImpl_->hImage_.CountChannels()));
 }
 
 ImageImpl* Image::ImplPtr() const
@@ -102,6 +102,11 @@ Image FromHImage(const HalconCpp::HImage& hImage)
 	Image img;
 	img.ImplPtr()->hImage_ = hImage;
 	return img;
+}
+
+Result<Image> ResultFromHImage(const Result<HalconCpp::HImage>& result)
+{
+	return result.transform(FromHImage);
 }
 
 VISALGORITHM_NAMESPACE_END

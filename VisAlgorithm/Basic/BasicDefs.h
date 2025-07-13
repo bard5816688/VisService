@@ -11,8 +11,3 @@ namespace VisAlgorithm {                                                      \
 #else
 #define VisAlgorithmApi __declspec(dllexport)
 #endif
-
-#include <vector>
-#include <chrono>
-#include <memory>
-#include <variant>

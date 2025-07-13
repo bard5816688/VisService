@@ -1,6 +1,8 @@
 #pragma once
 
-#include "VisAlgorithmDefs.h"
+#include <variant>
+#include <string>
+#include "BasicReturn.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -28,11 +30,11 @@ public:
 	Tuple& operator=(Tuple&& other) noexcept;
 	
 	Tuple& Append(const Tuple& tuple);
-	TupleElementType Type(size_t idx);
+	Result<TupleElementType> Type(size_t idx);
 
 	template<typename T>
 		requires std::is_arithmetic_v<T> || std::is_same_v<T, std::string>
-	T Get(size_t index) const;
+	Result<T> Get(size_t idx) const;
 
 public:
 	static Tuple FromVector(const std::vector<TupleElement>& values);
@@ -41,7 +43,7 @@ public:
 	TupleImpl* ImplPtr() const;
 #endif
 private:
-	TupleElement At(size_t index) const;
+	Result<TupleElement> At(size_t idx) const;
 
 private:
 	TupleImpl* tupleImpl_;

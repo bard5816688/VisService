@@ -110,7 +110,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.;./Basic;./Image;./Region;./Tuple;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include/HalconCpp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;./Basic;./Image;./Region;./Tuple;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include/HalconCpp;$(SolutionDir)ThirdParty/Expected</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -137,6 +137,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Basic\BasicReturn.h" />
+    <ClInclude Include="Basic\BasicReturnInternal.h" />
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Image\ImageInternal.h" />
     <ClInclude Include="Region\RegionInternal.h" />
@@ -147,7 +149,7 @@
     <ClInclude Include="Region\Region.h" />
     <ClInclude Include="Tuple\Tuple.h" />
     <ClInclude Include="Matching\ShapeModelStrategyConcept.h" />
-    <ClInclude Include="VisAlgorithmDefs.h" />
+    <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="VisAlgorithm.h" />
     <ClInclude Include="Image\VisImage.h" />
     <ClInclude Include="Matching\VisShapeModelStrategy.h" />

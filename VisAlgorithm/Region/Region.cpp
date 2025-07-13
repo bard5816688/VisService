@@ -1,4 +1,5 @@
 #include "RegionInternal.h"
+#include "BasicReturnInternal.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
@@ -63,9 +64,9 @@ Region& Region::operator=(Region&& other) noexcept
 	return *this;
 }
 
-int64_t Region::AreaCenter(double* row, double* column) const
+Result<int64_t> Region::AreaCenter(double* row, double* column) const
 {
-	return regionImpl_->hRegion_.AreaCenter(row, column);
+	return WRAP_HALCON_TRY(regionImpl_->hRegion_.AreaCenter(row, column));
 }
 
 RegionImpl* Region::ImplPtr() const
@@ -83,6 +84,11 @@ Region FromHRegion(const HalconCpp::HRegion& hRegion)
 	Region rgn;
 	rgn.ImplPtr()->hRegion_ = hRegion;
 	return rgn;
+}
+
+Result<Region> ResultFromHRegion(const Result<HalconCpp::HRegion>& result)
+{
+	return result.transform(FromHRegion);
 }
 
 VISALGORITHM_NAMESPACE_END

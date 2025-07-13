@@ -23,14 +23,14 @@ HShapeModelStrategy::~HShapeModelStrategy()
 	delete hShapeModelStrategyImpl_;
 }
 
-void HShapeModelStrategy::ReadShapeModel(const char* fileName)
+ResultVoid HShapeModelStrategy::ReadShapeModel(const char* fileName)
 {
-	hShapeModelStrategyImpl_->hShapeModel_.ReadShapeModel(fileName);
+	return WRAP_HALCON_TRY(hShapeModelStrategyImpl_->hShapeModel_.ReadShapeModel(fileName));
 }
 
-void HShapeModelStrategy::CreateShapeModel(const CreateShapeModelParams& params)
+ResultVoid HShapeModelStrategy::CreateShapeModel(const CreateShapeModelParams& params)
 {
-	hShapeModelStrategyImpl_->hShapeModel_.CreateShapeModel(GetHImage(params.templateImg_), params.numLevels_, params.angleStep_, params.angleExtent_, params.angleStep_, params.optimization_, params.metric_, params.contrast_, params.minContrast_);
+	return WRAP_HALCON_TRY(hShapeModelStrategyImpl_->hShapeModel_.CreateShapeModel(GetHImage(params.templateImg_), params.numLevels_, params.angleStep_, params.angleExtent_, params.angleStep_, params.optimization_, params.metric_, params.contrast_, params.minContrast_));
 }
 
 VISALGORITHM_NAMESPACE_END

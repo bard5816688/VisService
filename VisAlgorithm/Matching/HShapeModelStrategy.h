@@ -11,9 +11,9 @@ class VisAlgorithmApi HShapeModelStrategy
 public:
 	HShapeModelStrategy();
 	~HShapeModelStrategy();
-	void ReadShapeModel(const char* fileName);
-	void CreateShapeModel(const CreateShapeModelParams& params);
 
+	ResultVoid ReadShapeModel(const char* fileName);
+	ResultVoid CreateShapeModel(const CreateShapeModelParams& params);
 
 private:
 	HShapeModelStrategyImpl* hShapeModelStrategyImpl_;

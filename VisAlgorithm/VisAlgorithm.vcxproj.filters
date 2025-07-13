@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VisAlgorithmDefs.h">
+    <ClInclude Include="Basic\BasicDefs.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="VisAlgorithm.h">
@@ -55,6 +55,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Region\VisRegion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\BasicReturn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\BasicReturnInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
