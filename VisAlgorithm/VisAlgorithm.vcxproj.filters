@@ -24,25 +24,25 @@
     <ClInclude Include="Matching\ShapeModel.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Region\Region.h">
+    <ClInclude Include="Region\Region.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Tuple\Tuple.h">
+    <ClInclude Include="Tuple\Tuple.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Tuple\TupleInternal.h">
+    <ClInclude Include="Tuple\TupleInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Region\RegionInternal.h">
+    <ClInclude Include="Region\RegionInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Image\VisImage.h">
+    <ClInclude Include="Image\VisImage.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Image\ImageInternal.h">
+    <ClInclude Include="Image\ImageInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Image\Image.h">
+    <ClInclude Include="Image\Image.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Matching\HShapeModelStrategy.h">
@@ -54,7 +54,7 @@
     <ClInclude Include="Matching\ShapeModelStrategyConcept.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\Region\VisRegion.h">
+    <ClInclude Include="Region\VisRegion.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,16 +62,16 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\Region\Region.cpp">
+    <ClCompile Include="Region\Region.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\Tuple\Tuple.cpp">
+    <ClCompile Include="Tuple\Tuple.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\Image\VisImage.cpp">
+    <ClCompile Include="Image\VisImage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\Image\Image.cpp">
+    <ClCompile Include="Image\Image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Matching\HShapeModelStrategy.cpp">
@@ -80,7 +80,7 @@
     <ClCompile Include="Matching\VisShapeModelStrtegy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Basic\Region\VisRegion.cpp">
+    <ClCompile Include="Region\VisRegion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,7 +88,7 @@
     <None Include="Matching\ShapeMode.inl">
       <Filter>头文件</Filter>
     </None>
-    <None Include="Basic\Tuple\Tuple.inl">
+    <None Include="Tuple\Tuple.inl">
       <Filter>头文件</Filter>
     </None>
   </ItemGroup>
