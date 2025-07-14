@@ -10,25 +10,6 @@ public:
 	{
 	}
 
-	TupleImpl(const TupleElement& element)
-	{
-		std::visit([=](const auto& value)
-			{
-				using T = std::decay_t<decltype(value)>;
-				if constexpr (std::is_same_v<T, std::monostate>)
-				{
-				}
-				else if constexpr (std::is_same_v<T, std::string>)
-				{
-					hTuple_ = HalconCpp::HTuple(value.c_str());
-				}
-				else
-				{
-					hTuple_ = HalconCpp::HTuple(value);
-				}
-			}, element);
-	}
-
 	HalconCpp::HTuple hTuple_;//底层也可以替换为VisTuple(自定义/其他Dll提供的Tuple类型)   
 };
 
@@ -39,9 +20,22 @@ Tuple::Tuple()
 }
 
 Tuple::Tuple(const TupleElement& element)
-	: tupleImpl_(new TupleImpl(element))
 {
-
+	std::visit([=](const auto& value)
+		{
+			using T = std::decay_t<decltype(value)>;
+			if constexpr (std::is_same_v<T, std::monostate>)
+			{
+			}
+			else if constexpr (std::is_same_v<T, std::string>)
+			{
+				tupleImpl_->hTuple_ = HalconCpp::HTuple(value.c_str());
+			}
+			else
+			{
+				tupleImpl_->hTuple_ = HalconCpp::HTuple(value);
+			}
+		}, element);
 }
 
 Tuple::~Tuple()
