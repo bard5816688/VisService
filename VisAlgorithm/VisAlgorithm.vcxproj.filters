@@ -33,7 +33,7 @@
     <ClInclude Include="Region\RegionInternal.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Image\VisImage.h">
+    <ClInclude Include="Image\VisImage\VisImage.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Image\ImageInternal.h">
@@ -51,7 +51,7 @@
     <ClInclude Include="Matching\ShapeModelStrategyConcept.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Region\VisRegion.h">
+    <ClInclude Include="Region\VisRegion\VisRegion.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Basic\BasicReturn.h">
@@ -83,7 +83,7 @@
     <ClCompile Include="Tuple\Tuple.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Image\VisImage.cpp">
+    <ClCompile Include="Image\VisImage\VisImage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Image\Image.cpp">
@@ -95,7 +95,7 @@
     <ClCompile Include="Matching\VisShapeModelStrtegy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Region\VisRegion.cpp">
+    <ClCompile Include="Region\VisRegion\VisRegion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Transformation\HomMat2D.inl">

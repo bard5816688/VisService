@@ -32,5 +32,13 @@
     <ClInclude Include="VisService.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DeviceControl\CameraManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DeviceControl\CameraManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

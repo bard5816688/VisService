@@ -100,8 +100,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DeviceControl\CameraManager.h" />
     <ClInclude Include="visservice_global.h" />
     <ClInclude Include="VisService.h" />
+    <ClCompile Include="DeviceControl\CameraManager.cpp" />
     <ClCompile Include="VisService.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
