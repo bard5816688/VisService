@@ -15,18 +15,6 @@ Region::Region()
 	regionImpl_->hRegion_.GenEmptyObj();
 }
 
-Region::Region(double row1, double column1, double row2, double column2)
-	: regionImpl_(new RegionImpl)
-{
-	regionImpl_->hRegion_.GenRectangle1(row1, column1, row2, column2);
-}
-
-Region::Region(double row, double column, double radius)
-	: regionImpl_(new RegionImpl)
-{
-	regionImpl_->hRegion_.GenCircle(row, column, radius);
-}
-
 Region::~Region()
 {
 	delete regionImpl_;
@@ -64,29 +52,37 @@ Region& Region::operator=(Region&& other) noexcept
 	return *this;
 }
 
+ResultVoid Region::GenRectangle1(double row1, double column1, double row2, double column2)
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(rect1, regionImpl_->hRegion_.GenRectangle1(row1, column1, row2, column2));
+	return rect1;
+}
+
+ResultVoid Region::GenCircle(double row, double column, double radius)
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(circle, regionImpl_->hRegion_.GenCircle(row, column, radius));
+	return circle;
+}
+
 Result<int64_t> Region::AreaCenter(double* row, double* column) const
 {
-	return WRAP_HALCON_TRY(regionImpl_->hRegion_.AreaCenter(row, column));
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(area, regionImpl_->hRegion_.AreaCenter(row, column));
+	return area;
 }
 
-RegionImpl* Region::ImplPtr() const
+HalconCpp::HRegion RegionInternal::GetHRegion(const Region& region)
 {
-	return regionImpl_;
+	return region.regionImpl_->hRegion_;
 }
 
-HalconCpp::HRegion GetHRegion(const Region& region)
-{
-	return region.ImplPtr()->hRegion_;
-}
-
-Region FromHRegion(const HalconCpp::HRegion& hRegion)
+Region RegionInternal::FromHRegion(const HalconCpp::HRegion& hRegion)
 {
 	Region rgn;
-	rgn.ImplPtr()->hRegion_ = hRegion;
+	rgn.regionImpl_->hRegion_ = hRegion;
 	return rgn;
 }
 
-Result<Region> ResultFromHRegion(const Result<HalconCpp::HRegion>& result)
+Result<Region> RegionInternal::ResultFromHRegion(const Result<HalconCpp::HRegion>& result)
 {
 	return result.transform(FromHRegion);
 }

@@ -5,8 +5,12 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-HalconCpp::HRegion GetHRegion(const Region& region);
-Region FromHRegion(const HalconCpp::HRegion& hRegion);
-Result<Region> ResultFromHRegion(const Result<HalconCpp::HRegion>& result);
+class RegionInternal
+{
+public:
+	static HalconCpp::HRegion GetHRegion(const Region& region);
+	static Region FromHRegion(const HalconCpp::HRegion& hRegion);
+	static Result<Region> ResultFromHRegion(const Result<HalconCpp::HRegion>& result);
+};
 
 VISALGORITHM_NAMESPACE_END

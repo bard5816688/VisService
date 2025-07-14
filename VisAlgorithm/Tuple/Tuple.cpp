@@ -83,7 +83,8 @@ Tuple& Tuple::operator=(Tuple&& other) noexcept
 
 Tuple& Tuple::Append(const Tuple& tuple)
 {
-	tupleImpl_->hTuple_ = tupleImpl_->hTuple_.Append(tuple.ImplPtr()->hTuple_);
+
+	tupleImpl_->hTuple_ = tupleImpl_->hTuple_.Append(tuple.tupleImpl_->hTuple_);
 	return *this;
 }
 
@@ -91,23 +92,56 @@ Result<TupleElementType> Tuple::Type(size_t idx)
 {
 	if (idx >= tupleImpl_->hTuple_.Length())
 	{
-		return VISALGORITHM_ERROR("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
+		return VISALGORITHM__RETURN_UNEXPECTE("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
 	}
+	return VISALGORITHM_WRAP_TRY_CATCH(tupleImpl_->hTuple_[idx].Type()).transform([](HalconCpp::HTupleElementType type)
+		{
+			switch (type)
+			{
+			case HalconCpp::eElementTypeLong:
+				return TupleElementType::Int;
+			case HalconCpp::eElementTypeDouble:
+				return TupleElementType::Double;
+			case HalconCpp::eElementTypeString:
+				return TupleElementType::String;
+			case HalconCpp::eElementTypeHandle:
+			case HalconCpp::eElementTypeMixed:
+			case HalconCpp::eElementTypeUndef:
+			default:
+				return TupleElementType::Null;
+			}
+		});
+}
 
-	HalconCpp::HTupleElementType elementType = tupleImpl_->hTuple_[idx].Type();
-	switch (elementType)
+Result<TupleElement> Tuple::At(size_t idx) const
+{
+	if (idx >= tupleImpl_->hTuple_.Length())
+	{
+		return VISALGORITHM__RETURN_UNEXPECTE("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
+	}
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(elementType, tupleImpl_->hTuple_[idx].Type());
+	switch (elementType.value())
 	{
 	case HalconCpp::eElementTypeLong:
-		return TupleElementType::Int;
+	{
+		VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(i, tupleImpl_->hTuple_[idx].I());
+		return i;
+	}
 	case HalconCpp::eElementTypeDouble:
-		return TupleElementType::Double;
+	{
+		VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(d, tupleImpl_->hTuple_[idx].D());
+		return d;
+	}
 	case HalconCpp::eElementTypeString:
-		return TupleElementType::String;
+	{
+		VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(s, tupleImpl_->hTuple_[idx].S().Text());
+		return s;
+	}
 	case HalconCpp::eElementTypeHandle:
 	case HalconCpp::eElementTypeMixed:
 	case HalconCpp::eElementTypeUndef:
 	default:
-		return TupleElementType::Null;
+		return std::monostate();
 	}
 }
 
@@ -121,49 +155,21 @@ Tuple Tuple::FromVector(const std::vector<TupleElement>& values)
 	return tuple;
 }
 
-TupleImpl* Tuple::ImplPtr() const
+HalconCpp::HTuple TupleInternal::GetHTuple(const Tuple& tuple)
 {
-	return tupleImpl_;
+	return tuple.tupleImpl_->hTuple_;
 }
 
-Result<TupleElement> Tuple::At(size_t idx) const
-{
-	if (idx >= tupleImpl_->hTuple_.Length())
-	{
-		return VISALGORITHM_ERROR("Result<TupleElement> TupleImpl::At(size_t idx)", "Tuple index out of bounds", ErrorCode::StdExcepetion);
-	}
-	HalconCpp::HTupleElementType elementType = tupleImpl_->hTuple_[idx].Type();
-	switch (elementType)
-	{
-	case HalconCpp::eElementTypeLong:
-		return TupleElement(tupleImpl_->hTuple_[idx].I());
-	case HalconCpp::eElementTypeDouble:
-		return TupleElement(tupleImpl_->hTuple_[idx].D());
-	case HalconCpp::eElementTypeString:
-		return TupleElement(tupleImpl_->hTuple_[idx].S().Text());
-	case HalconCpp::eElementTypeHandle:
-	case HalconCpp::eElementTypeMixed:
-	case HalconCpp::eElementTypeUndef:
-	default:
-		return std::monostate();
-	}
-}
-
-HalconCpp::HTuple GetHTuple(const Tuple& tuple)
-{
-	return tuple.ImplPtr()->hTuple_;
-}
-
-Tuple FromHTuple(const HalconCpp::HTuple& hTuple)
+Tuple TupleInternal::FromHTuple(const HalconCpp::HTuple& hTuple)
 {
 	Tuple tuple;
-	tuple.ImplPtr()->hTuple_ = hTuple;
+	tuple.tupleImpl_->hTuple_ = hTuple;
 	return tuple;
 }
 
-Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& result)
+Result<Tuple> TupleInternal::ResultFromHTuple(const Result<HalconCpp::HTuple>& res)
 {
-	return result.transform(FromHTuple);
+	return res.transform(TupleInternal::FromHTuple);
 }
 
 VISALGORITHM_NAMESPACE_END

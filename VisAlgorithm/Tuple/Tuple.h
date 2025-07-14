@@ -31,25 +31,15 @@ public:
 	
 	Tuple& Append(const Tuple& tuple);
 	Result<TupleElementType> Type(size_t idx);
-
-	template<typename T>
-		requires std::is_arithmetic_v<T> || std::is_same_v<T, std::string>
-	Result<T> Get(size_t idx) const;
+	Result<TupleElement> At(size_t idx) const;
 
 public:
 	static Tuple FromVector(const std::vector<TupleElement>& values);
 
-#ifdef VISALGORITHM_EXPORTS
-	TupleImpl* ImplPtr() const;
-#endif
-private:
-	Result<TupleElement> At(size_t idx) const;
-
 private:
 	TupleImpl* tupleImpl_;
 
+	friend class TupleInternal;
 };
 
 VISALGORITHM_NAMESPACE_END
-
-#include "Tuple.inl"

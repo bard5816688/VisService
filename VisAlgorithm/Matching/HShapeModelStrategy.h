@@ -11,6 +11,10 @@ class VisAlgorithmApi HShapeModelStrategy
 public:
 	HShapeModelStrategy();
 	~HShapeModelStrategy();
+	HShapeModelStrategy(const HShapeModelStrategy& other);
+	HShapeModelStrategy& operator=(const HShapeModelStrategy& other);
+	HShapeModelStrategy(HShapeModelStrategy&& other) noexcept;
+	HShapeModelStrategy& operator=(HShapeModelStrategy&& other) noexcept;
 
 	ResultVoid ReadShapeModel(const char* fileName);
 	ResultVoid CreateShapeModel(const CreateShapeModelParams& params);

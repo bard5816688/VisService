@@ -4,9 +4,11 @@
 #include "Tuple.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
-
-HalconCpp::HTuple GetHTuple(const Tuple& tuple);
-Tuple FromHTuple(const HalconCpp::HTuple& hTuple);
-Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& result);
-
+class TupleInternal
+{
+public:
+	static HalconCpp::HTuple GetHTuple(const Tuple& tuple);
+	static Tuple FromHTuple(const HalconCpp::HTuple& hTuple);
+	static Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& res);
+};
 VISALGORITHM_NAMESPACE_END
