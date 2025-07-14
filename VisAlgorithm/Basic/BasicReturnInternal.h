@@ -1,7 +1,9 @@
 #pragma once
 
 #include "BasicReturn.h"
+#ifdef USE_HALCON
 #include "HalconCpp.h"
+#endif
 
 namespace tl
 {
@@ -36,10 +38,12 @@ inline auto WrapTryCatch(const std::string& funcName, Func&& func) -> Result<dec
     {
         return VISALGORITHM__RETURN_UNEXPECTE(funcName.c_str(), e.what(), ErrorCode::StdExcepetion);
     }
+#ifdef USE_HALCON
     catch (const HalconCpp::HException& e)
     {
         return VISALGORITHM__RETURN_UNEXPECTE(funcName.c_str(), e.ErrorMessage().Text(), ErrorCode::HalconExcepetion);
     }
+#endif
     catch (...)
     {
         return VISALGORITHM__RETURN_UNEXPECTE(funcName.c_str(), "Unknown exception caught", ErrorCode::Unknown);

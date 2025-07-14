@@ -139,38 +139,19 @@
   <ItemGroup>
     <ClInclude Include="Basic\BasicReturn.h" />
     <ClInclude Include="Basic\BasicReturnInternal.h" />
-    <ClInclude Include="Transformation\HHomMat2DStrategy.h" />
-    <ClInclude Include="Transformation\HomMat2D.h" />
-    <ClInclude Include="Image\Image.h" />
-    <ClInclude Include="Image\ImageInternal.h" />
-    <ClInclude Include="Region\RegionInternal.h" />
-    <ClInclude Include="Region\VisRegion\VisRegion.h" />
-    <ClInclude Include="Transformation\HomMat2DStrategyConcept.h" />
-    <ClInclude Include="Matching\HShapeModelStrategy.h" />
-    <ClInclude Include="Matching\ShapeModel.h" />
-    <ClInclude Include="Region\Region.h" />
-    <ClInclude Include="Tuple\Tuple.h" />
-    <ClInclude Include="Matching\ShapeModelStrategyConcept.h" />
+    <ClInclude Include="Tuple\HTupleStrategy.h" />
     <ClInclude Include="Basic\BasicDefs.h" />
+    <ClInclude Include="Tuple\Tuple.h" />
     <ClInclude Include="Tuple\TupleInternal.h" />
+    <ClInclude Include="Tuple\TupleStrategyConcept.h" />
     <ClInclude Include="VisAlgorithm.h" />
-    <ClInclude Include="Image\VisImage\VisImage.h" />
-    <ClInclude Include="Matching\VisShapeModelStrategy.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Transformation\HHomMat2DStrategy.cpp" />
-    <ClCompile Include="Transformation\HomMat2D.inl" />
-    <ClCompile Include="Image\Image.cpp" />
-    <ClCompile Include="Region\VisRegion\VisRegion.cpp" />
-    <ClCompile Include="Matching\HShapeModelStrategy.cpp" />
+    <ClCompile Include="Tuple\HTupleStrategy.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Region\Region.cpp" />
-    <ClCompile Include="Tuple\Tuple.cpp" />
-    <ClCompile Include="Image\VisImage\VisImage.cpp" />
-    <ClCompile Include="Matching\VisShapeModelStrtegy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Matching\ShapeMode.inl" />
+    <None Include="Tuple\Tuple.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

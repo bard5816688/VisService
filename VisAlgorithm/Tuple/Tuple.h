@@ -1,25 +1,15 @@
 #pragma once
 
-#include <variant>
-#include <string>
-#include "BasicReturn.h"
+#include "HTupleStrategy.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-using TupleElement = std::variant<std::monostate, int, double, std::string>;
-
-enum class TupleElementType
+template<IsTupleStrategy Strategy = HTupleStrategy>
+class Tuple
 {
-	Null,
-	Int,
-	Double,
-	String,
-};
+public:
+	static Tuple FromVector(const std::vector<TupleElement>& values);
 
-class TupleImpl;
-
-class VisAlgorithmApi Tuple
-{
 public:
 	Tuple();
 	Tuple(const TupleElement& element);
@@ -28,18 +18,15 @@ public:
 	Tuple& operator=(const Tuple& other);
 	Tuple(Tuple&& other) noexcept;
 	Tuple& operator=(Tuple&& other) noexcept;
-	
+
 	Tuple& Append(const Tuple& tuple);
 	Result<TupleElementType> Type(size_t idx);
 	Result<TupleElement> At(size_t idx) const;
 
-public:
-	static Tuple FromVector(const std::vector<TupleElement>& values);
-
 private:
-	TupleImpl* tupleImpl_;
-
-	friend class TupleInternal;
+	Strategy strategy_;
 };
 
 VISALGORITHM_NAMESPACE_END
+
+#include"Tuple.inl"

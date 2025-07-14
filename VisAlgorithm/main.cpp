@@ -1,11 +1,9 @@
-#include "VisAlgorithm.h"
+#include "Tuple.h"
 
 using namespace VisAlgorithm;
 int main() 
 {
-	Region rgn;
-	auto a = rgn.GenCircle(200, 200, 50);
-	double row, col;
-	auto area = rgn.AreaCenter(&row,&col);
+    Tuple t;
+	t.Append(TupleElement("2"));
     return 0;
 }
