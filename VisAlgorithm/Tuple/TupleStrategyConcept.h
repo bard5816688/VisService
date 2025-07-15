@@ -15,19 +15,19 @@ enum class TupleElementType
 	Double,
 	String,
 };
-
 template<typename T>
 concept IsTupleStrategy = RuleOfFive<T> && requires(
 	T t,
-	const std::vector<TupleElement>& vte,
 	const T& ct,
+	const std::vector<TupleElement>& vte,
 	size_t size_t
 	)
 {
 	{ T::FromVector(vte) }  -> std::same_as<T>;
+	{ ct.GetImpl() };
 	{ t.Append(ct) }  -> std::same_as<T&>;
 	{ t.Type(size_t) }  -> std::same_as<Result<TupleElementType>>;
-	{ t.At(size_t) }  -> std::same_as<Result<TupleElement>>;
+	{ ct.At(size_t) }  -> std::same_as<Result<TupleElement>>;
 };
 
 VISALGORITHM_NAMESPACE_END

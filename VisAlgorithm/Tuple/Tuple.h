@@ -3,8 +3,11 @@
 #include "HTupleStrategy.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
-
+#ifdef USE_HALCON
 template<IsTupleStrategy Strategy = HTupleStrategy>
+#else
+template<IsTupleStrategy Strategy>
+#endif
 class Tuple
 {
 public:

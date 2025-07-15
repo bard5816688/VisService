@@ -3,10 +3,12 @@
 #include "BasicReturnInternal.h"
 #include "Tuple.h"
 
+#ifdef USE_HALCON
+
 VISALGORITHM_NAMESPACE_BEGIN
 
 template<typename TupleStrategy>
-class TupleHalconUtils
+class TupleInternalUtils
 {
 public:
 	static HalconCpp::HTuple GetHTuple(const TupleStrategy& tuple);
@@ -14,6 +16,8 @@ public:
 	static Result<TupleStrategy> ResultFromHTuple(const Result<HalconCpp::HTuple>& res);
 };
 
-extern template class TupleHalconUtils<HTupleStrategy>;
+extern template class TupleInternalUtils<HTupleStrategy>;
 
 VISALGORITHM_NAMESPACE_END
+
+#endif
