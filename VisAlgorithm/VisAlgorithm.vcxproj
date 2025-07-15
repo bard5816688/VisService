@@ -139,6 +139,10 @@
   <ItemGroup>
     <ClInclude Include="Basic\BasicReturn.h" />
     <ClInclude Include="Basic\BasicReturnInternal.h" />
+    <ClInclude Include="Region\HRegionStrategy.h" />
+    <ClInclude Include="Region\Region.h" />
+    <ClInclude Include="Region\RegionInternal.h" />
+    <ClInclude Include="Region\RegionStrategyConcept.h" />
     <ClInclude Include="Tuple\HTupleStrategy.h" />
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Tuple\Tuple.h" />
@@ -147,10 +151,12 @@
     <ClInclude Include="VisAlgorithm.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Region\HRegionStrategy.cpp" />
     <ClCompile Include="Tuple\HTupleStrategy.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Region\Region.inl" />
     <None Include="Tuple\Tuple.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,7 +7,7 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-template<typename TupleStrategy>
+template<IsTupleStrategy TupleStrategy>
 class TupleInternalUtils
 {
 public:

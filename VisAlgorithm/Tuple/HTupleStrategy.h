@@ -22,10 +22,12 @@ public:
 	HTupleStrategy(HTupleStrategy&& other) noexcept;
 	HTupleStrategy& operator=(HTupleStrategy&& other) noexcept;
 
-	Impl* GetImpl() const;
 	HTupleStrategy& Append(const HTupleStrategy& tuple);
 	Result<TupleElementType> Type(size_t idx);
 	Result<TupleElement> At(size_t idx) const;
+
+public:
+	Impl* GetImpl() const;
 
 private:
 	Impl* impl_;

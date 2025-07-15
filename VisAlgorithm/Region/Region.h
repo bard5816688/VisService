@@ -1,13 +1,14 @@
 #pragma once
-
-#include "BasicReturn.h"
-#include "Tuple.h"
+#include "HRegionStrategy.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-class RegionImpl;
-
-class VisAlgorithmApi Region
+#ifdef USE_HALCON
+template<IsRegionStrategy Strategy = HRegionStrategy>
+#else
+template<IsRegionStrategy Strategy>
+#endif
+class Region
 {
 public:
 	Region();
@@ -22,10 +23,9 @@ public:
 	Result<int64_t> AreaCenter(double* row, double* column) const;
 
 private:
-	RegionImpl* regionImpl_;
-
-	friend class RegionInternal;
+	Strategy strategy_;
 };
 
 VISALGORITHM_NAMESPACE_END
 
+#include"Region.inl"

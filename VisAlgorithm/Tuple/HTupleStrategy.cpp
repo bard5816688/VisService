@@ -83,11 +83,6 @@ HTupleStrategy& HTupleStrategy::operator=(HTupleStrategy&& other) noexcept
 	return *this;
 }
 
-HTupleStrategy::Impl* HTupleStrategy::GetImpl() const
-{
-	return impl_;
-}
-
 HTupleStrategy& HTupleStrategy::Append(const HTupleStrategy& tuple)
 {
 
@@ -101,23 +96,21 @@ Result<TupleElementType> HTupleStrategy::Type(size_t idx)
 	{
 		return VISALGORITHM__RETURN_UNEXPECTE("Result<TupleElement> Impl::At(size_t idx)", "HTupleStrategy index out of bounds", ErrorCode::StdExcepetion);
 	}
-	return VISALGORITHM_WRAP_TRY_CATCH(impl_->hTuple_[idx].Type()).transform([](HalconCpp::HTupleElementType type)
-		{
-			switch (type)
-			{
-			case HalconCpp::eElementTypeLong:
-				return TupleElementType::Int;
-			case HalconCpp::eElementTypeDouble:
-				return TupleElementType::Double;
-			case HalconCpp::eElementTypeString:
-				return TupleElementType::String;
-			case HalconCpp::eElementTypeHandle:
-			case HalconCpp::eElementTypeMixed:
-			case HalconCpp::eElementTypeUndef:
-			default:
-				return TupleElementType::Null;
-			}
-		});
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(type, impl_->hTuple_[idx].Type());
+	switch (type.value())
+	{
+	case HalconCpp::eElementTypeLong:
+		return TupleElementType::Int;
+	case HalconCpp::eElementTypeDouble:
+		return TupleElementType::Double;
+	case HalconCpp::eElementTypeString:
+		return TupleElementType::String;
+	case HalconCpp::eElementTypeHandle:
+	case HalconCpp::eElementTypeMixed:
+	case HalconCpp::eElementTypeUndef:
+	default:
+		return TupleElementType::Null;
+	}
 }
 
 Result<TupleElement> HTupleStrategy::At(size_t idx) const
@@ -152,13 +145,18 @@ Result<TupleElement> HTupleStrategy::At(size_t idx) const
 	}
 }
 
-template<typename TupleStrategy>
+HTupleStrategy::Impl* HTupleStrategy::GetImpl() const
+{
+	return impl_;
+}
+
+template<IsTupleStrategy TupleStrategy>
 HalconCpp::HTuple TupleInternalUtils<TupleStrategy>::GetHTuple(const TupleStrategy& tuple)
 {
 	return tuple.GetImpl()->hTuple_;
 }
 
-template<typename TupleStrategy>
+template<IsTupleStrategy TupleStrategy>
 TupleStrategy TupleInternalUtils<TupleStrategy>::FromHTuple(const HalconCpp::HTuple& hTuple)
 {
 	HTupleStrategy tuple;
@@ -166,7 +164,7 @@ TupleStrategy TupleInternalUtils<TupleStrategy>::FromHTuple(const HalconCpp::HTu
 	return tuple;
 }
 
-template<typename TupleStrategy>
+template<IsTupleStrategy TupleStrategy>
 Result<TupleStrategy> TupleInternalUtils<TupleStrategy>::ResultFromHTuple(const Result<HalconCpp::HTuple>& res)
 {
 	return res.transform(TupleInternalUtils<TupleStrategy>::FromHTuple);

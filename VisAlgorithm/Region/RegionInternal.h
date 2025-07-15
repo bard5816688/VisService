@@ -5,12 +5,15 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-class RegionInternal
+template<IsRegionStrategy RegionStrategy>
+class RegionInternalUtils
 {
 public:
-	static HalconCpp::HRegion GetHRegion(const Region& region);
-	static Region FromHRegion(const HalconCpp::HRegion& hRegion);
-	static Result<Region> ResultFromHRegion(const Result<HalconCpp::HRegion>& result);
+	static HalconCpp::HRegion GetHRegion(const RegionStrategy& region);
+	static RegionStrategy FromHRegion(const HalconCpp::HRegion& hRegion);
+	static Result<RegionStrategy> ResultFromHRegion(const Result<HalconCpp::HRegion>& result);
 };
+
+extern template class RegionInternalUtils<HRegionStrategy>;
 
 VISALGORITHM_NAMESPACE_END
