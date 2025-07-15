@@ -8,9 +8,8 @@ VISALGORITHM_NAMESPACE_BEGIN
 
 class VisAlgorithmApi HRegionStrategy
 {
-	class Impl;
-
 public:
+	class Impl;
 	HRegionStrategy();
 	~HRegionStrategy();
 	HRegionStrategy(const HRegionStrategy& other);

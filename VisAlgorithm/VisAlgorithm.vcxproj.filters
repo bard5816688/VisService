@@ -45,10 +45,22 @@
     <ClInclude Include="Region\HRegionStrategy.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Region\Region.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Region\RegionStrategyConcept.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Region\Region.h">
+    <ClInclude Include="Image\Image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\ImageStrategyConcept.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\ImageInternal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Image\HImageStrategy.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,12 +74,18 @@
     <ClCompile Include="Region\HRegionStrategy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Image\HImageStrategy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Tuple\Tuple.inl">
       <Filter>头文件</Filter>
     </None>
     <None Include="Region\Region.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="Image\Image.inl">
       <Filter>头文件</Filter>
     </None>
   </ItemGroup>

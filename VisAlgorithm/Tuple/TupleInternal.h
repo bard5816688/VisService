@@ -7,16 +7,13 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-template<IsTupleStrategy TupleStrategy>
 class TupleInternalUtils
 {
 public:
-	static HalconCpp::HTuple GetHTuple(const TupleStrategy& tuple);
-	static TupleStrategy FromHTuple(const HalconCpp::HTuple& hTuple);
-	static Result<TupleStrategy> ResultFromHTuple(const Result<HalconCpp::HTuple>& res);
+	static HalconCpp::HTuple GetHTuple(const Tuple& tuple);
+	static Tuple FromHTuple(const HalconCpp::HTuple& hTuple);
+	static Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& res);
 };
-
-extern template class TupleInternalUtils<HTupleStrategy>;
 
 VISALGORITHM_NAMESPACE_END
 

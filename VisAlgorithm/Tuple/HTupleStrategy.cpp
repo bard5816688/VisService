@@ -8,6 +8,12 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HTupleStrategy::Impl
 {
 public:
+	HalconCpp::HTuple& GetHTuple()
+	{
+		return hTuple_;
+	}
+
+public:
 	HalconCpp::HTuple hTuple_; 
 };
 
@@ -150,27 +156,22 @@ HTupleStrategy::Impl* HTupleStrategy::GetImpl() const
 	return impl_;
 }
 
-template<IsTupleStrategy TupleStrategy>
-HalconCpp::HTuple TupleInternalUtils<TupleStrategy>::GetHTuple(const TupleStrategy& tuple)
+HalconCpp::HTuple TupleInternalUtils::GetHTuple(const Tuple& tuple)
 {
-	return tuple.GetImpl()->hTuple_;
+	return tuple.GetImpl()->GetHTuple();
 }
 
-template<IsTupleStrategy TupleStrategy>
-TupleStrategy TupleInternalUtils<TupleStrategy>::FromHTuple(const HalconCpp::HTuple& hTuple)
+Tuple TupleInternalUtils::FromHTuple(const HalconCpp::HTuple& hTuple)
 {
-	HTupleStrategy tuple;
-	tuple.GetImpl()->hTuple_ = hTuple;
+	Tuple tuple;
+	tuple.GetImpl()->GetHTuple() = hTuple;
 	return tuple;
 }
 
-template<IsTupleStrategy TupleStrategy>
-Result<TupleStrategy> TupleInternalUtils<TupleStrategy>::ResultFromHTuple(const Result<HalconCpp::HTuple>& res)
+Result<Tuple> TupleInternalUtils::ResultFromHTuple(const Result<HalconCpp::HTuple>& res)
 {
-	return res.transform(TupleInternalUtils<TupleStrategy>::FromHTuple);
+	return res.transform(TupleInternalUtils::FromHTuple);
 }
-
-template class TupleInternalUtils<HTupleStrategy>;
 
 VISALGORITHM_NAMESPACE_END
 

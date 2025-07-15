@@ -8,27 +8,38 @@ template<IsTupleStrategy Strategy = HTupleStrategy>
 #else
 template<IsTupleStrategy Strategy>
 #endif
-class Tuple
+class TupleContext
 {
 public:
-	static Tuple FromVector(const std::vector<TupleElement>& values);
+	static TupleContext FromVector(const std::vector<TupleElement>& values);
 
 public:
-	Tuple();
-	Tuple(const TupleElement& element);
-	~Tuple();
-	Tuple(const Tuple& other);
-	Tuple& operator=(const Tuple& other);
-	Tuple(Tuple&& other) noexcept;
-	Tuple& operator=(Tuple&& other) noexcept;
+	TupleContext();
+	TupleContext(const TupleElement& element);
+	~TupleContext();
+	TupleContext(const TupleContext& other);
+	TupleContext& operator=(const TupleContext& other);
+	TupleContext(TupleContext&& other) noexcept;
+	TupleContext& operator=(TupleContext&& other) noexcept;
 
-	Tuple& Append(const Tuple& tuple);
+	TupleContext& Append(const TupleContext& tuple);
 	Result<TupleElementType> Type(size_t idx);
 	Result<TupleElement> At(size_t idx) const;
 
 private:
+	Strategy::Impl* GetImpl() const;
 	Strategy strategy_;
+
+	friend class TupleInternalUtils;
 };
+
+
+#ifdef USE_HALCON
+#define DEFAULT_TUPLE_STRATEGY HTupleStrategy
+#elif
+#define DEFAULT_TUPLE_STRATEGY "NoSupported"
+#endif
+using Tuple = TupleContext<DEFAULT_TUPLE_STRATEGY>;
 
 VISALGORITHM_NAMESPACE_END
 

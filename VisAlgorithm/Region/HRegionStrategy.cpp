@@ -7,6 +7,11 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HRegionStrategy::Impl
 {
 public:
+	HalconCpp::HRegion& GetHRegion()
+	{
+		return hRegion_;
+	}
+
 	HalconCpp::HRegion hRegion_;
 };
 
@@ -77,27 +82,22 @@ HRegionStrategy::Impl* HRegionStrategy::GetImpl() const
 }
 
 
-template<IsRegionStrategy RegionStrategy>
-HalconCpp::HRegion RegionInternalUtils<RegionStrategy>::GetHRegion(const RegionStrategy& region)
+HalconCpp::HRegion RegionInternalUtils::GetHRegion(const Region& region)
 {
-	return region.GetImpl()->hRegion_;
+	return region.GetImpl()->GetHRegion();
 }
 
-template<IsRegionStrategy RegionStrategy>
-RegionStrategy RegionInternalUtils<RegionStrategy>::FromHRegion(const HalconCpp::HRegion& hRegion)
+Region RegionInternalUtils::FromHRegion(const HalconCpp::HRegion& hRegion)
 {
-	HRegionStrategy rgn;
-	rgn.GetImpl()->hRegion_ = hRegion;
+	Region rgn;
+	rgn.GetImpl()->GetHRegion() = hRegion;
 	return rgn;
 }
 
-template<IsRegionStrategy RegionStrategy>
-Result<RegionStrategy> RegionInternalUtils<RegionStrategy>::ResultFromHRegion(const Result<HalconCpp::HRegion>& result)
+Result<Region> RegionInternalUtils::ResultFromHRegion(const Result<HalconCpp::HRegion>& result)
 {
-	return result.transform(RegionInternalUtils<RegionStrategy>::FromHRegion);
+	return result.transform(RegionInternalUtils::FromHRegion);
 }
-
-template class RegionInternalUtils<HRegionStrategy>;
 
 VISALGORITHM_NAMESPACE_END
 

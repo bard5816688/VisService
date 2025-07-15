@@ -8,9 +8,8 @@ VISALGORITHM_NAMESPACE_BEGIN
 
 class VisAlgorithmApi HTupleStrategy
 {
-	class Impl;
-
 public:
+	class Impl;
 	static HTupleStrategy FromVector(const std::vector<TupleElement>& values);
 
 public:

@@ -8,23 +8,33 @@ template<IsRegionStrategy Strategy = HRegionStrategy>
 #else
 template<IsRegionStrategy Strategy>
 #endif
-class Region
+class RegionContext
 {
 public:
-	Region();
-	~Region();
-	Region(const Region& other);
-	Region& operator=(const Region& other);
-	Region(Region&& other) noexcept;
-	Region& operator=(Region&& other) noexcept;
+	RegionContext();
+	~RegionContext();
+	RegionContext(const RegionContext& other);
+	RegionContext& operator=(const RegionContext& other);
+	RegionContext(RegionContext&& other) noexcept;
+	RegionContext& operator=(RegionContext&& other) noexcept;
 
 	ResultVoid GenRectangle1(double row1, double column1, double row2, double column2);
 	ResultVoid GenCircle(double row, double column, double radius);
 	Result<int64_t> AreaCenter(double* row, double* column) const;
 
 private:
+	Strategy::Impl* GetImpl() const;
 	Strategy strategy_;
+
+	friend class RegionInternalUtils;
 };
+
+#ifdef USE_HALCON
+#define DEFAULT_REGION_STRATEGY HRegionStrategy
+#elif
+#define DEFAULT_REGION_STRATEGY "NoSupported"
+#endif
+using Region = RegionContext<DEFAULT_REGION_STRATEGY>;
 
 VISALGORITHM_NAMESPACE_END
 
