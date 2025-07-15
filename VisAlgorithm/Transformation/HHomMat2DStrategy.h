@@ -4,11 +4,10 @@
 
 VISALGORITHM_NAMESPACE_BEGIN
 
-class HHomMat2DStrategyImpl;
-
 class HHomMat2DStrategy
 {
 public:
+	class Impl;
 	HHomMat2DStrategy();
 	~HHomMat2DStrategy();
 	HHomMat2DStrategy(const HHomMat2DStrategy& other);
@@ -19,7 +18,7 @@ public:
 	Result<HHomMat2DStrategy> HomMat2dTranslate(double tx, double ty) const;
 
 private:
-	HHomMat2DStrategyImpl* hHomMat2DStrategyImpl_;
+	Impl* impl_;
 };
 
 VISALGORITHM_NAMESPACE_END

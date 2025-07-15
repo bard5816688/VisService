@@ -15,6 +15,7 @@ enum class TupleElementType
 	Double,
 	String,
 };
+
 template<typename T>
 concept IsTupleStrategy = RuleOfFive<T> && requires(
 	T t,

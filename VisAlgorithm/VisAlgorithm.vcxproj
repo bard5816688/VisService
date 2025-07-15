@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -117,6 +117,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>halconcpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,6 +145,10 @@
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Image\ImageInternal.h" />
     <ClInclude Include="Image\ImageStrategyConcept.h" />
+    <ClInclude Include="Matching\HShapeModelStrategy.h" />
+    <ClInclude Include="Matching\ShapeModel.h" />
+    <ClInclude Include="Matching\ShapeModelStrategyConcept.h" />
+    <ClInclude Include="Matching\VisShapeModelStrategy.h" />
     <ClInclude Include="Region\RegionStrategyConcept.h" />
     <ClInclude Include="Region\HRegionStrategy.h" />
     <ClInclude Include="Region\Region.h" />
@@ -156,12 +162,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image\HImageStrategy.cpp" />
+    <ClCompile Include="Matching\HShapeModelStrategy.cpp" />
+    <ClCompile Include="Matching\VisShapeModelStrtegy.cpp" />
     <ClCompile Include="Region\HRegionStrategy.cpp" />
     <ClCompile Include="Tuple\HTupleStrategy.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\Image.inl" />
+    <None Include="Matching\ShapeMode.inl" />
     <None Include="Region\Region.inl" />
     <None Include="Tuple\Tuple.inl" />
   </ItemGroup>

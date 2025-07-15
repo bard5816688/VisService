@@ -8,6 +8,7 @@ class HShapeModelStrategyImpl;
 
 class VisAlgorithmApi HShapeModelStrategy
 {
+	class Impl;
 public:
 	HShapeModelStrategy();
 	~HShapeModelStrategy();
@@ -20,7 +21,7 @@ public:
 	ResultVoid CreateShapeModel(const CreateShapeModelParams& params);
 
 private:
-	HShapeModelStrategyImpl* hShapeModelStrategyImpl_;
+	Impl* impl_;
 };
 
 VISALGORITHM_NAMESPACE_END

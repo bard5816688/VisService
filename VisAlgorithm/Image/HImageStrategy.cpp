@@ -88,6 +88,11 @@ Result<Tuple> HImageStrategy::CountChannels() const
 	return TupleInternalUtils::ResultFromHTuple(res);
 }
 
+HImageStrategy::Impl* HImageStrategy::GetImpl() const
+{
+	return impl_;
+}
+
 HalconCpp::HImage ImageInternalUtils::GetHImage(const Image& image)
 {
 	return image.GetImpl()->GetHImage();

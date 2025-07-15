@@ -6,7 +6,7 @@
 VISALGORITHM_NAMESPACE_BEGIN
 
 template<IsHomMat2DStrategy Strategy>
-class HomMat2D
+class HomMat2DContext
 {
 public:
 	Result<Strategy> HomMat2dTranslate(double Tx, double Ty) const;
