@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)D</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -110,7 +113,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>.;./Basic;./Image;./Region;./Tuple;./Transformation;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include/HalconCpp;$(SolutionDir)ThirdParty/Expected</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;./Basic;./Image;./Region;./Tuple;./Contour;./Transformation;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include;$(SolutionDir)ThirdParty/Halcon/Halcon24.11/Include/HalconCpp;$(SolutionDir)ThirdParty/Expected</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -141,6 +144,10 @@
   <ItemGroup>
     <ClInclude Include="Basic\BasicReturn.h" />
     <ClInclude Include="Basic\BasicReturnInternal.h" />
+    <ClInclude Include="Contour\Contour.h" />
+    <ClInclude Include="Contour\ContourInternal.h" />
+    <ClInclude Include="Contour\ContourStrategyConcept.h" />
+    <ClInclude Include="Contour\HContourStrategy.h" />
     <ClInclude Include="Image\HImageStrategy.h" />
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Image\ImageInternal.h" />
@@ -161,6 +168,7 @@
     <ClInclude Include="VisAlgorithm.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Contour\HContourStrategy.cpp" />
     <ClCompile Include="Image\HImageStrategy.cpp" />
     <ClCompile Include="Matching\HShapeModelStrategy.cpp" />
     <ClCompile Include="Matching\VisShapeModelStrtegy.cpp" />
@@ -168,6 +176,7 @@
     <ClCompile Include="Tuple\HTupleStrategy.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Contour\Contour.inl" />
     <None Include="Image\Image.inl" />
     <None Include="Matching\ShapeMode.inl" />
     <None Include="Region\Region.inl" />

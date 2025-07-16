@@ -8,7 +8,7 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HTupleStrategy::Impl
 {
 public:
-	HalconCpp::HTuple& GetHTuple()
+	HalconCpp::HTuple& GetHobj()
 	{
 		return hTuple_;
 	}
@@ -158,13 +158,13 @@ HTupleStrategy::Impl* HTupleStrategy::GetImpl() const
 
 HalconCpp::HTuple TupleInternalUtils::GetHTuple(const Tuple& tuple)
 {
-	return tuple.GetImpl()->GetHTuple();
+	return tuple.GetImpl()->GetHobj();
 }
 
 Tuple TupleInternalUtils::FromHTuple(const HalconCpp::HTuple& hTuple)
 {
 	Tuple tuple;
-	tuple.GetImpl()->GetHTuple() = hTuple;
+	tuple.GetImpl()->GetHobj() = hTuple;
 	return tuple;
 }
 

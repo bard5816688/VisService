@@ -7,7 +7,7 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HRegionStrategy::Impl
 {
 public:
-	HalconCpp::HRegion& GetHRegion()
+	HalconCpp::HRegion& GetHobj()
 	{
 		return hRegion_;
 	}
@@ -84,13 +84,13 @@ HRegionStrategy::Impl* HRegionStrategy::GetImpl() const
 
 HalconCpp::HRegion RegionInternalUtils::GetHRegion(const Region& region)
 {
-	return region.GetImpl()->GetHRegion();
+	return region.GetImpl()->GetHobj();
 }
 
 Region RegionInternalUtils::FromHRegion(const HalconCpp::HRegion& hRegion)
 {
 	Region rgn;
-	rgn.GetImpl()->GetHRegion() = hRegion;
+	rgn.GetImpl()->GetHobj() = hRegion;
 	return rgn;
 }
 

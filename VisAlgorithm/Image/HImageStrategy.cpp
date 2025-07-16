@@ -8,7 +8,7 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HImageStrategy::Impl
 {
 public:
-	HalconCpp::HImage& GetHImage()
+	HalconCpp::HImage& GetHobj()
 	{
 		return hImage_;
 	}
@@ -95,13 +95,13 @@ HImageStrategy::Impl* HImageStrategy::GetImpl() const
 
 HalconCpp::HImage ImageInternalUtils::GetHImage(const Image& image)
 {
-	return image.GetImpl()->GetHImage();
+	return image.GetImpl()->GetHobj();
 }
 
 Image ImageInternalUtils::FromHImage(const HalconCpp::HImage& hImage)
 {
 	Image img;
-	img.GetImpl()->GetHImage() = hImage;
+	img.GetImpl()->GetHobj() = hImage;
 	return img;
 }
 

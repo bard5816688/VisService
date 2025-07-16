@@ -75,6 +75,18 @@
     <ClInclude Include="Matching\VisShapeModelStrategy.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Contour\Contour.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour\ContourStrategyConcept.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour\HContourStrategy.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour\ContourInternal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Tuple\HTupleStrategy.cpp">
@@ -92,6 +104,9 @@
     <ClCompile Include="Matching\VisShapeModelStrtegy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Contour\HContourStrategy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Tuple\Tuple.inl">
@@ -104,6 +119,9 @@
       <Filter>头文件</Filter>
     </None>
     <None Include="Image\Image.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="Contour\Contour.inl">
       <Filter>头文件</Filter>
     </None>
   </ItemGroup>

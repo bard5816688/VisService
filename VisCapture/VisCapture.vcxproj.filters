@@ -23,11 +23,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VisService.h">
+    <ClInclude Include="viscapture_global.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\BasicDefs.h">
+    <QtMoc Include="VisCapture.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
+    </QtMoc>
+    <ClCompile Include="VisCapture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+
   </ItemGroup>
 </Project>

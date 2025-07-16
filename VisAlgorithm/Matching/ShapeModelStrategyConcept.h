@@ -2,6 +2,7 @@
 #include "BasicReturn.h"
 #include "Tuple.h"
 #include "Region.h"
+#include "Contour.h"
 #include "Image.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
