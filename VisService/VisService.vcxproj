@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>5.12.10_msvc2015_64</QtInstall>
-    <QtModules>core</QtModules>
+    <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -107,11 +107,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Basic\BasicDefs.h" />
+    <ClInclude Include="Basic\BasicReturn.h" />
     <ClInclude Include="ShapeModelNode.h" />
     <ClInclude Include="VisService.h" />
+    <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h" />
+    <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h" />
+    <QtMoc Include="VisWindow\VisualWindow.h" />
+    <QtMoc Include="VisWindow\Graphics\VRuleBar.h" />
+    <QtMoc Include="VisWindow\Graphics\VGraphicsView.h" />
+    <QtMoc Include="VisWindow\Graphics\VGraphicsScene.h" />
+    <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShapeModelNode.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VGraphicsItem.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VGraphicsItemControlBlock.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VGraphicsScene.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VGraphicsView.cpp" />
+    <ClCompile Include="VisWindow\Graphics\VRuleBar.cpp" />
+    <ClCompile Include="VisWindow\VisualWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
