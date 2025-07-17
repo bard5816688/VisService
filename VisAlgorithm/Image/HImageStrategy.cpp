@@ -1,7 +1,7 @@
-#include "ImageInternal.h"
-#include "TupleInternal.h"
-#include "RegionInternal.h"
-#include "BasicReturnInternal.h"
+#include "../Image/ImageInternal.h"
+#include "../Tuple/TupleInternal.h"
+#include "../Region/RegionInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

@@ -1,5 +1,5 @@
-#include "RegionInternal.h"
-#include "BasicReturnInternal.h"
+#include "../Region/RegionInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 #ifdef USE_HALCON
 
 VISALGORITHM_NAMESPACE_BEGIN

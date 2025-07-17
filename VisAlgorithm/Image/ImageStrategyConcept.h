@@ -1,8 +1,9 @@
 #pragma once
 
-#include "BasicReturn.h"
-#include "Tuple.h"
-#include "Region.h"
+#include "../Basic/BasicReturn.h"
+#include "../Tuple/Tuple.h"
+#include "../Region/Region.h"
+#include "../Contour/Contour.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

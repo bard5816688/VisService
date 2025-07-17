@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicReturn.h"
+#include "../Basic/BasicReturn.h"
 #ifdef USE_HALCON
 #include "HalconCpp.h"
 #endif

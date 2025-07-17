@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicReturnInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 #include "Contour.h"
 
 VISALGORITHM_NAMESPACE_BEGIN

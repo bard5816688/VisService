@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicReturnInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 #include "Tuple.h"
 
 #ifdef USE_HALCON

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #define VISALGORITHM_NAMESPACE_BEGIN                                          \
 namespace VisAlgorithm {                                                      \
@@ -14,11 +14,11 @@ namespace VisAlgorithm {                                                      \
 
 template<typename T>
 concept RuleOfFive =
-std::copy_constructible<T> &&              // 1. ¿½±´¹¹Ôì
-std::is_copy_assignable_v<T> &&            // 2. ¿½±´¸³Öµ
-std::move_constructible<T> &&              // 3. ÒÆ¶¯¹¹Ôì
-std::is_move_assignable_v<T> &&            // 4. ÒÆ¶¯¸³Öµ
-std::is_destructible_v<T>;                 // 5. Îö¹¹º¯Êı
+std::copy_constructible<T> &&              // 1. æ‹·è´æ„é€ 
+std::is_copy_assignable_v<T> &&            // 2. æ‹·è´èµ‹å€¼
+std::move_constructible<T> &&              // 3. ç§»åŠ¨æ„é€ 
+std::is_move_assignable_v<T> &&            // 4. ç§»åŠ¨èµ‹å€¼
+std::is_destructible_v<T>;                 // 5. ææ„å‡½æ•°
 
 
 #define USE_HALCON

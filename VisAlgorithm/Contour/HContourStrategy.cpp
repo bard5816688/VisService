@@ -1,5 +1,5 @@
 #include "ContourInternal.h"
-#include "BasicReturnInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 #ifdef USE_HALCON
 
 VISALGORITHM_NAMESPACE_BEGIN

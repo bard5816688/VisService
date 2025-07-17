@@ -1,5 +1,5 @@
-#include "TupleInternal.h"
-#include "BasicReturnInternal.h"
+#include "../Tuple/TupleInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 
 #ifdef USE_HALCON
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "BasicReturnInternal.h"
+#include "../Basic/BasicReturnInternal.h"
 #include "Image.h"
 
 VISALGORITHM_NAMESPACE_BEGIN

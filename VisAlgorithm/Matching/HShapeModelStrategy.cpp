@@ -1,8 +1,8 @@
 #include "HShapeModelStrategy.h"
 #include "HalconCpp.h"
-#include "ImageInternal.h"
-#include "TupleInternal.h"
-#include "RegionInternal.h"
+#include "../Image/ImageInternal.h"
+#include "../Tuple/TupleInternal.h"
+#include "../Region/RegionInternal.h"
 
 VISALGORITHM_NAMESPACE_BEGIN
 

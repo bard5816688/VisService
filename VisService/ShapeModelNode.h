@@ -1,12 +1,12 @@
 #pragma once
 #include "BasicDefs.h"
-//#include "VisAlgorithm.h"
+#include "VisAlgorithm.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
 struct CreateShapeModelParams : public CGraph::GParam
 {
-	//VisAlgorithm::CreateShapeModelParams createShapeModelPrams_;
+	VisAlgorithm::CreateShapeModelParams createShapeModelPrams_;
 };
 
 class CreateShapeModelNode : public  CGraph::GNode
