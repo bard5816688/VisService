@@ -41,6 +41,9 @@
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Basic\BasicObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShapeModelNode.cpp">

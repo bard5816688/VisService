@@ -54,7 +54,7 @@ inline auto WrapTryCatch(const std::string& funcName, Func&& func) -> Result<dec
     WrapTryCatch(__func__, [=]() -> decltype(expr) { return (expr); })
 
 #define VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(varName, expr)                \
-    auto varName = VISALGORITHM_WRAP_TRY_CATCH(expr);                                                  \
+    auto varName = VISALGORITHM_WRAP_TRY_CATCH(expr);                       \
     static_assert(tl::is_expected<decltype(varName)>::value,                \
         #varName " must be tl::expected<T, ErrorInfo>");                    \
     if (!varName)                                                           \

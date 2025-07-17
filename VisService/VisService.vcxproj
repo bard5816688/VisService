@@ -109,6 +109,7 @@
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\BasicReturn.h" />
     <ClInclude Include="ShapeModelNode.h" />
+    <ClInclude Include="Basic\BasicObject.h" />
     <ClInclude Include="VisService.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h" />

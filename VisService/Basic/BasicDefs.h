@@ -17,4 +17,16 @@
 namespace VisService {                                                      \
 
 #define  VISSERVICE_NAMESPACE_END                                           \
-}
+}   
+
+VISSERVICE_NAMESPACE_BEGIN
+
+template<typename T>
+concept RuleOfFive =
+std::copy_constructible<T> &&
+std::is_copy_assignable_v<T> &&
+std::move_constructible<T> &&
+std::is_move_assignable_v<T> &&
+std::is_destructible_v<T>;
+
+VISSERVICE_NAMESPACE_END

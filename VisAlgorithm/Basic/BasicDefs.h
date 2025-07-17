@@ -12,13 +12,16 @@ namespace VisAlgorithm {                                                      \
 #define VisAlgorithmApi __declspec(dllexport)
 #endif
 
+VISALGORITHM_NAMESPACE_BEGIN
+
 template<typename T>
 concept RuleOfFive =
-std::copy_constructible<T> &&              // 1. 拷贝构造
-std::is_copy_assignable_v<T> &&            // 2. 拷贝赋值
-std::move_constructible<T> &&              // 3. 移动构造
-std::is_move_assignable_v<T> &&            // 4. 移动赋值
-std::is_destructible_v<T>;                 // 5. 析构函数
+std::copy_constructible<T> &&
+std::is_copy_assignable_v<T> &&
+std::move_constructible<T> &&
+std::is_move_assignable_v<T> &&
+std::is_destructible_v<T>;
 
+VISALGORITHM_NAMESPACE_END
 
 #define USE_HALCON
