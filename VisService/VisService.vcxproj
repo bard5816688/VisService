@@ -42,7 +42,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>msvc2017_64</QtInstall>
-    <QtModules>core</QtModules>
+    <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -108,8 +108,18 @@
   <ItemGroup>
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\BasicReturn.h" />
-    <ClInclude Include="ShapeModelNode.h" />
+    <QtMoc Include="Module\ModuleBasicUi.h" />
+    <ClInclude Include="Module\Matching\ShapeMatching.h" />
     <ClInclude Include="Basic\BasicObject.h" />
+    <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils_p.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.h" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h" />
     <ClInclude Include="VisService.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h" />
@@ -120,7 +130,31 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ShapeModelNode.cpp" />
+    <ClCompile Include="Module\ModuleBasicUi.cpp" />
+    <ClCompile Include="Module\Matching\ShapeMatching.cpp" />
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </QtMoc>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.cpp" />
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.cpp" />
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils.cpp" />
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </QtMoc>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsItem.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsItemControlBlock.cpp" />
@@ -128,6 +162,9 @@
     <ClCompile Include="VisWindow\Graphics\VGraphicsView.cpp" />
     <ClCompile Include="VisWindow\Graphics\VRuleBar.cpp" />
     <ClCompile Include="VisWindow\VisualWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Module\ModuleBasicUi.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

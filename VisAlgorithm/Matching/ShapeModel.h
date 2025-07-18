@@ -23,9 +23,12 @@ public:
 private:
     Strategy strategy_;
 };
-
-template class ShapeModelContext<HShapeModelStrategy>;
-using HShapeModel = ShapeModelContext<HShapeModelStrategy>;
+#ifdef USE_HALCON
+#define DEFAULT_SHAPEMODEL_STRATEGY HShapeModelStrategy
+#elif
+#define DEFAULT_SHAPEMODEL_STRATEGY "NoSupported"
+#endif
+using ShapeModel = ShapeModelContext<DEFAULT_SHAPEMODEL_STRATEGY>;
 
 VISALGORITHM_NAMESPACE_END
 

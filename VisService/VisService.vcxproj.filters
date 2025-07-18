@@ -29,9 +29,6 @@
     <ClInclude Include="Basic\BasicDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShapeModelNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Basic\BasicReturn.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -44,11 +41,14 @@
     <ClInclude Include="Basic\BasicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Module\Matching\ShapeMatching.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ShapeModelNode.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -70,6 +70,27 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Module\ModuleBasicUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Module\Matching\ShapeMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h">
@@ -87,5 +108,46 @@
     <QtMoc Include="VisWindow\VisualWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Module\ModuleBasicUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils_p.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Module\ModuleBasicUi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

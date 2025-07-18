@@ -1,6 +1,5 @@
 #pragma once
 #include <QtCore/qglobal.h>
-#include "CGraph.h"
 
 #ifndef BUILD_STATIC
 # if defined(VISSERVICE_LIB)
