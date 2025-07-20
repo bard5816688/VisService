@@ -15,7 +15,7 @@ public:
         , factory_(new QtVariantEditorFactory())
         , browser_(new QtTreePropertyBrowser())
     {
-        m_browser->setFactoryForManager(manager_, factory_);
+        browser_->setFactoryForManager(manager_, factory_);
         build();
     }
 
@@ -26,7 +26,7 @@ public:
 
     QtTreePropertyBrowser* browser() const 
     { 
-        return m_browser; 
+        return browser_;
     }
 
 protected:

@@ -63,7 +63,56 @@ ResultVoid HShapeModelStrategy::ReadShapeModel(const char* fileName)
 
 ResultVoid HShapeModelStrategy::CreateShapeModel(const CreateShapeModelParams& params)
 {
-	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.CreateShapeModel(ImageInternalUtils::GetHImage(params.templateImg_), params.numLevels_, params.angleStep_, params.angleExtent_, params.angleStep_, params.optimization_, params.metric_, params.contrast_, params.minContrast_));
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.CreateShapeModel(ImageInternalUtils::GetHImage(params.templateImg_), params.numLevels_, params.angleStep_,
+		params.angleExtent_, params.angleStep_, params.optimization_.c_str(), params.metric_.c_str(), params.contrast_, params.minContrast_));
+	return res;
+}
+
+//ResultVoid HShapeModelStrategy::FindShapeModel(const FindShapeModelParams& params) const
+//{
+//	HalconCpp::HTuple hRow, hCol, hAngle, hScore;
+//	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.FindShapeModel(ImageInternalUtils::GetHImage(params.searchImage), params.angleStart, params.angleExtent,
+//		params.minScore, params.numMatches, params.maxOverlap, params.subPixel.c_str(), params.numLevels, params.greediness, &hRow, &hCol,
+//		&hAngle, &hScore));
+//
+//	TupleInternalUtils::GetHTuple(params.row)
+//	return res;
+//}
+
+ResultVoid HShapeModelStrategy::ClearShapeModel()
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.ClearShapeModel());
+	return res;
+}
+
+//ResultVoid HShapeModelStrategy::GetShapeModelParams(const ShapeModelParams& params) const
+//{
+//	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.GetShapeModelParams(params.angleStart, params.angleExtent, params.angleStep, params.scaleMin, params.scaleMax, params.scaleStep, params.metric, params.minContrast));
+//	return res;
+//}
+
+ResultVoid HShapeModelStrategy::SetShapeModelOrigin(int row, int column)
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.SetShapeModelOrigin(row, column));
+	return res;
+}
+
+ResultVoid HShapeModelStrategy::GetShapeModelOrigin(double* row, double* column) const
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.GetShapeModelOrigin(row, column));
+}
+
+ResultVoid HShapeModelStrategy::SetShapeModelParam(const std::string& paramName, double paramValue)
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.SetShapeModelParam(HalconCpp::HTuple(paramName.c_str()), HalconCpp::HTuple(paramValue))
+	);
+	return res;
+}
+
+ResultVoid HShapeModelStrategy::WriteShapeModel(const std::string& fileName) const
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.WriteShapeModel(fileName.c_str())
+	);
 	return res;
 }
 

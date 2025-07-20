@@ -41,7 +41,7 @@
     <ClInclude Include="Basic\BasicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Module\Matching\ShapeMatching.h">
+    <ClInclude Include="PipeLine\Module\Matching\ShapeMatching.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
@@ -70,10 +70,7 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Module\ModuleBasicUi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Module\Matching\ShapeMatching.cpp">
+    <ClCompile Include="PipeLine\Module\Matching\ShapeMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp">
@@ -91,6 +88,12 @@
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PipeLine\Module\Matching\ShapeMatchingUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PipeLine\PipeLineTeachUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h">
@@ -106,9 +109,6 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="VisWindow\VisualWindow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="Module\ModuleBasicUi.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h">
@@ -144,9 +144,18 @@
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="PipeLine\Module\Matching\ShapeMatchingUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="PipeLine\PipeLineTeachUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Module\ModuleBasicUi.ui">
+    <QtUic Include="PipeLine\Module\Matching\ShapeMatchingUi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="PipeLine\PipeLineTeachUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

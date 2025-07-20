@@ -108,9 +108,10 @@
   <ItemGroup>
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\BasicReturn.h" />
-    <QtMoc Include="Module\ModuleBasicUi.h" />
-    <ClInclude Include="Module\Matching\ShapeMatching.h" />
+    <ClInclude Include="PipeLine\Module\Matching\ShapeMatching.h" />
     <ClInclude Include="Basic\BasicObject.h" />
+    <QtMoc Include="PipeLine\Module\Matching\ShapeMatchingUi.h" />
+    <QtMoc Include="PipeLine\PipeLineTeachUi.h" />
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
@@ -130,8 +131,9 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Module\ModuleBasicUi.cpp" />
-    <ClCompile Include="Module\Matching\ShapeMatching.cpp" />
+    <ClCompile Include="PipeLine\Module\Matching\ShapeMatchingUi.cpp" />
+    <ClCompile Include="PipeLine\Module\Matching\ShapeMatching.cpp" />
+    <ClCompile Include="PipeLine\PipeLineTeachUi.cpp" />
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
@@ -164,7 +166,8 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Module\ModuleBasicUi.ui" />
+    <QtUic Include="PipeLine\Module\Matching\ShapeMatchingUi.ui" />
+    <QtUic Include="PipeLine\PipeLineTeachUi.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
