@@ -100,19 +100,18 @@ ResultVoid HShapeModelStrategy::SetShapeModelOrigin(int row, int column)
 ResultVoid HShapeModelStrategy::GetShapeModelOrigin(double* row, double* column) const
 {
 	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.GetShapeModelOrigin(row, column));
+	return res;
 }
 
 ResultVoid HShapeModelStrategy::SetShapeModelParam(const std::string& paramName, double paramValue)
 {
-	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.SetShapeModelParam(HalconCpp::HTuple(paramName.c_str()), HalconCpp::HTuple(paramValue))
-	);
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.SetShapeModelParam(HalconCpp::HTuple(paramName.c_str()), HalconCpp::HTuple(paramValue)));
 	return res;
 }
 
 ResultVoid HShapeModelStrategy::WriteShapeModel(const std::string& fileName) const
 {
-	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.WriteShapeModel(fileName.c_str())
-	);
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.WriteShapeModel(fileName.c_str()));
 	return res;
 }
 

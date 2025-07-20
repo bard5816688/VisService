@@ -23,7 +23,7 @@ public:
 	HTupleStrategy& Append(const HTupleStrategy& tuple);
 	Result<TupleElementType> Type(size_t idx);
 	Result<TupleElement> At(size_t idx) const;
-	Result<HTupleStrategy> TupleLength() const;
+	Result<int64_t> Length() const;
 	Result<HTupleStrategy> TupleSelect(const HTupleStrategy& index) const;
 	Result<HTupleStrategy> TupleConcat(const HTupleStrategy& t2) const;
 	Result<HTupleStrategy> TupleGenSequence(const HTupleStrategy& start, const HTupleStrategy& end, const HTupleStrategy& step) const;

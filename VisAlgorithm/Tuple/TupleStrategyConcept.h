@@ -29,6 +29,8 @@ concept IsTupleStrategy = RuleOfFive<T> && requires(
 	{ t.Append(ct) }  -> std::same_as<T&>;
 	{ t.Type(size_t) }  -> std::same_as<Result<TupleElementType>>;
 	{ ct.At(size_t) }  -> std::same_as<Result<TupleElement>>;
+	{ ct.Length() }  -> std::same_as<Result<int64_t>>;
+	{ ct.TupleSelect(ct) }  -> std::same_as<Result<T>>;
 };
 
 VISALGORITHM_NAMESPACE_END

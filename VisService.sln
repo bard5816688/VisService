@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VisAlgorithm", "VisAlgorith
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VisCGraph", "VisCGraph\VisCGraph.vcxproj", "{F9E090B6-61B3-4B65-B5F3-824A307D720A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{14B36A21-F372-4758-82DC-AB07AD2CBB19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -27,6 +29,10 @@ Global
 		{F9E090B6-61B3-4B65-B5F3-824A307D720A}.Debug|x64.Build.0 = Debug|x64
 		{F9E090B6-61B3-4B65-B5F3-824A307D720A}.Release|x64.ActiveCfg = Release|x64
 		{F9E090B6-61B3-4B65-B5F3-824A307D720A}.Release|x64.Build.0 = Release|x64
+		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Debug|x64.ActiveCfg = Debug|x64
+		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Debug|x64.Build.0 = Debug|x64
+		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Release|x64.ActiveCfg = Release|x64
+		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

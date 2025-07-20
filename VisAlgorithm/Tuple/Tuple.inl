@@ -93,80 +93,80 @@ Result<TupleElement> TupleContext<Strategy>::At(size_t idx) const
 }
 
 template<IsTupleStrategy Strategy>
-Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleLength() const
+Result<int64_t> TupleContext<Strategy>::Length() const
 {
-	return strategy_.TupleLength();
+	return strategy_.Length();
 }
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleSelect(const TupleContext<Strategy>& index) const
 {
-	return strategy_.TupleSelect(index);
+	return strategy_.TupleSelect(index.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleConcat(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleConcat(t2);
+	return strategy_.TupleConcat(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleGenSequence(const TupleContext<Strategy>& start, const TupleContext<Strategy>& end, const TupleContext<Strategy>& step) const
 {
-	return strategy_.TupleGenSequence(start, end, step);
+	return strategy_.TupleGenSequence(start.strategy_, end.strategy_, step.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleGenConst(const TupleContext<Strategy>& length, const TupleContext<Strategy>& Const) const
 {
-	return strategy_.TupleGenConst(length, Const);
+	return strategy_.TupleGenConst(length.strategy_, Const.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleAdd(const TupleContext<Strategy>& s2) const
 {
-	return strategy_.TupleAdd(s2);
+	return strategy_.TupleAdd(s2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleSub(const TupleContext<Strategy>& d2) const
 {
-	return strategy_.TupleSub(d2);
+	return strategy_.TupleSub(d2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleMult(const TupleContext<Strategy>& p2) const
 {
-	return strategy_.TupleMult(p2);
+	return strategy_.TupleMult(p2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleInsert(const TupleContext<Strategy>& index, TupleContext<Strategy>& invert) const
 {
-	return strategy_.TupleInsert(index, invert);
+	return strategy_.TupleInsert(index.strategy_, invert.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleRemove(const TupleContext<Strategy>& index) const
 {
-	return strategy_.TupleRemove(index);
+	return strategy_.TupleRemove(index.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleReplace(const TupleContext<Strategy>& index, const TupleContext<Strategy>& replacetuple) const
 {
-	return strategy_.TupleReplace(index, replacetuple);
+	return strategy_.TupleReplace(index.strategy_, replacetuple.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleDiv(const TupleContext<Strategy>& q2) const
 {
-	return strategy_.TupleDiv(q2);
+	return strategy_.TupleDiv(q2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TuplePow(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TuplePow(t2);
+	return strategy_.TuplePow(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
@@ -214,31 +214,31 @@ Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleMin() const
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleGreater(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleGreater(t2);
+	return strategy_.TupleGreater(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleLess(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleLess(t2);
+	return strategy_.TupleLess(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleEqual(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleEqual(t2);
+	return strategy_.TupleEqual(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleAnd(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleAnd(t2);
+	return strategy_.TupleAnd(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleOr(const TupleContext<Strategy>& t2) const
 {
-	return strategy_.TupleOr(t2);
+	return strategy_.TupleOr(t2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
@@ -250,7 +250,7 @@ Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleNot() const
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleString(const TupleContext<Strategy>& format) const
 {
-	return strategy_.TupleString(format);
+	return strategy_.TupleString(format.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
@@ -262,13 +262,13 @@ Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleNumber() const
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleSplit(const TupleContext<Strategy>& separator) const
 {
-	return strategy_.TupleSplit(separator);
+	return strategy_.TupleSplit(separator.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleJoin(const TupleContext<Strategy>& separators) const
 {
-	return strategy_.TupleJoin(separators);
+	return strategy_.TupleJoin(separators.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
@@ -286,31 +286,31 @@ Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleReal() const
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::ReadTuple(const TupleContext<Strategy>& filename) const
 {
-	return strategy_.ReadTuple(filename);
+	return strategy_.ReadTuple(filename.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 ResultVoid TupleContext<Strategy>::WriteTuple(const TupleContext<Strategy>& filename) const
 {
-	return strategy_.WriteTuple(filename);
+	return strategy_.WriteTuple(filename.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleUnion(const TupleContext<Strategy>& set2) const
 {
-	return strategy_.TupleUnion(set2);
+	return strategy_.TupleUnion(set2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleIntersection(const TupleContext<Strategy>& set2) const
 {
-	return strategy_.TupleIntersection(set2);
+	return strategy_.TupleIntersection(set2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>
 Result<TupleContext<Strategy>> TupleContext<Strategy>::TupleDifference(const TupleContext<Strategy>& set2) const
 {
-	return strategy_.TupleDifference(set2);
+	return strategy_.TupleDifference(set2.strategy_);
 }
 
 template<IsTupleStrategy Strategy>

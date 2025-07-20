@@ -117,13 +117,13 @@ Result<RegionContext<Strategy>> RegionContext<Strategy>::Union1() const
 template<IsRegionStrategy Strategy>
 Result<RegionContext<Strategy>> RegionContext<Strategy>::Intersection(const RegionContext<Strategy>& region2)const
 {
-	return strategy_.Intersection(region2);
+	return strategy_.Intersection(region2.strategy_);
 }
 
 template<IsRegionStrategy Strategy>
 Result<RegionContext<Strategy>> RegionContext<Strategy>::Difference(const RegionContext<Strategy>& sub) const
 {
-	return strategy_.Difference(sub);
+	return strategy_.Difference(sub.strategy_);
 }
 
 template<IsRegionStrategy Strategy>
@@ -141,7 +141,7 @@ Result<RegionContext<Strategy>> RegionContext<Strategy>::Connection() const
 template<IsRegionStrategy Strategy>
 Result<RegionContext<Strategy>> RegionContext<Strategy>::Dilation1(const RegionContext<Strategy>& structElement, int64_t iterations) const
 {
-	return strategy_.Dilation1(structElement, iterations);
+	return strategy_.Dilation1(structElement.strategy_, iterations.strategy_);
 }
 
 template<IsRegionStrategy Strategy>

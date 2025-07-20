@@ -4,7 +4,7 @@
 VISALGORITHM_NAMESPACE_BEGIN
 
 #ifdef USE_HALCON
-template<IsTupleStrategy Strategy>
+template<IsTupleStrategy Strategy = HTupleStrategy>
 #else
 template<IsTupleStrategy Strategy>
 #endif
@@ -26,7 +26,7 @@ public:
 	TupleContext& Append(const TupleContext& tuple);
 	Result<TupleElementType> Type(size_t idx);
 	Result<TupleElement> At(size_t idx) const;
-	Result<TupleContext> TupleLength() const;
+	Result<int64_t> Length() const;
 	Result<TupleContext> TupleSelect(const TupleContext& index) const;
 	Result<TupleContext> TupleConcat(const TupleContext& t2) const;
 	Result<TupleContext> TupleGenSequence(const TupleContext& start, const TupleContext& end, const TupleContext& step) const;

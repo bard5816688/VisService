@@ -8,6 +8,7 @@ VISALGORITHM_NAMESPACE_BEGIN
 class HTupleStrategy::Impl
 {
 public:
+
 	HalconCpp::HTuple& GetHobj()
 	{
 		return hTuple_;
@@ -46,6 +47,7 @@ HTupleStrategy::HTupleStrategy()
 }
 
 HTupleStrategy::HTupleStrategy(const TupleElement& element)
+	: impl_(new Impl)
 {
 	std::visit([=](const auto& value) {
 		using T = std::decay_t<decltype(value)>;
@@ -162,10 +164,10 @@ Result<TupleElement> HTupleStrategy::At(size_t idx) const
 	}
 }
 
-Result<HTupleStrategy> HTupleStrategy::TupleLength() const
+Result<int64_t> HTupleStrategy::Length() const
 {
-	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(length, impl_->GetHobj().TupleLength());
-	return HTupleStrategy::Impl::ResultFromHTuple(length);
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(length, impl_->GetHobj().Length());
+	return length;
 }
 
 Result<HTupleStrategy> HTupleStrategy::TupleSelect(const HTupleStrategy& index) const
