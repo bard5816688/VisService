@@ -1,36 +1,29 @@
 #pragma once
 #include "BasicDefs.h"
 #include "VisAlgorithm.h"
-#include "CGraph.h"
+#include "../../BaseNode.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
-struct ShapeModelParams
+struct ShapeMatchingParams
 {
+	std::string keyName_;
 	VisAlgorithm::Image refImage_;
 	VisAlgorithm::CreateShapeModelParams modelParams_;
 	VisAlgorithm::ShapeModel shapeModel_;
-};
-
-struct ShapeMatchingRunParams
-{
-
-};
-
-struct ShapeMatchingParams : public CGraph::GParam
-{
-	//ModuleBasicParams basicParams_;
-	ShapeMatchingRunParams runParams_;
-	ShapeModelParams modelParams_;
+	VisAlgorithm::FindShapeModelParams runParams_;
 };
 
 
-class ShapeMatchingNode : public CGraph::GNode
+class ShapeMatching : public BaseNode
 {
+public:
+	ShapeMatching(std::string name);
+
 public:
 	virtual CStatus init() override
 	{
-
+		//shapeMatchingParams_.readDb(taskName_);
 		CGraph::CGRAPH_ECHO("ShapeMatchingNode::init()");
 		return CStatus();
 	}
@@ -41,6 +34,8 @@ public:
 		return CStatus();
 	}
 
+private:
+	ShapeMatchingParams shapeMatchingParams_;
 };
 
 VISSERVICE_NAMESPACE_END

@@ -1,10 +1,9 @@
 #include "ShapeMatching.h"
-#include "../../TreePropertyBrowser/ParamEditor.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
-template<>
-void ParamEditor<ShapeModelParams>::build()
+ShapeMatching::ShapeMatching(std::string name)
+	: BaseNode(name)
 {
 
 }

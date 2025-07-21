@@ -47,6 +47,15 @@
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PipeLine\InputBindingResolver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PipeLine\BaseNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PipeLine\PipeLineManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp">
@@ -92,6 +101,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PipeLine\PipeLineTeachUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PipeLine\PipeLineManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PipeLine\BaseNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
