@@ -30,7 +30,7 @@ private:
 };
 
 template class ShapeModelContext<HShapeModelStrategy>;
-using HShapeModel = ShapeModelContext<HShapeModelStrategy>;
+using ShapeModel = ShapeModelContext<HShapeModelStrategy>;
 
 VISALGORITHM_NAMESPACE_END
 
