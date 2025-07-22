@@ -29,7 +29,7 @@
     <ClInclude Include="Basic\BasicDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\BasicReturn.h">
+    <ClInclude Include="Basic\ReturnDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h">
@@ -38,7 +38,7 @@
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\BasicObject.h">
+    <ClInclude Include="Basic\VisObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
@@ -54,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\TaskFlowParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic\ErrorCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,6 +116,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlowFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

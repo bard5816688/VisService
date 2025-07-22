@@ -107,11 +107,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Basic\BasicDefs.h" />
-    <ClInclude Include="Basic\BasicReturn.h" />
+    <ClInclude Include="Basic\ReturnDefs.h" />
+    <ClInclude Include="Basic\ErrorCode.h" />
+    <ClInclude Include="TaskFlow.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
     <ClInclude Include="TaskFlow\TaskFlowFactory.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
-    <ClInclude Include="Basic\BasicObject.h" />
+    <ClInclude Include="Basic\VisObject.h" />
     <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
     <QtMoc Include="TaskFlow\TaskFlowUi.h" />
     <ClInclude Include="TaskFlow\TaskFlowManager.h" />
@@ -134,6 +136,7 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TaskFlow.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowFactory.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
