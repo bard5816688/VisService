@@ -106,15 +106,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="PipeLine\BaseNode.h" />
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\BasicReturn.h" />
-    <ClInclude Include="PipeLine\InputBindingResolver.h" />
-    <ClInclude Include="PipeLine\PipeLineManager.h" />
-    <ClInclude Include="PipeLine\Module\Matching\ShapeMatching.h" />
+    <ClInclude Include="TaskFlow\TaskFlowParams.h" />
+    <ClInclude Include="TaskFlow\TaskFlowFactory.h" />
+    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
     <ClInclude Include="Basic\BasicObject.h" />
-    <QtMoc Include="PipeLine\Module\Matching\ShapeMatchingUi.h" />
-    <QtMoc Include="PipeLine\PipeLineTeachUi.h" />
+    <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
+    <QtMoc Include="TaskFlow\TaskFlowUi.h" />
+    <ClInclude Include="TaskFlow\TaskFlowManager.h" />
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
@@ -134,16 +134,12 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PipeLine\BaseNode.cpp" />
-    <ClCompile Include="PipeLine\PipeLineManager.cpp">
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
-    </ClCompile>
-    <ClCompile Include="PipeLine\Module\Matching\ShapeMatchingUi.cpp" />
-    <ClCompile Include="PipeLine\Module\Matching\ShapeMatching.cpp" />
-    <ClCompile Include="PipeLine\PipeLineTeachUi.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowFactory.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowManager.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowUi.cpp" />
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
@@ -176,8 +172,8 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PipeLine\Module\Matching\ShapeMatchingUi.ui" />
-    <QtUic Include="PipeLine\PipeLineTeachUi.ui" />
+    <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui" />
+    <QtUic Include="TaskFlow\TaskFlowUi.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

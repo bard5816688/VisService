@@ -41,19 +41,19 @@
     <ClInclude Include="Basic\BasicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeLine\Module\Matching\ShapeMatching.h">
+    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeLine\InputBindingResolver.h">
+    <ClInclude Include="TaskFlow\TaskFlowFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeLine\BaseNode.h">
+    <ClInclude Include="TaskFlow\TaskFlowManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PipeLine\PipeLineManager.h">
+    <ClInclude Include="TaskFlow\TaskFlowParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -79,7 +79,7 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeLine\Module\Matching\ShapeMatching.cpp">
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp">
@@ -97,16 +97,19 @@
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeLine\Module\Matching\ShapeMatchingUi.cpp">
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeLine\PipeLineTeachUi.cpp">
+    <ClCompile Include="TaskFlow\TaskFlowUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeLine\PipeLineManager.cpp">
+    <ClCompile Include="TaskFlow\TaskFlowManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PipeLine\BaseNode.cpp">
+    <ClCompile Include="TaskFlow\TaskFlowParams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlowFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,18 +162,18 @@
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="PipeLine\Module\Matching\ShapeMatchingUi.h">
+    <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="PipeLine\PipeLineTeachUi.h">
+    <QtMoc Include="TaskFlow\TaskFlowUi.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PipeLine\Module\Matching\ShapeMatchingUi.ui">
+    <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="PipeLine\PipeLineTeachUi.ui">
+    <QtUic Include="TaskFlow\TaskFlowUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

@@ -50,10 +50,11 @@ template<typename T>
 using Return = tl::expected<T, ErrorInfo>;
 using ReturnVoid = tl::expected<void, ErrorInfo>;
 
-#define _IS_NULLPTR(t) (std::is_pointer<decltype(t)>::value && !(t))
+#define _IS_NULLPTR(ptr) (std::is_pointer<decltype(ptr)>::value && !(ptr))
+
 #define VIS_RETURN_IF_NULLPTR(ptr)                                                              \
 {                                                                                               \
-    if (_IS_NULLPTR(t))                                                                         \
+    if (_IS_NULLPTR(ptr))                                                                         \
     {                                                                                           \
         return tl::unexpected(ErrorInfo(__func__, "Null Pointer!", ErrorCode::NullPointer));    \
     }                                                                                           \
@@ -61,11 +62,12 @@ using ReturnVoid = tl::expected<void, ErrorInfo>;
 
 #define VIS_RETURN_IF_NULLPTR_WITH_MSG(ptr, ...)                                                \
 {                                                                                               \
-    if (_IS_NULLPTR(t))                                                                         \
+    if (_IS_NULLPTR(ptr))                                                                         \
     {                                                                                           \
         return tl::unexpected(ErrorInfo(__func__, ##__VA_ARGS__, ErrorCode::NullPointer));      \
     }                                                                                           \
 }
 
+#define VIS_RETURN_UNEXPECTE(procName, errormsg, errorCode) tl::unexpected(ErrorInfo(procName, errormsg, errorCode))
 
 VISSERVICE_NAMESPACE_END

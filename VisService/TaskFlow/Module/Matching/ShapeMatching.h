@@ -1,7 +1,6 @@
 #pragma once
 #include "BasicDefs.h"
 #include "VisAlgorithm.h"
-#include "../../BaseNode.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
