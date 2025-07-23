@@ -38,7 +38,7 @@
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\VisObject.h">
+    <ClInclude Include="Basic\BasicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
@@ -47,19 +47,19 @@
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlowFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlowManager.h">
+    <ClInclude Include="TaskFlow\TaskFlowBuild.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\TaskFlowParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow.h">
+    <ClInclude Include="Basic\ErrorCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Basic\ErrorCode.h">
+    <ClInclude Include="TaskFlow\TaskFlow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFlow\TaskFlowContextParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -109,16 +109,13 @@
     <ClCompile Include="TaskFlow\TaskFlowUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowFactory.cpp">
+    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow.cpp">
+    <ClCompile Include="TaskFlow\TaskFlow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

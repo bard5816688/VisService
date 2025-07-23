@@ -1,6 +1,7 @@
 #pragma once
 #include "BasicDefs.h"
 #include "VisAlgorithm.h"
+#include "CGraph.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
@@ -14,7 +15,7 @@ struct ShapeMatchingParams
 };
 
 
-class ShapeMatching : public BaseNode
+class ShapeMatching : public CGraph::GNode
 {
 public:
 	ShapeMatching(std::string name);

@@ -12,7 +12,7 @@ enum class ModuleErrorCode
 	Matching,
 	Inspection,
 	Calibration,
-	Task,
+	TaskFlow,
 	Transformer,
 
 };
@@ -23,7 +23,7 @@ const std::map<ModuleErrorCode, std::string> g_moduleErrorCodeDescribleMap =
 	{ ModuleErrorCode::Matching,	"视觉定位模块" },
 	{ ModuleErrorCode::Inspection,	"视觉检测模块" },
 	{ ModuleErrorCode::Calibration,	"视觉标定模块" },
-	{ ModuleErrorCode::Task,		"视觉任务模块" },
+	{ ModuleErrorCode::TaskFlow,	"视觉任务模块" },
 	{ ModuleErrorCode::Transformer, "视觉转换模块" }
 };
 

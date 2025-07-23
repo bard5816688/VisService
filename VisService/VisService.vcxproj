@@ -109,14 +109,14 @@
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\ReturnDefs.h" />
     <ClInclude Include="Basic\ErrorCode.h" />
-    <ClInclude Include="TaskFlow.h" />
+    <ClInclude Include="TaskFlow\TaskFlow.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
-    <ClInclude Include="TaskFlow\TaskFlowFactory.h" />
+    <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
-    <ClInclude Include="Basic\VisObject.h" />
+    <ClInclude Include="Basic\BasicObject.h" />
     <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
     <QtMoc Include="TaskFlow\TaskFlowUi.h" />
-    <ClInclude Include="TaskFlow\TaskFlowManager.h" />
+    <ClInclude Include="TaskFlow\TaskFlowContextParams.h" />
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
@@ -136,12 +136,11 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TaskFlow.cpp" />
-    <ClCompile Include="TaskFlow\TaskFlowFactory.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlow.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
-    <ClCompile Include="TaskFlow\TaskFlowManager.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowUi.cpp" />
     <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
