@@ -36,7 +36,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>5.12.10_msvc2015_64</QtInstall>
+    <QtInstall>5.12.10_msvc2017_64</QtInstall>
     <QtModules>core;sql;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -109,7 +109,7 @@
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\ReturnDefs.h" />
     <ClInclude Include="Basic\ErrorCode.h" />
-    <ClInclude Include="TaskFlow\TaskFlow.h" />
+    <QtMoc Include="TaskFlow\TaskFlow.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
     <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />

@@ -40,4 +40,9 @@ ReturnVoid TaskFlow::Run(const TaskFlowRunParams& params)
 	return ReturnVoid();
 }
 
+std::any TaskFlow::GetResult()
+{
+	return 3;
+}
+
 VISSERVICE_NAMESPACE_END

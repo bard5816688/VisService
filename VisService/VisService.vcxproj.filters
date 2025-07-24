@@ -56,9 +56,6 @@
     <ClInclude Include="Basic\ErrorCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskFlow\TaskFlowContextParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -172,6 +169,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TaskFlow\TaskFlowUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TaskFlow\TaskFlow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

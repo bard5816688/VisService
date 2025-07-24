@@ -8,14 +8,16 @@ namespace CGraph
 
 VISSERVICE_NAMESPACE_BEGIN
 
-class VISSERVICE_EXPORT TaskFlow
+class VISSERVICE_EXPORT TaskFlow : public QObject
 {
+	Q_OBJECT
+
 public:
 	TaskFlow();
 	~TaskFlow();
 	ReturnVoid Initialize(const TaskFlowInitParams& params);
 	ReturnVoid Run(const TaskFlowRunParams& params);
-
+	std::any GetResult();
 
 private:
 	CGraph::GPipeline* pipeLine_;
