@@ -17,7 +17,15 @@ public:
 	~TaskFlow();
 	ReturnVoid Initialize(const TaskFlowInitParams& params);
 	ReturnVoid Run(const TaskFlowRunParams& params);
-	std::any GetResult();
+	ReturnVoid AsyncRun(const TaskFlowRunParams& params);
+	Return<QJsonObject> GetResult();
+	Return<VisAlgorithm::Image> GetSourceImage();
+	Return<VisAlgorithm::Image> GetResultImage();
+
+signals:
+	void sourceImageReady();
+	void runFinished();
+	void errorOccurred(const ErrorParams&);
 
 private:
 	CGraph::GPipeline* pipeLine_;

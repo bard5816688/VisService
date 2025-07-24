@@ -13,14 +13,4 @@ struct TaskFlowInitGParams : public CGraph::GParam
 	TaskFlowAcquisitionType acquisitionType_;
 };
 
-struct TaskFlowNodeIoGParams : public CGraph::GParam
-{
-	struct Param
-	{
-		std::any data_;
-		std::string type_;
-	};
-	std::map<std::string, std::map<std::string, Param>> nodeIoParms_;
-};
-
 VISSERVICE_NAMESPACE_END

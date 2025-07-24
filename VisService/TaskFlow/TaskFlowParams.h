@@ -11,24 +11,12 @@ enum class TaskFlowTopologyType
 
 };
 
-enum class TaskFlowAcquisitionType
-{
-	StaticAcquisition,
-	OtfAcquisition,//飞拍
-};
-
-struct TaskFlowStation
-{
-	int cameraNum_;
-	int stationNum_;
-};
-
 struct TaskFlowInitParams
 {
 	std::string taskName_;
 	std::string deputyTaskName_;//副任务名称，包含|
-	TaskFlowStation station_;
-	TaskFlowAcquisitionType acquisitionType_;
+	WorkStation station_;
+	AcquisitionType acquisitionType_;
 	TaskFlowTopologyType topologyType_;
 };
 

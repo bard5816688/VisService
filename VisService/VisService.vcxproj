@@ -110,6 +110,10 @@
     <ClInclude Include="Basic\ReturnDefs.h" />
     <ClInclude Include="Basic\ErrorCode.h" />
     <QtMoc Include="TaskFlow\TaskFlow.h" />
+    <ClInclude Include="Calibration\CalibrationParams.h" />
+    <QtMoc Include="Calibration\HandEyeCalibrationUi.h" />
+    <ClInclude Include="Common\VisUtils.h" />
+    <ClInclude Include="Transformer\DispenseTrajectoryPlanner.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
     <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
@@ -117,6 +121,7 @@
     <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
     <QtMoc Include="TaskFlow\TaskFlowUi.h" />
     <ClInclude Include="TaskFlow\TaskFlowContextParams.h" />
+    <ClInclude Include="Transformer\DispenseTrajectoryPlannerParams.h" />
     <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
     <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
@@ -136,6 +141,9 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Calibration\HandEyeCalibrationUi.cpp" />
+    <ClCompile Include="Common\VisUtils.cpp" />
+    <ClCompile Include="Transformer\DispenseTrajectoryPlanner.cpp" />
     <ClCompile Include="TaskFlow\TaskFlow.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowBuild.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
@@ -174,6 +182,7 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="Calibration\HandEyeCalibrationUi.ui" />
     <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui" />
     <QtUic Include="TaskFlow\TaskFlowUi.ui" />
   </ItemGroup>

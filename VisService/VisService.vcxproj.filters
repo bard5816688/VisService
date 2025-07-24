@@ -59,6 +59,18 @@
     <ClInclude Include="TaskFlow\TaskFlowContextParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Calibration\CalibrationParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\VisUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformer\DispenseTrajectoryPlanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformer\DispenseTrajectoryPlannerParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp">
@@ -113,6 +125,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calibration\HandEyeCalibrationUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\VisUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformer\DispenseTrajectoryPlanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -174,12 +195,18 @@
     <QtMoc Include="TaskFlow\TaskFlow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Calibration\HandEyeCalibrationUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="TaskFlow\TaskFlowUi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="Calibration\HandEyeCalibrationUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

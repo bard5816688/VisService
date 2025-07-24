@@ -59,5 +59,28 @@ struct AxisParams
 	double t_;                                 //倾斜轴
 };
 
+enum class AcquisitionType
+{
+	StaticAcquisition,
+	OtfAcquisition,//飞拍
+};
+
+struct WorkStation
+{
+	int cameraNum_;
+	int stationNum_;
+};
+
+struct VisInitParams
+{
+	std::map<int, MN_VisionDevice::MS_StationInformation> allStstionInfoMap;//上位机配置的所有运动轴信息
+};
+
+enum class VisOperationMode
+{
+	PRODUCTION,
+	DEBUGING,
+};
+
 
 VISSERVICE_NAMESPACE_END
