@@ -113,6 +113,7 @@
     <ClInclude Include="Calibration\CalibrationParams.h" />
     <QtMoc Include="Calibration\HandEyeCalibrationUi.h" />
     <ClInclude Include="Common\VisUtils.h" />
+    <ClInclude Include="TaskFlow\Module\ModuleObject.h" />
     <ClInclude Include="Transformer\DispenseTrajectoryPlanner.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
     <ClInclude Include="TaskFlow\TaskFlowBuild.h" />

@@ -11,6 +11,7 @@ class TupleInternalUtils
 {
 public:
 	static HalconCpp::HTuple GetHTuple(const Tuple& tuple);
+	static HalconCpp::HTuple* GetHTuplePtr(Tuple* tuple);
 	static Tuple FromHTuple(const HalconCpp::HTuple& hTuple);
 	static Result<Tuple> ResultFromHTuple(const Result<HalconCpp::HTuple>& res);
 };

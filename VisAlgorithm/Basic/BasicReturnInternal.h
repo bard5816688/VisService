@@ -51,7 +51,7 @@ inline auto WrapTryCatch(const std::string& funcName, Func&& func) -> Result<dec
 }
 
 #define VISALGORITHM_WRAP_TRY_CATCH(expr) \
-    WrapTryCatch(__func__, [=]() -> decltype(expr) { return (expr); })
+    WrapTryCatch(__func__, [&]() -> decltype(expr) { return (expr); })
 
 #define VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(varName, expr)                \
     auto varName = VISALGORITHM_WRAP_TRY_CATCH(expr);                       \

@@ -39,20 +39,21 @@ struct FindShapeModelParams
 
 struct ShapeModelParams
 {
-	double angleStart;
-	double angleExtent;
-	double angleStep;
-	double scaleMin;
-	double scaleMax;
-	double scaleStep;
-	std::string metric;
-	int64_t minContrast;
+	double* angleStart;
+	double* angleExtent;
+	double* angleStep;
+	double* scaleMin;
+	double* scaleMax;
+	double* scaleStep;
+	std::string* metric;
+	int64_t* minContrast;
 };
 
 
 template<typename T>
 concept IsShapeModelStrategy = RuleOfFive<T> && requires(
 	T t,
+	const T& ct,
 	const char* constCharPtr,
 	CreateShapeModelParams  createModelParams,
 	const FindShapeModelParams  findModelParams,
@@ -61,8 +62,8 @@ concept IsShapeModelStrategy = RuleOfFive<T> && requires(
 {
 	{ t.ReadShapeModel(constCharPtr) } -> std::same_as<ResultVoid>;
 	{ t.CreateShapeModel(createModelParams) } -> std::same_as<ResultVoid>;
-	{ t.FindShapeModel(findModelParams) } -> std::same_as<ResultVoid>;
-	{ t.GetShapeModelParams(shapeModelParams) } -> std::same_as<ResultVoid>;
+	{ ct.FindShapeModel(findModelParams) } -> std::same_as<ResultVoid>;
+	{ ct.GetShapeModelParams(shapeModelParams) } -> std::same_as<Result<int64_t>>;
 };
 
 VISALGORITHM_NAMESPACE_END

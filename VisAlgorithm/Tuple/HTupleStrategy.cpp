@@ -408,6 +408,11 @@ HalconCpp::HTuple TupleInternalUtils::GetHTuple(const Tuple& tuple)
 	return tuple.GetImpl()->GetHobj();
 }
 
+HalconCpp::HTuple* TupleInternalUtils::GetHTuplePtr(Tuple* tuple)
+{
+	return &(tuple->GetImpl()->GetHobj());
+}
+
 Tuple TupleInternalUtils::FromHTuple(const HalconCpp::HTuple& hTuple)
 {
 	Tuple tuple;

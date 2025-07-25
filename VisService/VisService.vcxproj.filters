@@ -71,6 +71,9 @@
     <ClInclude Include="Transformer\DispenseTrajectoryPlannerParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TaskFlow\Module\ModuleObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp">

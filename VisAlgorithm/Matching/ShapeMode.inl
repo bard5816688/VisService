@@ -75,9 +75,9 @@ ResultVoid ShapeModelContext<Strategy>::ClearShapeModel()
 }
 
 template<IsShapeModelStrategy Strategy>
-ResultVoid ShapeModelContext<Strategy>::GetShapeModelParams(const ShapeModelParams& params) const
+Result<int64_t> ShapeModelContext<Strategy>::GetShapeModelParams(const ShapeModelParams& params) const
 {
-	return strategy_.GetShapeModelParams();
+	return strategy_.GetShapeModelParams(params);
 }
 
 template<IsShapeModelStrategy Strategy>

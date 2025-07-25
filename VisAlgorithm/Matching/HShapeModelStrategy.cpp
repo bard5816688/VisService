@@ -68,16 +68,13 @@ ResultVoid HShapeModelStrategy::CreateShapeModel(const CreateShapeModelParams& p
 	return res;
 }
 
-//ResultVoid HShapeModelStrategy::FindShapeModel(const FindShapeModelParams& params) const
-//{
-//	HalconCpp::HTuple hRow, hCol, hAngle, hScore;
-//	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.FindShapeModel(ImageInternalUtils::GetHImage(params.searchImage), params.angleStart, params.angleExtent,
-//		params.minScore, params.numMatches, params.maxOverlap, params.subPixel.c_str(), params.numLevels, params.greediness, &hRow, &hCol,
-//		&hAngle, &hScore));
-//
-//	TupleInternalUtils::GetHTuple(params.row)
-//	return res;
-//}
+ResultVoid HShapeModelStrategy::FindShapeModel(const FindShapeModelParams& params) const
+{
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.FindShapeModel(ImageInternalUtils::GetHImage(params.searchImage), params.angleStart,
+		params.angleExtent, params.minScore, params.numMatches, params.maxOverlap, params.subPixel.c_str(), params.numLevels, params.greediness,
+		TupleInternalUtils::GetHTuplePtr(params.row), TupleInternalUtils::GetHTuplePtr(params.column), TupleInternalUtils::GetHTuplePtr(params.angle), TupleInternalUtils::GetHTuplePtr(params.score)));
+	return res;
+}
 
 ResultVoid HShapeModelStrategy::ClearShapeModel()
 {
@@ -85,11 +82,13 @@ ResultVoid HShapeModelStrategy::ClearShapeModel()
 	return res;
 }
 
-//ResultVoid HShapeModelStrategy::GetShapeModelParams(const ShapeModelParams& params) const
-//{
-//	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.GetShapeModelParams(params.angleStart, params.angleExtent, params.angleStep, params.scaleMin, params.scaleMax, params.scaleStep, params.metric, params.minContrast));
-//	return res;
-//}
+Result<int64_t> HShapeModelStrategy::GetShapeModelParams(const ShapeModelParams& params) const
+{
+	HalconCpp::HString metric;
+	VISALGORITHM_TRY_OR_RETURN_UNEXPECTED(res, impl_->hShapeModel_.GetShapeModelParams(params.angleStart, params.angleExtent, params.angleStep, params.scaleMin, params.scaleMax, params.scaleStep, &metric, params.minContrast));
+	*params.metric = metric.Text();
+	return res;
+}
 
 ResultVoid HShapeModelStrategy::SetShapeModelOrigin(int row, int column)
 {
