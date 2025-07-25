@@ -7,12 +7,12 @@ DispensePathPlanner::DispensePathPlanner()
 
 }
 
-Return<std::vector<QPointF>> DispensePathPlanner::PlanDispensePath(std::shared_ptr<PlanDispensePathParams> params)
+Return<std::vector<QPointF>> DispensePathPlanner::PlanDispensePath(const PlanDispensePathParams& params)
 {
 
 }
 
-Return<std::vector<QPointF>> DispensePathPlanner::TransformWorkCoord2ImageCoord(std::shared_ptr<TransformWorkCoord2ImageCoordParams> params)
+Return<std::vector<QPointF>> DispensePathPlanner::TransformWorkCoord2ImageCoord(const TransformWorkCoord2ImageCoordParams& params)
 {
 
 }
