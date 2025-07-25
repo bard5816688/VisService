@@ -14,7 +14,7 @@ enum class TaskFlowTopologyType
 struct TaskFlowInitParams
 {
 	std::string taskName_;
-	std::string deputyTaskName_;//副任务名称，包含|
+	std::string deputyTaskName_;	//副任务名称，包含|
 	WorkStation station_;
 	AcquisitionType acquisitionType_;
 	TaskFlowTopologyType topologyType_;
@@ -25,10 +25,9 @@ struct TaskFlowRunParams
 	AxisParams axisParams_;
 };
 
-struct DispensingMatchingTaskFlowResultPrams
+struct MatchingModelInformation
 {
-	VisAlgorithm::Image srcImage_;
-
+	QPointF modelCenterPt_;
 };
 
 

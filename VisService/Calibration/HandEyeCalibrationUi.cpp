@@ -11,7 +11,7 @@ HandEyeCalibrationUi::HandEyeCalibrationUi(const HandEyeCalibrationInitParams& p
 HandEyeCalibrationUi::~HandEyeCalibrationUi()
 {}
 
-ReturnVoid HandEyeCalibrationUi::SetPositionCallback(std::function<void(const AxisParams&, const AxisParams&)> callback)
+ReturnVoid HandEyeCalibrationUi::SetPosition(const AxisParams& axis, const AxisParams& camera)
 {
 
 }

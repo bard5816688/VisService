@@ -13,8 +13,7 @@ class VISSERVICE_EXPORT HandEyeCalibrationUi : public QWidget
 public:
 	HandEyeCalibrationUi(const HandEyeCalibrationInitParams& params_, QWidget* parent = nullptr);
 	~HandEyeCalibrationUi();
-	//ReturnVoid SetPosition(const AxisParams& axis, const AxisParams& camera);
-	ReturnVoid SetPositionCallback(std::function<void(const AxisParams&, const AxisParams&)> callback);
+	ReturnVoid SetPosition(const AxisParams& axis, const AxisParams& camera);
 	ReturnVoid ProcessCalibration(const ProcessHandEyeCalibrationParams& params);
 	HandEyeCalibrationResult GetHandEyeCalibrationResult();
 
@@ -25,7 +24,6 @@ signals:
 
 private:
 	Ui::HandEyeCalibrationUiClass ui;
-	std::function<void(const AxisParams&, const AxisParams&)> setPositionFunc_;
 
 };
 

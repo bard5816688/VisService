@@ -9,8 +9,8 @@ struct TaskFlowInitGParams : public CGraph::GParam
 {
 	std::string taskName_;
 	std::string deputyTaskName_;//副任务名称，包含|
-	TaskFlowStation station_;
-	TaskFlowAcquisitionType acquisitionType_;
+	WorkStation station_;
+	AcquisitionType acquisitionType_;
 };
 
 VISSERVICE_NAMESPACE_END

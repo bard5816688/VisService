@@ -12,8 +12,7 @@ class VISSERVICE_EXPORT TaskFlowUi : public QWidget
 public:
 	TaskFlowUi(const TaskFlowInitParams& params, QWidget* parent = nullptr);
 	~TaskFlowUi();
-	//ReturnVoid SetPosition(const AxisParams& axis, const AxisParams& camera);
-	ReturnVoid SetPositionCallback(std::function<void(const AxisParams&, const AxisParams&)> callback);
+	ReturnVoid SetPosition(const AxisParams& axis, const AxisParams& camera);
 
 signals:
 	void referenceImageDeterminded();
@@ -22,11 +21,10 @@ signals:
 
 private:
 	Ui::TaskFlowUiClass ui;
-	std::function<void(const AxisParams&, const AxisParams&)> setPositionFunc_;
 	TaskFlowInitParams taskFlowInitParams_;
 
 };
 
-VISSERVICE_EXPORT Return<QPointF> GetMatchingModelCenter(const std::string& taskName_, const std::string& deputyTaskName_);
+VISSERVICE_EXPORT Return<MatchingModelInformation> GetMatchingModelInformation(const std::string& taskName_, const std::string& deputyTaskName_);
 
 VISSERVICE_NAMESPACE_END
