@@ -1,13 +1,13 @@
 #pragma once
-#include "DispenseTrajectoryPlannerParams.h"
+#include "DispensePathPlannerParams.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
-class VISSERVICE_EXPORT DispenseTrajectoryPlanner
+class VISSERVICE_EXPORT DispensePathPlanner
 {
 public:
-	DispenseTrajectoryPlanner();
-	Return<std::vector<QPointF>> CalculateTrajectory(std::shared_ptr<CalculateTrajectoryParams> params);
+	DispensePathPlanner();
+	Return<std::vector<QPointF>> PlanDispensePath(std::shared_ptr<PlanDispensePathParams> params);
 	Return<std::vector<QPointF>> TransformWorkCoord2ImageCoord(std::shared_ptr<TransformWorkCoord2ImageCoordParams> params);
 	Return<std::vector<QPointF>> Transform2TemplateCoord(const Transform2TemplateCoordParams& params);
 };

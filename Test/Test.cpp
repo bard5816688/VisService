@@ -7,8 +7,6 @@
 int main()
 {
 
-
-
  //   VisAlgorithm::Tuple tuple(123);
 	//VisAlgorithm::Tuple tuple2 = tuple.Append(VisAlgorithm::Tuple(4));
 	//auto tuple3 = tuple2.TupleAdd(tuple);

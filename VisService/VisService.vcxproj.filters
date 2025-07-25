@@ -65,13 +65,16 @@
     <ClInclude Include="Common\VisUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transformer\DispenseTrajectoryPlanner.h">
+    <ClInclude Include="PathPlanner\DispensePathPlanner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transformer\DispenseTrajectoryPlannerParams.h">
+    <ClInclude Include="PathPlanner\DispensePathPlannerParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\Module\ModuleObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFlow\Module\ReflectableStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -136,7 +139,7 @@
     <ClCompile Include="Common\VisUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Transformer\DispenseTrajectoryPlanner.cpp">
+    <ClCompile Include="PathPlanner\DispensePathPlanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

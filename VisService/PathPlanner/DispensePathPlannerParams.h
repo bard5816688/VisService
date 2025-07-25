@@ -16,23 +16,23 @@ enum class DispenserOperationMode
 	Needle,//针头模式
 };
 
-struct CalculateTrajectoryParams
+struct PlanDispensePathParams
 {
 	DispenserMechanicalStructureMode dispenserMechanicalStructureMode_;
 	WorkStation stationModel_;
 	WorkStation stationCurrent_;
 	double relativeAngleToTemplate_;
-	QPointF relativePositionToTemplate_;//匹配到的模板中心点坐标（机械坐标）
-	std::vector<QPointF> trajectory_;
+	QPointF relativePositionToTemplate_;//匹配到的模板中心点坐标（轴参考系）
+	std::vector<QPointF> dispensingPath_;
 
 };
 
-struct CalculateTrajectoryParams_Together : public CalculateTrajectoryParams
+struct PlanDispensePathParams_Together : public PlanDispensePathParams
 {
 
 };
 
-struct CalculateTrajectoryParams_Separate : public CalculateTrajectoryParams
+struct PlanDispensePathParams_Separate : public PlanDispensePathParams
 {
 	DispenserOperationMode dispenserOperationMode_;
 	QString syringeNeedlePositionCalibrateName_;
