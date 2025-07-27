@@ -11,7 +11,7 @@ VISSERVICE_NAMESPACE_BEGIN
 class VISSERVICE_EXPORT TaskFlow : public QObject
 {
 	Q_OBJECT
-
+		
 public:
 	TaskFlow();
 	~TaskFlow();

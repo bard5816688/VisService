@@ -1,6 +1,7 @@
 #pragma once
 #include "../Basic/BasicObject.h"
 #include "VisAlgorithm.h"
+#include <QPointF>
 
 VISSERVICE_NAMESPACE_BEGIN
 

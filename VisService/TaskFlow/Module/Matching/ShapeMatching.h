@@ -1,7 +1,7 @@
 #pragma once
-#include "BasicDefs.h"
+#include "../ModuleObject.h"
 #include "VisAlgorithm.h"
-#include "CGraph.h"
+#include <QPointF>
 
 VISSERVICE_NAMESPACE_BEGIN
 
@@ -14,28 +14,37 @@ struct ShapeMatchingParams
 	VisAlgorithm::FindShapeModelParams runParams_;
 };
 
+struct ShapeMatchingInputParams
+{
+	ModuleInputParamsMember<VisAlgorithm::Image> sourceImage_;
+	ModuleInputParamsMember<VisAlgorithm::Region> roi_;
 
-class ShapeMatching : public CGraph::GNode
+};
+
+struct ShapeMatchingOutputParams
+{
+	VisAlgorithm::Region findRegion_;
+	QPointF findPosition_;
+	double findAngle_;
+	double findScore_;
+};
+
+
+class ShapeMatching : public BaseModule
 {
 public:
 	ShapeMatching(std::string name);
 
-public:
-	virtual CStatus init() override
-	{
-		//shapeMatchingParams_.readDb(taskName_);
-		CGraph::CGRAPH_ECHO("ShapeMatchingNode::init()");
-		return CStatus();
-	}
-
-	virtual CStatus run() override
-	{
-		CGraph::CGRAPH_ECHO("ShapeMatchingNode::run()");
-		return CStatus();
-	}
+	virtual void SetInputParam(const std::string& key, const QVariant& value)override;
+	virtual QVariant GetOutParam(const std::string& key)override;
+	virtual CStatus init() override;
+	virtual CStatus run() override;
 
 private:
 	ShapeMatchingParams shapeMatchingParams_;
+	ShapeMatchingInputParams shapeMatchingInputParams_;
+	ShapeMatchingOutputParams shapeMatchingOutputParams_;
+
 };
 
 VISSERVICE_NAMESPACE_END
