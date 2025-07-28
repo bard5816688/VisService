@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "../../Basic/BasicObject.h"
-#include "CGraph.h"
+#include "../../CGraph/CGraph.h"
 #include <QPointF>
 #include "VisAlgorithm.h"
 #include "ReflectableStruct.h"
@@ -24,6 +24,9 @@ public:
 	virtual std::vector<std::string> GetOutputParamNames() = 0;
 
 };
+
+
+#define CREATE_GPARAM(type, member) CGRAPH_CREATE_GPARAM(type, #member)
 
 
 inline std::pair<std::string, std::string> splitInputParamsPath(const std::string& str)

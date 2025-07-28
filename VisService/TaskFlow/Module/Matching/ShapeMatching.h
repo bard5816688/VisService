@@ -17,24 +17,29 @@ struct ShapeMatchingParams
 class ShapeMatching : public ModuleBase
 {
 public:
-	ShapeMatching(std::string moduleName);
+	ShapeMatching();
 	virtual CStatus init() override;
 	virtual CStatus run() override;
 	virtual std::vector<std::string> GetOutputParamNames() override;
 
 private:
+	ReturnVoid FillinInputParams();
+
+private:
 	ShapeMatchingParams shapeMatchingParams_;
 	GParam<VisAlgorithm::Region> findRegion_;
-	GParam<QPointF> findPosition_;
-	GParam<double> findAngle_;
-	GParam<double> findScore_;
+	GParam<VisAlgorithm::Tuple> findPositionRow_;
+	GParam<VisAlgorithm::Tuple> findPositionCol_;
+	GParam<VisAlgorithm::Tuple> findAngle_;
+	GParam<VisAlgorithm::Tuple> findScore_;
 
 	friend struct Reflectable<ShapeMatching>;
 };
 
 REFLECT_STRUCT(ShapeMatching,
 	MEMBER(ShapeMatching, findRegion_),
-	MEMBER(ShapeMatching, findPosition_),
+	MEMBER(ShapeMatching, findPositionRow_),
+	MEMBER(ShapeMatching, findPositionCol_),
 	MEMBER(ShapeMatching, findAngle_),
 	MEMBER(ShapeMatching, findScore_)
 )

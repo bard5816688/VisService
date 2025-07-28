@@ -41,9 +41,6 @@
     <ClInclude Include="Common\VisUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskFlow\Module\ModuleObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -71,12 +68,498 @@
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CBasicDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CBasicInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CDescInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CFuncType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CStatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CStdEx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CStrDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CBasic\CValType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\Ann\DAnnDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\Ann\DAnnInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\Ann\DAnnNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\Ann\DAnnObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\Ann\DAnnParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\DomainInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\DomainCtrl\DomainObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GAspect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GAspectDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GAspectInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GAspectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GAspectObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphAspect\GTemplateAspect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDaemon\GDaemon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDaemon\GDaemonInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDaemon\GDaemonManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDaemon\GDaemonObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDaemon\GTemplateDaemon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GDynamicEngine\GDynamicEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GStaticEngine\GStaticEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GTopoEngine\GTopoEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GEngineDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GEngine\GEngineInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GOptimizer\GMaxParaOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GOptimizer\GOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GOptimizer\GOptimizerInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GOptimizer\GSeparateOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\_GOptimizer\GTrimOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GCoordinator\GCoordinator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GFence\GFence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GFunction\GFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GSingleton\GSingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GAdapter\GAdapterInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GCluster\GCluster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GConditionDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GConditionInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GMultiCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GMutable\GMutable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GRegion\GRegion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GSome\GSome.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GGroupDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GGroup\GGroupInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GNode\GNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GNode\GNodeDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GNode\GNodeInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GNode\GTemplateNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElement.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementRelation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementRepository.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphElement\GElementSorter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEventDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEventInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEventManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEventManagerWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphEvent\GEventObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageManagerSingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphMessage\GMessageUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GMessageParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParamInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParamManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParamManagerWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParamObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GParamUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GPassedDefaultParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphParam\GPassedParam.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GPerf\GPerf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GPerf\GPerfAspect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GPerf\GPerfDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GPerf\GPerfInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GSchedule\GSchedule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GSchedule\GScheduleDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\_GSchedule\GScheduleInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\GPipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\GPipelineFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\GPipelineInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\GPipelineManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphPipeline\GPipelineObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphStage\GStage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphStage\GStageInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphStage\GStageManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphStage\GStageManagerWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphStage\GStageObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\GraphCtrl\GraphObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Container\UContainerInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Container\USerialUniqueArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Container\USmallVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\Common\UCommonDistanceInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\Common\UCosineDistance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\Common\UEuclideanDistance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\UDistance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\UDistanceCalculator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\UDistanceInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Distance\UDistanceObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Lru\ULru.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Lru\ULruNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Random\URandom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Random\URandomDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Singleton\USingleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Singleton\USingletonDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Lock\UCvMutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Lock\ULockInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Lock\USpinLock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Metrics\UMetrics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UAtomicPriorityQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UAtomicQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UAtomicRingBufferQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\ULockFreeRingBufferQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UQueueDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UQueueInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UQueueObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Queue\UWorkStealingQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Semaphore\USemaphore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Task\UTask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Task\UTaskGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Task\UTaskInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Thread\UThreadBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Thread\UThreadInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Thread\UThreadPrimary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\Thread\UThreadSecondary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\UThreadObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\UThreadPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\UThreadPoolConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\UThreadPoolDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\ThreadPool\UThreadPoolInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Timer\UTimeCounter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Timer\UTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\Timer\UTimerInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\UtilsDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\UtilsFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\UtilsInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\UtilsCtrl\UtilsObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraph\CGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\VisUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlow.cpp">
@@ -121,6 +604,105 @@
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\DomainCtrl\Ann\DAnnNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphAspect\GAspect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphAspect\GAspectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphAspect\GAspectObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphDaemon\GDaemon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphDaemon\GDaemonManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\_GEngine\GDynamicEngine\GDynamicEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\_GEngine\GStaticEngine\GStaticEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\_GEngine\GTopoEngine\GTopoEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GAdapter\GFence\GFence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GAdapter\GFunction\GFunction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GGroup\GCluster\GCluster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GCondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GGroup\GMutable\GMutable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GGroup\GRegion\GRegion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GGroup\GGroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GNode\GNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GElement.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GElementManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphElement\GElementRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphEvent\GEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphEvent\GEventManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphMessage\GMessageManagerSingleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphParam\GParam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphParam\GParamManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphPipeline\_GPerf\GPerf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphPipeline\_GSchedule\GSchedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphPipeline\GPipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphPipeline\GPipelineFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphPipeline\GPipelineManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\GraphCtrl\GraphStage\GStage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraph\UtilsCtrl\ThreadPool\UThreadPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TaskFlow\TaskFlow.h">
@@ -161,5 +743,46 @@
     <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CGraph\GraphCtrl\GraphAspect\GAspectObject.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphDaemon\GDaemonObject.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphElement\GAdapter\GCoordinator\GCoordinator.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphElement\GAdapter\GSingleton\GSingleton.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphElement\GGroup\GCondition\GMultiCondition.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphElement\GGroup\GSome\GSome.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphElement\GElement.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphEvent\GEventManager.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphParam\GParamManager.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphPipeline\GPipeline.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\GraphCtrl\GraphStage\GStage.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\UtilsCtrl\Distance\UDistance.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="CGraph\UtilsCtrl\ThreadPool\UThreadPool.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
