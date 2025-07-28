@@ -1,6 +1,5 @@
-#include "TaskFlow.h"
+ï»¿#include "TaskFlow.h"
 #include "TaskFlowBuild.h"
-#include "TaskFlowContextParams.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
@@ -28,13 +27,13 @@ ReturnVoid TaskFlow::Initialize(const TaskFlowInitParams& params)
 	}
 	pipeLine_ = CGraph::GPipelineFactory::create();
 	VIS_RETURN_IF_UNEXPECTED(TaskFlowBuild::Build(pipeLine_, params.topologyType_));
-	//×¢ÈëÈ«¾Ö²ÎÊý
-	pipeLine_->createGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
-	auto taskFlowGParams = pipeLine_->getGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
-	taskFlowGParams->taskName_ = params.taskName_;
-	taskFlowGParams->deputyTaskName_ = params.deputyTaskName_;
-	taskFlowGParams->station_ = params.station_;
-	pipeLine_->init();
+
+	//pipeLine_->createGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
+	//auto taskFlowGParams = pipeLine_->getGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
+	//taskFlowGParams->taskName_ = params.taskName_;
+	//taskFlowGParams->deputyTaskName_ = params.deputyTaskName_;
+	//taskFlowGParams->station_ = params.station_;
+	//pipeLine_->init();
 	return ReturnVoid();
 }
 
@@ -54,17 +53,17 @@ ReturnVoid TaskFlow::AsyncRun(const TaskFlowRunParams& params)
 
 Return<QJsonObject> TaskFlow::GetResult()
 {
-
+	return Return<QJsonObject>();
 }
 
 Return<VisAlgorithm::Image> TaskFlow::GetSourceImage()
 {
-
+	return Return<VisAlgorithm::Image>();
 }
 
 Return<VisAlgorithm::Image> TaskFlow::GetResultImage()
 {
-
+	return Return<VisAlgorithm::Image>();
 }
 
 VISSERVICE_NAMESPACE_END

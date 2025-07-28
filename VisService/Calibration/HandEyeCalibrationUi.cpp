@@ -13,17 +13,17 @@ HandEyeCalibrationUi::~HandEyeCalibrationUi()
 
 ReturnVoid HandEyeCalibrationUi::SetPosition(const AxisParams& axis, const AxisParams& camera)
 {
-
+	return ReturnVoid();
 }
 
 ReturnVoid HandEyeCalibrationUi::ProcessCalibration(const ProcessHandEyeCalibrationParams& params)
 {
-
+	return ReturnVoid();
 }
 
 HandEyeCalibrationResult HandEyeCalibrationUi::GetHandEyeCalibrationResult()
 {
-
+	return HandEyeCalibrationResult();
 }
 
 VISSERVICE_NAMESPACE_END

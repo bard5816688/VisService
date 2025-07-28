@@ -1,50 +1,43 @@
-#pragma once
+﻿#pragma once
 #include "../ModuleObject.h"
-#include "VisAlgorithm.h"
-#include <QPointF>
 
 VISSERVICE_NAMESPACE_BEGIN
 
 struct ShapeMatchingParams
 {
-	std::string keyName_;
+	std::string taskName_;
+	ModuleInputParamPath<VisAlgorithm::Image> sourceImage_;
+	ModuleInputParamPath<VisAlgorithm::Region> roi_;
 	VisAlgorithm::Image refImage_;
 	VisAlgorithm::CreateShapeModelParams modelParams_;
 	VisAlgorithm::ShapeModel shapeModel_;
 	VisAlgorithm::FindShapeModelParams runParams_;
 };
 
-struct ShapeMatchingInputParams
-{
-	ModuleInputParamsMember<VisAlgorithm::Image> sourceImage_;
-	ModuleInputParamsMember<VisAlgorithm::Region> roi_;
-
-};
-
-struct ShapeMatchingOutputParams
-{
-	VisAlgorithm::Region findRegion_;
-	QPointF findPosition_;
-	double findAngle_;
-	double findScore_;
-};
-
-
-class ShapeMatching : public BaseModule
+class ShapeMatching : public ModuleBase
 {
 public:
-	ShapeMatching(std::string name);
-
-	virtual void SetInputParam(const std::string& key, const QVariant& value)override;
-	virtual QVariant GetOutParam(const std::string& key)override;
+	ShapeMatching(std::string moduleName);
 	virtual CStatus init() override;
 	virtual CStatus run() override;
+	virtual std::vector<std::string> GetOutputParamNames() override;
 
 private:
 	ShapeMatchingParams shapeMatchingParams_;
-	ShapeMatchingInputParams shapeMatchingInputParams_;
-	ShapeMatchingOutputParams shapeMatchingOutputParams_;
+	GParam<VisAlgorithm::Region> findRegion_;
+	GParam<QPointF> findPosition_;
+	GParam<double> findAngle_;
+	GParam<double> findScore_;
 
+	friend struct Reflectable<ShapeMatching>;
 };
+
+REFLECT_STRUCT(ShapeMatching,
+	MEMBER(ShapeMatching, findRegion_),
+	MEMBER(ShapeMatching, findPosition_),
+	MEMBER(ShapeMatching, findAngle_),
+	MEMBER(ShapeMatching, findScore_)
+)
+
 
 VISSERVICE_NAMESPACE_END

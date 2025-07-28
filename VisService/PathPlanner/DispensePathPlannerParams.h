@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "../Basic/BasicObject.h"
 #include <QPointF>
 
@@ -6,8 +6,8 @@ VISSERVICE_NAMESPACE_BEGIN
 
 enum class DispenserOperationMode
 {
-	Camera,//Ïà»úÄ£Ê½
-	Needle,//ÕëÍ·Ä£Ê½
+	Camera,//ç›¸æœºæ¨¡å¼
+	Needle,//é’ˆå¤´æ¨¡å¼
 };
 
 struct PlanDispensePathParams
@@ -16,29 +16,29 @@ struct PlanDispensePathParams
 	WorkStation stationModel_;
 	WorkStation stationCurrent_;
 	double relativeAngleToTemplate_;
-	QPointF relativePositionToTemplate_;//Æ¥Åäµ½µÄÄ£°åÖĞĞÄµã×ø±ê£¨Öá²Î¿¼Ïµ£©
+	QPointF relativePositionToTemplate_;//åŒ¹é…åˆ°çš„æ¨¡æ¿ä¸­å¿ƒç‚¹åæ ‡ï¼ˆè½´å‚è€ƒç³»ï¼‰
 	std::vector<QPointF> dispensingPath_;
 
 };
 
 enum class TransformCoorType
 {
-	Needle,//×ª»»µ½ÕëÍ·Öá×ø±êÏµ
-	Camera,//×ª»»µ½Ïà»úÖá×ø±êÏµ
+	Needle,//è½¬æ¢åˆ°é’ˆå¤´è½´åæ ‡ç³»
+	Camera,//è½¬æ¢åˆ°ç›¸æœºè½´åæ ‡ç³»
 };
 
 struct TransformWorkCoord2ImageCoordParams
 {
-	QPointF workCoorPt_; //µ±Ç°ĞèÒª×ª»»µÄ»úĞµµã×ø±ê
-	QPointF cameraCoorPt_;	//µ±Ç°Ïà»úÖá»úĞµ×ø±ê
-	WorkStation stationCurrent_;//¶ÔÓ¦µÄ¹¤Î»ĞÅÏ¢
+	QPointF workCoorPt_; //å½“å‰éœ€è¦è½¬æ¢çš„æœºæ¢°ç‚¹åæ ‡
+	QPointF cameraCoorPt_;	//å½“å‰ç›¸æœºè½´æœºæ¢°åæ ‡
+	WorkStation stationCurrent_;//å¯¹åº”çš„å·¥ä½ä¿¡æ¯
 };
 
 struct  Transform2TemplateCoordParams
 {
-	QPointF dispensingPath_;		//µ±Ç°¹ì¼£µãÎ»ÖÃ×ø±ê£¨¾ø¶Ô»úĞµ×ø±ê£©
-	QPointF positionWorkCoor_;		//Æ¥Åä×ø±ê£¨»úĞµ£©
-	double angle_;					//Æ¥Åä½Ç¶È
+	QPointF dispensingPath_;		//å½“å‰è½¨è¿¹ç‚¹ä½ç½®åæ ‡ï¼ˆç»å¯¹æœºæ¢°åæ ‡ï¼‰
+	QPointF positionWorkCoor_;		//åŒ¹é…åæ ‡ï¼ˆæœºæ¢°ï¼‰
+	double angle_;					//åŒ¹é…è§’åº¦
 };
 
 

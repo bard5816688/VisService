@@ -1,4 +1,4 @@
-#pragma once
+Ôªø#pragma once
 #include "ReturnDefs.h"
 #include <QJsonObject>
 #include <QObject>
@@ -52,17 +52,17 @@ struct AxisParams
 
 	}
 
-	double x_;                                 //X÷·
-	double y_;                                 //y÷·
-	double z_;                                 //Z÷·
-	double u_;                                 //u÷·
-	double t_;                                 //«„–±÷·
+	double x_;                            
+	double y_;                            
+	double z_;                            
+	double u_;                            
+	double t_;                            
 };
 
 enum class AcquisitionType
 {
 	StaticAcquisition,
-	OtfAcquisition,//∑…≈ƒ
+	OtfAcquisition,
 };
 
 struct WorkStation
@@ -73,7 +73,7 @@ struct WorkStation
 
 struct VisInitParams
 {
-	std::map<int, MN_VisionDevice::MS_StationInformation> allStstionInfoMap;//…œŒªª˙≈‰÷√µƒÀ˘”–‘À∂Ø÷·–≈œ¢
+	//std::map<int, MN_VisionDevice::MS_StationInformation> allStstionInfoMap;
 };
 
 enum class VisOperationMode

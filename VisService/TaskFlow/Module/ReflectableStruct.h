@@ -1,6 +1,6 @@
-#pragma once
+ï»¿#pragma once
 #include <tuple>
-#include <string_view>
+#include <string>
 #include <vector>
 #include <optional>
 #include <type_traits>
@@ -18,11 +18,11 @@ concept ReflectableStruct = requires {{ Reflectable<T>::getMembers() }; };
 template <typename T, typename MemberT>
 struct MemberInfo
 {
-	std::string_view name_;
+	std::string name_;
 	MemberT T::* ptr_;
-	std::string_view typeName_;
+	std::string typeName_;
 
-	constexpr MemberInfo(std::string_view n, MemberT T::* p)
+	constexpr MemberInfo(std::string n, MemberT T::* p)
 		: name_(n)
 		, ptr_(p)
 		, typeName_(typeid(MemberT).name())
@@ -49,21 +49,19 @@ struct ReflectStruct
 		return std::get<I>(getMembers());
 	}
 
-	// »ñÈ¡×Ö¶ÎÃûÁÐ±í
-	static std::vector<std::string_view> getMemberNames()
+	static std::vector<std::string> getMemberNames()
 	{
 		auto members = getMembers();
-		std::vector<std::string_view> names;
+		std::vector<std::string> names;
 		std::apply([&](auto &&...m)
 			{ ((names.push_back(m.name_)), ...); }, members);
 		return names;
 	}
 
-	// »ñÈ¡×Ö¶ÎÀàÐÍÃû
-	static std::optional<std::string_view> getTypeNameByField(std::string_view name)
+	static std::optional<std::string> getTypeNameByField(std::string name)
 	{
 		auto members = getMembers();
-		std::optional<std::string_view> result;
+		std::optional<std::string> result;
 
 		std::apply([&](auto&&... m) {
 			(([&] {
@@ -76,16 +74,14 @@ struct ReflectStruct
 		return result;
 	}
 
-	// »ñÈ¡×Ö¶ÎÖ¸Õë£¨void*£©
-	static void* getMemberPointerByName(T* obj, std::string_view name)
+	static void* getMemberPointerByName(T* obj, std::string name)
 	{
 		auto members = getMembers();
 		return getMemberPointerImpl(obj, name, members, std::make_index_sequence<std::tuple_size_v<decltype(members)>>{});
 	}
 
-	// ÀàÐÍ°²È« set ½Ó¿Ú
 	template <typename FieldT>
-	static bool setFieldByName(T& obj, std::string_view name, const FieldT& value) {
+	static bool setFieldByName(T& obj, std::string name, const FieldT& value) {
 		auto members = getMembers();
 		bool success = false;
 		std::apply([&](auto&&... m) {
@@ -103,9 +99,8 @@ struct ReflectStruct
 	}
 
 
-	// ÀàÐÍ°²È« get ½Ó¿Ú
 	template <typename FieldT>
-	static std::optional<FieldT> getFieldByName(const T& obj, std::string_view name) {
+	static std::optional<FieldT> getFieldByName(const T& obj, std::string name) {
 		auto members = getMembers();
 		std::optional<FieldT> result;
 		std::apply([&](auto&&... m) {
@@ -124,7 +119,7 @@ struct ReflectStruct
 
 private:
 	template <std::size_t... I>
-	static void* getMemberPointerImpl(T* obj, std::string_view name,
+	static void* getMemberPointerImpl(T* obj, std::string name,
 		const auto& members, std::index_sequence<I...>)
 	{
 		void* result = nullptr;
@@ -149,19 +144,16 @@ struct Reflectable<StructType> {                                    \
     using T = StructType;                                           \
     static constexpr auto getMembers() {                            \
         return std::make_tuple(                                     \
-            MAKE_MEMBER_INFO(T, __VA_ARGS__)                        \
+            __VA_ARGS__                                             \
         );                                                          \
     }                                                               \
 };
 
-#define MAKE_MEMBER_INFO(T, ...)                                     \
-    MAKE_MEMBER_INFO_IMPL(T, __VA_ARGS__)
+#define MEMBER(struct_type, field) \
+    MemberInfo<struct_type, decltype(struct_type::field)>{ #struct_type "." #field, &struct_type::field }
 
-#define MAKE_MEMBER_INFO_IMPL(T, ...)                                \
-    std::make_tuple(__VA_ARGS__)
 
-#define MEMBER(field)                                                \
-    MemberInfo<T, decltype(T::field)>{#field, &T::field}
+
 
 /*
 VISSERVICE_NAMESPACE_BEGIN
@@ -172,8 +164,8 @@ struct Person {
 };
 
 REFLECT_STRUCT(Person,
-	MEMBER(name),
-	MEMBER(age)
+	MEMBER(Person, name),
+	MEMBER(Person, age)
 )
 
 VISSERVICE_NAMESPACE_END

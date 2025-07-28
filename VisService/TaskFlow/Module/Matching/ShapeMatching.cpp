@@ -1,32 +1,22 @@
-#include "ShapeMatching.h"
+ï»¿#include "ShapeMatching.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
-ShapeMatching::ShapeMatching(std::string name)
+ShapeMatching::ShapeMatching(std::string moduleName)
 {
-
-}
-
-void ShapeMatching::SetInputParam(const std::string& key, const QVariant& value)
-{
-
-}
-
-QVariant ShapeMatching::GetOutParam(const std::string& key)
-{
-
+	setName(moduleName);
 }
 
 CStatus ShapeMatching::init()
 {
 	CStatus status;
-	//Êý¾Ý¿âÖÐ¼ÓÔØÄ£¿é×ÔÓÉ²ÎÊý
 	//shapeMatchingParams_.readDb(taskName_);
 
-	//´´½¨Ä£¿éÊä³ö²ÎÊý
-	status = CGRAPH_CREATE_GPARAM(ShapeMatchingOutputParams, "ShapeMatchingOutputParams");
+	status = CGRAPH_CREATE_GPARAM(GParam<VisAlgorithm::Region>, getName() + "." + "findRegion_");
+	status = CGRAPH_CREATE_GPARAM(GParam<QPointF>, getName() + "." + "findPosition_");
+	status = CGRAPH_CREATE_GPARAM(GParam<double>, getName() + "." + "findAngle_");
+	status = CGRAPH_CREATE_GPARAM(GParam<double>, getName() + "." + "findScore_");
 
-	//ÆäËû
 	CGraph::CGRAPH_ECHO("ShapeMatchingNode::init()");
 	return status;
 }
@@ -34,19 +24,16 @@ CStatus ShapeMatching::init()
 CStatus ShapeMatching::run()
 {
 	CStatus status;
-	//»ñÈ¡½ÚµãµÄÊäÈë²ÎÊý(ÔËÐÐÊ±»ñÈ¡)
-	auto path = splitInputParamsPath(shapeMatchingInputParams_.sourceImage_.first);
-
-
-	auto sourceImage = CGRAPH_GET_GPARAM()
-		auto sourceImage = this->template getGParam<VisAlgorithm::Image>();;
-	{
-		CGRAPH_PARAM_READ_CODE_BLOCK();
-		shapeMatchingInputParams_.sourceImage_;
-	}
+	auto roi = CGRAPH_GET_GPARAM(GParam<VisAlgorithm::Region>, "");
+	roi->value_;
 
 	CGraph::CGRAPH_ECHO("ShapeMatchingNode::run()");
 	return CStatus();
+}
+
+std::vector<std::string> ShapeMatching::GetOutputParamNames()
+{
+	return ReflectStruct<ShapeMatching>::getMemberNames();
 }
 
 VISSERVICE_NAMESPACE_END

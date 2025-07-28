@@ -56,6 +56,10 @@ struct ErrorParams
 	ErrorCode errorCode_;
 	std::string errorMsg_;
 	std::string procName_;
+	ErrorParams(ModuleErrorCode m, ErrorCode e, std::string msg, std::string proc)
+		: moduleErrorCode_(m), errorCode_(e), errorMsg_(std::move(msg)), procName_(std::move(proc)) 
+	{
+	}
 	std::string ErrorDescrible()
 	{
 		std::string describle = g_moduleErrorCodeDescribleMap.at(moduleErrorCode_) + g_errorCodeDescribleMap.at(errorCode_);

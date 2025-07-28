@@ -1,4 +1,4 @@
-#include "TaskFlowBuild.h"
+Ôªø#include "TaskFlowBuild.h"
 #include "./Module/Matching/ShapeMatching.h"
 
 VISSERVICE_NAMESPACE_BEGIN
@@ -6,7 +6,7 @@ VISSERVICE_NAMESPACE_BEGIN
 ReturnVoid TaskFlowBuild::Build(CGraph::GPipelinePtr pipeLine, TaskFlowTopologyType type)
 {
 #ifdef USE_PREDEFINED_PIPELINE
-		auto pipeLine = CGraph::GPipelineFactory::create();
+		pipeLine = CGraph::GPipelineFactory::create();
 		ReturnVoid ret;
 		switch (type)
 		{
@@ -26,8 +26,9 @@ ReturnVoid TaskFlowBuild::Build(CGraph::GPipelinePtr pipeLine, TaskFlowTopologyT
 			return tl::unexpected(ret.error());
 		}
 #elif
-	//∂¡»°JSONππΩ®PipeLine
+
 #endif
+	return ret;
 }
 
 ReturnVoid TaskFlowBuild::BuildDispensingMatching(CGraph::GPipelinePtr pipeLine)

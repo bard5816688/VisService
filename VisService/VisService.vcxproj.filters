@@ -32,40 +32,16 @@
     <ClInclude Include="Basic\ReturnDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Basic\BasicObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TreePropertyBrowser\ParamEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlowBuild.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlowParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Basic\ErrorCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Calibration\CalibrationParams.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Common\VisUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PathPlanner\DispensePathPlanner.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PathPlanner\DispensePathPlannerParams.h">
+    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskFlow\Module\ModuleObject.h">
@@ -74,14 +50,50 @@
     <ClInclude Include="TaskFlow\Module\ReflectableStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\Bingding\BindingContext.h">
+    <ClInclude Include="TaskFlow\TaskFlowBuild.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\Bingding\BindingResolver.h">
+    <ClInclude Include="TaskFlow\TaskFlowParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPlanner\DispensePathPlanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPlanner\DispensePathPlannerParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calibration\CalibrationParams.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Common\VisUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlowParams.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PathPlanner\DispensePathPlanner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calibration\HandEyeCalibrationUi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -103,53 +115,20 @@
     <ClCompile Include="VisWindow\VisualWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp">
+    <ClCompile Include="TaskFlow\TaskFlowUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowUi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowParams.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Calibration\HandEyeCalibrationUi.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\VisUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PathPlanner\DispensePathPlanner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\Bingding\BindingResolver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="TaskFlow\TaskFlow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Calibration\HandEyeCalibrationUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h">
       <Filter>Header Files</Filter>
     </QtMoc>
@@ -165,60 +144,21 @@
     <QtMoc Include="VisWindow\VisualWindow.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
-      <Filter>Source Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils_p.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.cpp">
-      <Filter>Source Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.cpp">
-      <Filter>Source Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h">
+    <QtMoc Include="TaskFlow\TaskFlowUi.h">
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="TaskFlow\TaskFlowUi.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="TaskFlow\TaskFlow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <QtMoc Include="Calibration\HandEyeCalibrationUi.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
+    <QtUic Include="Calibration\HandEyeCalibrationUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="TaskFlow\TaskFlowUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtUic Include="Calibration\HandEyeCalibrationUi.ui">
+    <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

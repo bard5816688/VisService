@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "../Basic/BasicObject.h"
 #include "VisAlgorithm.h"
 #include <QPointF>
@@ -15,7 +15,7 @@ enum class TaskFlowTopologyType
 struct TaskFlowInitParams
 {
 	std::string taskName_;
-	std::string deputyTaskName_;	//¸±ÈÎÎñÃû³Æ£¬°üº¬|
+	std::string deputyTaskName_;	//include |
 	WorkStation station_;
 	AcquisitionType acquisitionType_;
 	TaskFlowTopologyType topologyType_;

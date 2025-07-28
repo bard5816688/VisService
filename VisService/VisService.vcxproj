@@ -109,32 +109,10 @@
     <ClInclude Include="Basic\BasicDefs.h" />
     <ClInclude Include="Basic\ReturnDefs.h" />
     <ClInclude Include="Basic\ErrorCode.h" />
-    <QtMoc Include="TaskFlow\TaskFlow.h" />
-    <ClInclude Include="TaskFlow\Bingding\BindingContext.h" />
-    <ClInclude Include="Calibration\CalibrationParams.h" />
-    <QtMoc Include="Calibration\HandEyeCalibrationUi.h" />
-    <ClInclude Include="Common\VisUtils.h" />
-    <ClInclude Include="TaskFlow\Bingding\BindingResolver.h" />
-    <ClInclude Include="TaskFlow\Module\ModuleObject.h" />
-    <ClInclude Include="TaskFlow\Module\ReflectableStruct.h" />
-    <ClInclude Include="PathPlanner\DispensePathPlanner.h" />
-    <ClInclude Include="TaskFlow\TaskFlowParams.h" />
-    <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
-    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
     <ClInclude Include="Basic\BasicObject.h" />
-    <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
+    <ClInclude Include="Calibration\CalibrationParams.h" />
     <QtMoc Include="TaskFlow\TaskFlowUi.h" />
-    <ClInclude Include="PathPlanner\DispensePathPlannerParams.h" />
-    <ClInclude Include="TreePropertyBrowser\ParamEditor.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils_p.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.h" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.h" />
-    <ClInclude Include="VisService.h" />
+    <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsDrawTool.h" />
     <ClInclude Include="VisWindow\Graphics\VGraphicsItemControlBlock.h" />
     <QtMoc Include="VisWindow\VisualWindow.h" />
@@ -142,41 +120,28 @@
     <QtMoc Include="VisWindow\Graphics\VGraphicsView.h" />
     <QtMoc Include="VisWindow\Graphics\VGraphicsScene.h" />
     <QtMoc Include="VisWindow\Graphics\VGraphicsItem.h" />
+    <QtMoc Include="Calibration\HandEyeCalibrationUi.h" />
+    <ClInclude Include="Common\VisUtils.h" />
+    <ClInclude Include="PathPlanner\DispensePathPlanner.h" />
+    <ClInclude Include="PathPlanner\DispensePathPlannerParams.h" />
+    <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
+    <ClInclude Include="TaskFlow\Module\ModuleObject.h" />
+    <ClInclude Include="TaskFlow\Module\ReflectableStruct.h" />
+    <QtMoc Include="TaskFlow\TaskFlow.h" />
+    <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
+    <ClInclude Include="TaskFlow\TaskFlowParams.h" />
+    <ClInclude Include="VisService.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Calibration\HandEyeCalibrationUi.cpp" />
     <ClCompile Include="Common\VisUtils.cpp" />
     <ClCompile Include="PathPlanner\DispensePathPlanner.cpp" />
-    <ClCompile Include="TaskFlow\Bingding\BindingResolver.cpp" />
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
+    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
     <ClCompile Include="TaskFlow\TaskFlow.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowBuild.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
-    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
-    <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowUi.cpp" />
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtbuttonpropertybrowser.cpp" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qteditorfactory.cpp">
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
-    </QtMoc>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtgroupboxpropertybrowser.cpp" />
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowser.cpp" />
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertybrowserutils.cpp" />
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qtpropertymanager.cpp">
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
-    </QtMoc>
-    <QtMoc Include="TreePropertyBrowser\QtPropertyBrowser\qttreepropertybrowser.cpp">
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
-      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
-      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
-    </QtMoc>
-    <ClCompile Include="TreePropertyBrowser\QtPropertyBrowser\qtvariantproperty.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsDrawTool.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsItem.cpp" />
     <ClCompile Include="VisWindow\Graphics\VGraphicsItemControlBlock.cpp" />

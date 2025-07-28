@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "CGraph.h"
 #include "TaskFlowParams.h"
