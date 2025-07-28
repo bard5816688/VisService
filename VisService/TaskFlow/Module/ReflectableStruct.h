@@ -138,6 +138,8 @@ private:
 
 VISSERVICE_NAMESPACE_END
 
+#define FRIEND_REFLECT(type) friend struct Reflectable<type>;
+
 #define REFLECT_STRUCT(StructType, ...)                             \
 template <>                                                         \
 struct Reflectable<StructType> {                                    \

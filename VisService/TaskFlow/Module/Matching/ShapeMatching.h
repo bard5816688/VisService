@@ -33,7 +33,7 @@ private:
 	GParam<VisAlgorithm::Tuple> findAngle_;
 	GParam<VisAlgorithm::Tuple> findScore_;
 
-	friend struct Reflectable<ShapeMatching>;
+	FRIEND_REFLECT(ShapeMatching);
 };
 
 REFLECT_STRUCT(ShapeMatching,
