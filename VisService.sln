@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VisService", "VisService\Vi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VisAlgorithm", "VisAlgorithm\VisAlgorithm.vcxproj", "{70506AC0-2A16-43EE-A3F9-C837B56CC8DF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{14B36A21-F372-4758-82DC-AB07AD2CBB19}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,10 +21,6 @@ Global
 		{70506AC0-2A16-43EE-A3F9-C837B56CC8DF}.Debug|x64.Build.0 = Debug|x64
 		{70506AC0-2A16-43EE-A3F9-C837B56CC8DF}.Release|x64.ActiveCfg = Release|x64
 		{70506AC0-2A16-43EE-A3F9-C837B56CC8DF}.Release|x64.Build.0 = Release|x64
-		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Debug|x64.ActiveCfg = Debug|x64
-		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Debug|x64.Build.0 = Debug|x64
-		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Release|x64.ActiveCfg = Release|x64
-		{14B36A21-F372-4758-82DC-AB07AD2CBB19}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
