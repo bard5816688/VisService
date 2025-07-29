@@ -1,10 +1,7 @@
 #pragma once
-#include "BasicDefs.h"
 #include <QVariant>
 #include "QtPropertyBrowser/QtVariantProperty.h"
 #include "QtPropertyBrowser/QtTreePropertyBrowser.h"
-
-VISSERVICE_NAMESPACE_BEGIN
 
 template <typename T>
 class ParamEditor : public QObject {
@@ -35,6 +32,3 @@ protected:
     QtVariantEditorFactory* factory_;
     QtTreePropertyBrowser* browser_;
 };
-
-
-VISSERVICE_NAMESPACE_END

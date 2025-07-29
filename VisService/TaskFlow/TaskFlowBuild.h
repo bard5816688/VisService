@@ -1,6 +1,5 @@
 ﻿#pragma once
-
-#include "../CGraph/CGraph.h"
+#include "../Component/CGraph/CGraph.h"
 #include "TaskFlowParams.h"
 
 #define USE_PREDEFINED_PIPELINE

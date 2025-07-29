@@ -1,5 +1,7 @@
 #include "ShapeMatchingUi.h"
 
+VISSERVICE_NAMESPACE_BEGIN
+
 ShapeMatchingUi::ShapeMatchingUi(QWidget *parent)
 	: QWidget(parent)
 {
@@ -9,3 +11,4 @@ ShapeMatchingUi::ShapeMatchingUi(QWidget *parent)
 ShapeMatchingUi::~ShapeMatchingUi()
 {}
 
+VISSERVICE_NAMESPACE_END

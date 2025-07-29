@@ -1,9 +1,10 @@
 ﻿#pragma once
 #include "../../Basic/BasicObject.h"
-#include "../../CGraph/CGraph.h"
+#include "../../Component/CGraph/CGraph.h"
 #include <QPointF>
 #include "VisAlgorithm.h"
 #include "ReflectableStruct.h"
+//#include "../../Component/ParamManager/"
 
 VISSERVICE_NAMESPACE_BEGIN
 

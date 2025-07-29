@@ -1,18 +1,7 @@
 ﻿#pragma once
-#include "../ModuleObject.h"
+#include "ShapeMatchingParams.h"
 
 VISSERVICE_NAMESPACE_BEGIN
-
-struct ShapeMatchingParams
-{
-	std::string taskName_;
-	ModuleInputParamPath<VisAlgorithm::Image> sourceImage_;
-	ModuleInputParamPath<VisAlgorithm::Region> roi_;
-	VisAlgorithm::Image refImage_;
-	VisAlgorithm::CreateShapeModelParams modelParams_;
-	VisAlgorithm::ShapeModel shapeModel_;
-	VisAlgorithm::FindShapeModelParams runParams_;
-};
 
 class ShapeMatching : public ModuleBase
 {
@@ -43,6 +32,5 @@ REFLECT_STRUCT(ShapeMatching,
 	MEMBER(ShapeMatching, findAngle_),
 	MEMBER(ShapeMatching, findScore_)
 )
-
 
 VISSERVICE_NAMESPACE_END

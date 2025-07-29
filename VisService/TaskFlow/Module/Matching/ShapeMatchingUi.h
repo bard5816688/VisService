@@ -2,6 +2,9 @@
 
 #include <QWidget>
 #include "ui_ShapeMatchingUi.h"
+#include "ShapeMatchingParams.h"
+
+VISSERVICE_NAMESPACE_BEGIN
 
 class ShapeMatchingUi : public QWidget
 {
@@ -13,5 +16,7 @@ public:
 
 private:
 	Ui::ShapeMatchingUiClass ui;
+
 };
 
+VISSERVICE_NAMESPACE_END
