@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <memory>
 #include "ParamStorage.h"
 #include "LRUCache.h"
@@ -7,19 +7,20 @@ template<typename ParamType>
 class ParamManager 
 {
 public:
-	ParamManager(ParamStorage<ParamType> storage, size_t cacheSize = 10)
-        : storage_(storage), cache_(cacheSize) 
+	ParamManager(std::string storagePath, size_t cacheSize = 10)
+        : cache_(cacheSize)
     {
+		storage_ = std::make_shared<ParamStorage<ParamType>>(QString::fromStdString(storagePath));
     }
 
-    // ¶ÁÈ¡£¬ÏÈ²é»º´æ£¬Ã»ÃüÖĞÔò´Ó´æ´¢¼ÓÔØ
+    // è¯»å–ï¼Œå…ˆæŸ¥ç¼“å­˜ï¼Œæ²¡å‘½ä¸­åˆ™ä»å­˜å‚¨åŠ è½½
     std::optional<ParamType> Get(const std::string& key) 
     {
         if (auto cached = cache_.Get(key))
         {
             return cached;
         }
-        auto loaded = storage_.Load(key);
+        auto loaded = storage_->Load(key);
         if (loaded) 
         {
             cache_.InsertOrAssign(key, *loaded);
@@ -27,32 +28,32 @@ public:
         return loaded;
     }
 
-    // ĞÂÔö²ÎÊı£¬³É¹¦ºóĞ´Èë»º´æ
+    // æ–°å¢å‚æ•°ï¼ŒæˆåŠŸåå†™å…¥ç¼“å­˜
     bool Add(const std::string& key, const ParamType& value) 
     {
-        if (!storage_.Save(key, value)) return false;
+        if (!storage_->Save(key, value)) return false;
         cache_.InsertOrAssign(key, value);
         return true;
     }
 
-    // ¸üĞÂ²ÎÊı£¬³É¹¦ºóË¢ĞÂ»º´æ
+    // æ›´æ–°å‚æ•°ï¼ŒæˆåŠŸååˆ·æ–°ç¼“å­˜
     bool Update(const std::string& key, const ParamType& value) 
     {
-        if (!storage_.Update(key, value)) return false;
+        if (!storage_->Update(key, value)) return false;
         cache_.InsertOrAssign(key, value);
         return true;
     }
 
-    // É¾³ı²ÎÊı£¬³É¹¦ºóÇåÀí»º´æ
+    // åˆ é™¤å‚æ•°ï¼ŒæˆåŠŸåæ¸…ç†ç¼“å­˜
     bool Remove(const std::string& key) 
     {
-        if (!storage_.Remove(key)) return false;
-        cache_.Erase(key);  // ĞèÒª¸øLRUCacheÔö¼Óremove½Ó¿Ú
+        if (!storage_->Remove(key)) return false;
+        cache_.Erase(key);  // éœ€è¦ç»™LRUCacheå¢åŠ removeæ¥å£
         return true;
     }
 
 private:
-    ParamStorage<ParamType> storage_;
+	std::shared_ptr<ParamStorage<ParamType>> storage_;
     LRUCache<std::string, ParamType> cache_;
 
 };

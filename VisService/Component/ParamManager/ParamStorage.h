@@ -8,17 +8,17 @@
 #include <QDebug>
 #include <optional>
 #include <mutex>
-#include <unordered_map>
+#include <map>
 #include <string>
 #include "ParamTraits.h"// 必须为每种 T 提供 ParamTraits<T>::ToJson / FromJson / TableName
 
 class DbConnectionManager
 {
 public:
-	static QSqlDatabase& instance(const QString& dbPath)
+	static QSqlDatabase instance(const QString& dbPath)
 	{
 		static std::mutex mutex;
-		static std::unordered_map<QString, QSqlDatabase> dbMap;
+		static std::map<QString, QSqlDatabase> dbMap;
 
 		std::lock_guard<std::mutex> lock(mutex);
 		auto it = dbMap.find(dbPath);
@@ -149,7 +149,8 @@ private:
 
 private:
 	QString dbPath_;
-	QSqlDatabase& db_;
+	QSqlDatabase db_;
 	QString tableName_;
 	std::mutex mutex_;
+
 };
