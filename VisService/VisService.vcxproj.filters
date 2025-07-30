@@ -721,6 +721,9 @@
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingParams.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Component\ParamManager\DbWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="TaskFlow\TaskFlow.h">
@@ -748,6 +751,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="TaskFlow\Module\Matching\ShapeMatchingUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Component\ParamManager\DbWorker.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -800,6 +806,9 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="Component\CGraph\UtilsCtrl\ThreadPool\UThreadPool.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Component\ParamManager\ParamStorage.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

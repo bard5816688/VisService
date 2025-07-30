@@ -279,6 +279,7 @@
     <ClInclude Include="Component\ParamManager\ParamManager .h" />
     <ClInclude Include="Component\ParamManager\ParamStorage.h" />
     <ClInclude Include="Component\ParamManager\ParamTraits.h" />
+    <QtMoc Include="Component\ParamManager\DbWorker.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatchingParams.h" />
     <ClInclude Include="Component\VisWindow\Graphics\VGraphicsDrawTool.h" />
@@ -334,6 +335,7 @@
     <ClCompile Include="Component\CGraph\GraphCtrl\GraphStage\GStage.cpp" />
     <ClCompile Include="Component\CGraph\UtilsCtrl\ThreadPool\UThreadPool.cpp" />
     <ClCompile Include="Common\VisUtils.cpp" />
+    <ClCompile Include="Component\ParamManager\DbWorker.cpp" />
     <ClCompile Include="PathPlanner\DispensePathPlanner.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingParams.cpp" />
@@ -369,6 +371,7 @@
     <None Include="Component\CGraph\GraphCtrl\GraphStage\GStage.inl" />
     <None Include="Component\CGraph\UtilsCtrl\Distance\UDistance.inl" />
     <None Include="Component\CGraph\UtilsCtrl\ThreadPool\UThreadPool.inl" />
+    <None Include="Component\ParamManager\ParamStorage.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
