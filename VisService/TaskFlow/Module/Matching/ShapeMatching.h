@@ -6,9 +6,10 @@ VISSERVICE_NAMESPACE_BEGIN
 class ShapeMatching : public ModuleBase
 {
 public:
-	ShapeMatching();
+	ShapeMatching(const std::string& taskName);
 	virtual CStatus init() override;
 	virtual CStatus run() override;
+	virtual std::string GetModuleName() override;
 	virtual std::vector<std::string> GetOutputParamNames() override;
 
 private:

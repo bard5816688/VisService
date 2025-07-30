@@ -3,6 +3,8 @@
 #include "ParamStorage.h"
 #include "LRUCache.h"
 
+#define STORAGE_PATH "Params.db"
+
 template<typename ParamType>
 class ParamManager 
 {

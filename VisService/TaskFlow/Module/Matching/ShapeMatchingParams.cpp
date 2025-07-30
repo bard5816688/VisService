@@ -23,7 +23,7 @@ VISSERVICE_NAMESPACE_BEGIN
 
 ParamManager<ShapeMatchingParams>& GlobalShapeMatchingParams()
 {
-	static ParamManager<ShapeMatchingParams> instance("shape.db");
+	static ParamManager<ShapeMatchingParams> instance(STORAGE_PATH);
 	return instance;
 }
 

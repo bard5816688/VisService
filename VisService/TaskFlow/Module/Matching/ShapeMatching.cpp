@@ -2,7 +2,8 @@
 
 VISSERVICE_NAMESPACE_BEGIN
 
-ShapeMatching::ShapeMatching()
+ShapeMatching::ShapeMatching(const std::string& taskName)
+	: ModuleBase(taskName)
 {
 	setName("ShapeMatching");
 }
@@ -34,6 +35,11 @@ CStatus ShapeMatching::run()
 	return status;
 }
 
+std::string ShapeMatching::GetModuleName()
+{
+	return "ShapeMatching";
+}
+
 std::vector<std::string> ShapeMatching::GetOutputParamNames()
 {
 	return ReflectStruct<ShapeMatching>::getMemberNames();
@@ -47,5 +53,7 @@ ReturnVoid ShapeMatching::FillinInputParams()
 	shapeMatchingParams_.roi_.second = roi->value_;
 	return ReturnVoid();
 }
+
+REGISTER_MODULE_LOGIC("ShapeMatching", ShapeMatching)
 
 VISSERVICE_NAMESPACE_END

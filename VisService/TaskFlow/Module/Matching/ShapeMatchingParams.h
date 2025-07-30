@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "../ModuleObject.h"
-#include "../../../Component/ParamManager/ParamManager .h"
 
 VISSERVICE_NAMESPACE_BEGIN
 

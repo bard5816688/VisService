@@ -1,10 +1,12 @@
 ﻿#pragma once
 #include "../../Basic/BasicObject.h"
 #include "../../Component/CGraph/CGraph.h"
-#include <QPointF>
+#include "../../Component/ParamManager/ParamManager .h"
 #include "VisAlgorithm.h"
 #include "ReflectableStruct.h"
-//#include "../../Component/ParamManager/"
+#include "ModuleRegistry .h"
+#include <QPointF>
+#include <QWidget>
 
 VISSERVICE_NAMESPACE_BEGIN
 
@@ -22,13 +24,36 @@ public:
 class ModuleBase : public CGraph::GNode
 {
 public:
+    ModuleBase(const std::string& taskName)
+        : taskName_(taskName)
+    {
+    }
+    virtual~ModuleBase() = default;
+    virtual std::string GetModuleName() = 0;
 	virtual std::vector<std::string> GetOutputParamNames() = 0;
 
+protected:
+    std::string taskName_;
 };
 
+class ModuleUiBase : public QWidget
+{
+    Q_OBJECT
+
+public:
+	ModuleUiBase(const std::string& taskName, QWidget* parent)
+        : QWidget(parent)
+        , taskName_(taskName)
+    {
+    }
+    virtual~ModuleUiBase() = default;
+    virtual std::string GetModuleName() = 0;
+
+protected:
+    std::string taskName_;
+};
 
 #define CREATE_GPARAM(type, member) CGRAPH_CREATE_GPARAM(type, #member)
-
 
 inline std::pair<std::string, std::string> splitInputParamsPath(const std::string& str)
 {

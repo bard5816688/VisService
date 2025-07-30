@@ -293,7 +293,8 @@
     <ClInclude Include="Common\VisUtils.h" />
     <ClInclude Include="PathPlanner\DispensePathPlanner.h" />
     <ClInclude Include="PathPlanner\DispensePathPlannerParams.h" />
-    <ClInclude Include="TaskFlow\Module\ModuleObject.h" />
+    <QtMoc Include="TaskFlow\Module\ModuleObject.h" />
+    <ClInclude Include="TaskFlow\Module\ModuleRegistry .h" />
     <ClInclude Include="TaskFlow\Module\ReflectableStruct.h" />
     <QtMoc Include="TaskFlow\TaskFlow.h" />
     <ClInclude Include="TaskFlow\TaskFlowBuild.h" />

@@ -41,9 +41,6 @@
     <ClInclude Include="Common\VisUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\Module\ModuleObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskFlow\Module\ReflectableStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -572,6 +569,9 @@
     <ClInclude Include="Component\ParamManager\ParamManager .h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TaskFlow\Module\ModuleRegistry .h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\VisUtils.cpp">
@@ -754,6 +754,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="Component\ParamManager\DbWorker.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="TaskFlow\Module\ModuleObject.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
