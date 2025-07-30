@@ -36,8 +36,8 @@ ReturnVoid TaskFlowBuild::BuildDispensingMatching(CGraph::GPipelinePtr pipeLine,
 {
 	auto ShapeMatching = ModuleRegistry::Instance().CreateLogic("ShapeMatching", taskName);
 	auto ShapeMatchingUi = ModuleRegistry::Instance().CreateUi("ShapeMatching", taskName, nullptr);
-	CGraph::GElementPPtr tste;
-	auto status = pipeLine->registerGNode(tste);
+
+	auto status = pipeLine->registerGNode(ShapeMatching);
 	return ReturnVoid();
 }
 

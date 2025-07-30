@@ -122,6 +122,21 @@ CStatus GPipeline::process(CSize runTimes) {
     CGRAPH_FUNCTION_END
 }
 
+CStatus GPipeline::registerGNode(GElementPtr nodePtr, const GElementPtrSet& depends,
+	const std::string& name, CSize loop) {
+	CGRAPH_FUNCTION_BEGIN
+	CGRAPH_ASSERT_INIT(false)
+	CGRAPH_ASSERT_NOT_NULL(nodePtr)
+
+	auto node = dynamic_cast<GNodePtr>(nodePtr);
+	CGRAPH_RETURN_ERROR_STATUS_BY_CONDITION(nullptr == node, "[" + (nodePtr)->getName() + "] is not based on GNode")
+	CGRAPH_RETURN_ERROR_STATUS_BY_CONDITION(nullptr != node->belong_, "[" + node->getName() + "] can not register to pipeline for its belong to [" + node->belong_->getName() + "]")
+	CGRAPH_RETURN_ERROR_STATUS_BY_CONDITION(node->isRegistered(), "[" + node->getName() + "] register duplicate")
+
+	status = innerRegister(node, depends, name, loop);
+	CGRAPH_FUNCTION_END
+}
+
 
 CStatus GPipeline::registerGNode(GElementPPtr nodeRef, const GElementPtrSet &depends,
                                  const std::string &name, CSize loop) {
