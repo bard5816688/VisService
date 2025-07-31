@@ -10,8 +10,8 @@ namespace tl
     template<typename T>
     struct is_expected : std::false_type {};
 
-    template<typename T, typename E>
-    struct is_expected<tl::expected<T, E>> : std::true_type {};
+    template<typename T>
+    struct is_expected<tl::expected<T, VisAlgorithm::ErrorInfo>> : std::true_type {};
 }
 
 VISALGORITHM_NAMESPACE_BEGIN

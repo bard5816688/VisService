@@ -280,6 +280,9 @@
     <ClInclude Include="Component\ParamManager\ParamStorage.h" />
     <ClInclude Include="Component\ParamManager\ParamTraits.h" />
     <QtMoc Include="Component\ParamManager\DbWorker.h" />
+    <ClInclude Include="TaskFlow\TaskFlowBuilder.h" />
+    <ClInclude Include="TaskFlow\CGrapExtension\PipelineFactory.h" />
+    <ClInclude Include="TaskFlow\CGrapExtension\PipeLine.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatching.h" />
     <ClInclude Include="TaskFlow\Module\Matching\ShapeMatchingParams.h" />
     <ClInclude Include="Component\VisWindow\Graphics\VGraphicsDrawTool.h" />
@@ -297,7 +300,6 @@
     <ClInclude Include="TaskFlow\Module\ModuleRegistry .h" />
     <ClInclude Include="TaskFlow\Module\ReflectableStruct.h" />
     <QtMoc Include="TaskFlow\TaskFlow.h" />
-    <ClInclude Include="TaskFlow\TaskFlowBuild.h" />
     <ClInclude Include="TaskFlow\TaskFlowParams.h" />
     <ClInclude Include="VisService.h" />
   </ItemGroup>
@@ -338,11 +340,13 @@
     <ClCompile Include="Common\VisUtils.cpp" />
     <ClCompile Include="Component\ParamManager\DbWorker.cpp" />
     <ClCompile Include="PathPlanner\DispensePathPlanner.cpp" />
+    <ClCompile Include="TaskFlow\TaskFlowBuilder.cpp" />
+    <ClCompile Include="TaskFlow\CGrapExtension\PipelineFactory.cpp" />
+    <ClCompile Include="TaskFlow\CGrapExtension\PipeLine.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatching.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingParams.cpp" />
     <ClCompile Include="TaskFlow\Module\Matching\ShapeMatchingUi.cpp" />
     <ClCompile Include="TaskFlow\TaskFlow.cpp" />
-    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp" />
     <ClCompile Include="TaskFlow\TaskFlowUi.cpp" />
     <ClCompile Include="Component\VisWindow\Graphics\VGraphicsDrawTool.cpp" />

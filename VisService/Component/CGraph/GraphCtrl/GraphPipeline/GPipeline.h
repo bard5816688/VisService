@@ -198,19 +198,6 @@ public:
     TNode* registerGNode(const GElementPtrSet &depends,
                          Args... args);
 
-     /**
-     * 注册一个节点信息
-     * @param nodeRef
-     * @param depends
-     * @param name
-     * @param loop
-     * @return
-     */
-    CStatus registerGNode(GElementPtr nodePtr,
-                          const GElementPtrSet &depends = std::initializer_list<GElementPtr>(),
-                          const std::string &name = CGRAPH_EMPTY,
-                          CSize loop = CGRAPH_DEFAULT_LOOP_TIMES);
-
     /**
      * 注册一个节点信息
      * @param nodeRef

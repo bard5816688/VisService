@@ -1,12 +1,13 @@
 ﻿#pragma once
-#include "../Component/CGraph/CGraph.h"
+#include "CGrapExtension/PipelineFactory.h"
 #include "TaskFlowParams.h"
 
 #define USE_PREDEFINED_PIPELINE
 
 VISSERVICE_NAMESPACE_BEGIN
 
-class TaskFlowBuild
+class ModuleBase;
+class TaskFlowBuild1
 {
 public:
 	static ReturnVoid Build(CGraph::GPipelinePtr pipeLine, TaskFlowTopologyType type, const std::string& taskName);
@@ -21,5 +22,6 @@ private:
 #endif
 
 };
+
 
 VISSERVICE_NAMESPACE_END

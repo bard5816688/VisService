@@ -2,6 +2,15 @@
 #include "Expected.hpp"
 #include "ErrorCode.h"
 
+namespace tl
+{
+    template<typename T>
+    struct is_expected : std::false_type {};
+
+    template<typename T>
+    struct is_expected<tl::expected<T, VisService::ErrorParams>> : std::true_type {};
+}
+
 VISSERVICE_NAMESPACE_BEGIN
 
 template<typename T>
@@ -21,12 +30,12 @@ using ReturnVoid = tl::expected<void, ErrorParams>;
     }                                                                                                   \
 }
 
-#define VIS_RETURN_IF_UNEXPECTED(expr)                      \
-    do {                                                    \
-        auto&& _result = (expr);                            \
-        if (!_result.has_value())                           \
-            return tl::unexpected(_result.error());         \
-    } while (0)
+#define VIS_RETURN_IF_UNEXPECTED(res, expr)                             \
+    auto res = (expr);                                                  \
+    static_assert(tl::is_expected<decltype(res)>::value,                \
+        #res " must be tl::expected<T, ErrorInfo>");                    \
+    if (!res)                                                           \
+        return tl::unexpected(res.error());
 
 
 VISSERVICE_NAMESPACE_END

@@ -65,7 +65,7 @@ namespace                                                                   \
     {                                                                       \
         ModuleAutoRegisterLogic_##LogicType()                              \
         {                                                                   \
-            ModuleRegistry::instance().RegisterLogic(                      \
+            ModuleRegistry::Instance().RegisterLogic(                      \
                 ModuleName,                                                 \
                 [](const std::string& taskName) -> ModuleBase*              \
                 {                                                           \
@@ -83,7 +83,7 @@ namespace                                                                       
     {                                                                           \
         ModuleAutoRegisterUi_##UiType()                                         \
         {                                                                       \
-            ModuleRegistry::instance().RegisterUi(                              \
+            ModuleRegistry::Instance().RegisterUi(                              \
                 ModuleName,                                                     \
                 [](const std::string& taskName, QWidget* parent) -> QWidget*    \
                 {                                                               \

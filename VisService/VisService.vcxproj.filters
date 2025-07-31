@@ -44,9 +44,6 @@
     <ClInclude Include="TaskFlow\Module\ReflectableStruct.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\TaskFlowBuild.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskFlow\TaskFlowParams.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -572,15 +569,18 @@
     <ClInclude Include="TaskFlow\Module\ModuleRegistry .h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TaskFlow\CGrapExtension\PipeLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFlow\CGrapExtension\PipelineFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskFlow\TaskFlowBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Common\VisUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskFlow\TaskFlowBuild.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlowParams.cpp">
@@ -722,6 +722,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Component\ParamManager\DbWorker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\CGrapExtension\PipeLine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\CGrapExtension\PipelineFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\TaskFlowBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
