@@ -26,7 +26,7 @@ private:
 signals:
 	void sourceImageReady();
 	void runFinished();
-	void errorOccurred(const ErrorParams&)
+	void errorOccurred(const ErrorParams&);
 
 };
 
