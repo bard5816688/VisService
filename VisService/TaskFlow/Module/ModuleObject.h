@@ -27,6 +27,7 @@ public:
     virtual~ModuleBase() = default;
     virtual std::string GetModuleType() = 0;
 	virtual std::vector<std::string> GetOutputParamNames() = 0;
+	virtual Return<QJsonObject> GetResult() = 0;
 
 public:
     ModuleBase();

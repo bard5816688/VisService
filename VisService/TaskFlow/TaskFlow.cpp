@@ -36,7 +36,7 @@ ReturnVoid TaskFlow::AsyncRun(const TaskFlowRunParams& params)
 	return ReturnVoid();
 }
 
-Return<QJsonObject> TaskFlow::GetResult()
+Return<QJsonArray> TaskFlow::GetResult()
 {
 	VIS_RETURN_IF_UNEXPECTED(pipelineType, GetPipeLineName(params_.topologyType_));
 	VIS_RETURN_IF_UNEXPECTED(pipeline, GlobalTaskFlowBuilder().GetPipeLine(*pipelineType));

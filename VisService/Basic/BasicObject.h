@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "ReturnDefs.h"
-#include <QJsonObject>
+#include <QJsonArray>
 #include <QObject>
 
 VISSERVICE_NAMESPACE_BEGIN

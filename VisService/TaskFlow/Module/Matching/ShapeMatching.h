@@ -11,6 +11,7 @@ public:
 	virtual CStatus run() override;
 	virtual std::string GetModuleType() override;
 	virtual std::vector<std::string> GetOutputParamNames() override;
+	virtual virtual Return<QJsonObject> GetResult() override;
 
 private:
 	ReturnVoid FillinInputParams();

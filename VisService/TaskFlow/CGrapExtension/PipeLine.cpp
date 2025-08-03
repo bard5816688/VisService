@@ -34,9 +34,15 @@ ReturnVoid PipeLine::Initialize(const std::string& pipelineName)
     init();
 }
 
-Return<QJsonObject> PipeLine::GetResult()
+Return<QJsonArray> PipeLine::GetResult()
 {
-
+    QJsonArray res;
+    for (auto module : registedModules_)
+    {
+        VIS_RETURN_IF_UNEXPECTED(moduleRes, module.second->GetResult());
+        res.append(*moduleRes);
+    }
+    return res;
 }
 
 PipeLine::PipeLine()

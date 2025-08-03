@@ -44,6 +44,11 @@ std::vector<std::string> ShapeMatching::GetOutputParamNames()
 	return ReflectStruct<ShapeMatching>::getMemberNames();
 }
 
+Return<QJsonObject> ShapeMatching::GetResult()
+{
+
+}
+
 ReturnVoid ShapeMatching::FillinInputParams()
 {
 	auto srcImg = CGRAPH_GET_GPARAM(GParam<VisAlgorithm::Image>, shapeMatchingParams_.sourceImage_.first);

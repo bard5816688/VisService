@@ -13,7 +13,7 @@ public:
 	ReturnVoid Initialize(const TaskFlowInitParams& params);
 	ReturnVoid Run(const TaskFlowRunParams& params);
 	ReturnVoid AsyncRun(const TaskFlowRunParams& params);
-	Return<QJsonObject> GetResult();
+	Return<QJsonArray> GetResult();
 	Return<VisAlgorithm::Image> GetSourceImage();
 	Return<VisAlgorithm::Image> GetResultImage();
 
