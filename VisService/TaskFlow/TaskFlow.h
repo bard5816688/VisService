@@ -18,7 +18,7 @@ public:
 	Return<VisAlgorithm::Image> GetResultImage();
 
 private:
-	Return<std::string> GetTaskName(TaskFlowTopologyType type);
+	Return<std::string> GetPipeLineName(TaskFlowTopologyType type);
 
 private:
 	TaskFlowInitParams params_;

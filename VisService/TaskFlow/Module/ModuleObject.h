@@ -24,16 +24,18 @@ public:
 class ModuleBase : public CGraph::GNode
 {
 public:
-    ModuleBase(const std::string& taskName)
-        : taskName_(taskName)
-    {
-    }
     virtual~ModuleBase() = default;
-    virtual std::string GetModuleName() = 0;
+    virtual std::string GetModuleType() = 0;
 	virtual std::vector<std::string> GetOutputParamNames() = 0;
 
+public:
+    ModuleBase();
+    void SetPipeLineName(const std::string& pipelineName);
+    void SetModuleName(const std::string& moduleName);
+
 protected:
-    std::string taskName_;
+    std::string pipelineName_;
+    std::string moduleName_;
 };
 
 class ModuleUiBase : public QWidget
@@ -41,16 +43,17 @@ class ModuleUiBase : public QWidget
     Q_OBJECT
 
 public:
-	ModuleUiBase(const std::string& taskName, QWidget* parent)
-        : QWidget(parent)
-        , taskName_(taskName)
-    {
-    }
     virtual~ModuleUiBase() = default;
     virtual std::string GetModuleName() = 0;
 
+public:
+    ModuleUiBase(QWidget* parent = nullptr);
+    void SetPipeLineName(const std::string& pipelineName);
+    void SetModuleName(const std::string& moduleName);
+
 protected:
-    std::string taskName_;
+    std::string pipelineName_;
+    std::string moduleName_;
 };
 
 #define CREATE_GPARAM(type, member) CGRAPH_CREATE_GPARAM(type, #member)

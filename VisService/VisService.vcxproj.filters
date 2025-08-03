@@ -572,9 +572,6 @@
     <ClInclude Include="TaskFlow\CGrapExtension\PipeLine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskFlow\CGrapExtension\PipelineFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskFlow\TaskFlowBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -727,13 +724,16 @@
     <ClCompile Include="TaskFlow\CGrapExtension\PipeLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TaskFlow\CGrapExtension\PipelineFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TaskFlow\TaskFlowBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\Module\ModuleObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskFlow\CGrapExtension\PipeLineUi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -771,6 +771,9 @@
     <QtMoc Include="TaskFlow\Module\ModuleObject.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="TaskFlow\CGrapExtension\PipeLineUi.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="Calibration\HandEyeCalibrationUi.ui">
@@ -780,6 +783,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="TaskFlow\Module\Matching\ShapeMatchingUi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="TaskFlow\CGrapExtension\PipeLineUi.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

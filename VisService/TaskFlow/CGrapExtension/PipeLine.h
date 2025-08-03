@@ -8,11 +8,10 @@ class ModuleBase;
 class PipeLine : public CGraph::GPipeline
 {
 public:
-    ReturnVoid RegisterGNode(ModuleBase* nodePtr,
-        const std::set<ModuleBase*>& depends = std::initializer_list<ModuleBase*>(),
-        const std::string& name = "",
-        CSize loop = 1);
-
+    explicit PipeLine();
+    ~PipeLine() override;
+	ReturnVoid RegisterModule(ModuleBase* module, const std::set<ModuleBase*>& depends = std::initializer_list<ModuleBase*>(), const std::string& moduleName = "", CSize loop = 1);
+	ReturnVoid Initialize(const std::string& pipelineName);
 	Return<QJsonObject> GetResult();
 
 private:

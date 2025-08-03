@@ -2,8 +2,7 @@
 
 VISSERVICE_NAMESPACE_BEGIN
 
-ShapeMatching::ShapeMatching(const std::string& taskName)
-	: ModuleBase(taskName)
+ShapeMatching::ShapeMatching()
 {
 	setName("ShapeMatching");
 }
@@ -35,7 +34,7 @@ CStatus ShapeMatching::run()
 	return status;
 }
 
-std::string ShapeMatching::GetModuleName()
+std::string ShapeMatching::GetModuleType()
 {
 	return "ShapeMatching";
 }

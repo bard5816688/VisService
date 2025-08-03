@@ -1,13 +1,14 @@
 #include "PipeLine.h"
+#include "../Module/ModuleObject.h"
 
 VISSERVICE_NAMESPACE_BEGIN
 
-ReturnVoid PipeLine::RegisterGNode(ModuleBase* nodePtr,
+ReturnVoid PipeLine::RegisterModule(ModuleBase* module,
 	const std::set<ModuleBase*>& depends,
-	const std::string& name,
+	const std::string& moduleName,
 	CSize loop)
 {
-	auto ele = reinterpret_cast<CGraph::GElementPPtr>(&nodePtr);
+	auto ele = reinterpret_cast<CGraph::GElementPPtr>(&module);
     CGraph::GElementPtrSet dependsGElementPtrSet;
     std::transform(
         depends.begin(),
@@ -18,14 +19,36 @@ ReturnVoid PipeLine::RegisterGNode(ModuleBase* nodePtr,
             return static_cast<CGraph::GElementPtr>(d);
         }
     );
-	registerGNode(ele, dependsGElementPtrSet, name, loop);
+	registerGNode(ele, dependsGElementPtrSet, moduleName, loop);
 
-	registedModules_.insert(std::make_pair(name, nodePtr));
+	registedModules_.insert(std::make_pair(moduleName, module));
+}
+
+ReturnVoid PipeLine::Initialize(const std::string& pipelineName)
+{
+	for (auto module : registedModules_)
+    {
+        module.second->SetPipeLineName(pipelineName);
+        module.second->SetModuleName(module.first);
+    }
+    init();
 }
 
 Return<QJsonObject> PipeLine::GetResult()
 {
 
 }
+
+PipeLine::PipeLine()
+    : CGraph::GPipeline()
+{
+
+}
+
+PipeLine::~PipeLine()
+{
+
+}
+
 
 VISSERVICE_NAMESPACE_END

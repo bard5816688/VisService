@@ -10,18 +10,24 @@ class VISSERVICE_EXPORT TaskFlowUi : public QWidget
 	Q_OBJECT
 
 public:
-	TaskFlowUi(const TaskFlowInitParams& params, QWidget* parent = nullptr);
+	TaskFlowUi(QWidget* parent = nullptr);
 	~TaskFlowUi();
+	ReturnVoid Initialize(const TaskFlowInitParams& params);
 	ReturnVoid SetPosition(const AxisParams& axis, const AxisParams& camera);
 
-signals:
-	void referenceImageDeterminded();
-	void matchingModelFinished(bool);
-	void requestMotionControlWidget(const QPoint& _point);
+	     
+private:
+	ReturnVoid SetupUi(QWidget* parent);
+
 
 private:
 	Ui::TaskFlowUiClass ui;
 	TaskFlowInitParams taskFlowInitParams_;
+
+signals:
+	void ReferenceImageDeterminded();
+	void MatchingModelFinished(bool);
+	void RequestMotionControlWidget(const QPoint& _point);
 
 };
 

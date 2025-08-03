@@ -9,8 +9,8 @@ class ModuleBase;
 class ModuleRegistry 
 {
 public:
-    using ModuleCreator = std::function<ModuleBase* (const std::string& taskName)>;
-    using ModuleUiCreator = std::function<QWidget* (const std::string& taskName, QWidget* parent)>;
+    using ModuleCreator = std::function<ModuleBase* (void)>;
+    using ModuleUiCreator = std::function<ModuleUiBase* (QWidget* parent)>;
 
     static ModuleRegistry& Instance() 
     {
@@ -18,32 +18,32 @@ public:
         return registry;
     }
 
-	void RegisterLogic(const std::string& moduleName, ModuleCreator logicCreator)
+	void RegisterLogic(const std::string& moduleType, ModuleCreator logicCreator)
     {
-        logicFactory_[moduleName] = logicCreator;
+        logicFactory_[moduleType] = logicCreator;
     }
 
-    void RegisterUi(const std::string& moduleName, ModuleUiCreator uiCreator)
+    void RegisterUi(const std::string& moduleType, ModuleUiCreator uiCreator)
     {
-        uiFactory_[moduleName] = uiCreator;
+        uiFactory_[moduleType] = uiCreator;
     }
 
-    ModuleBase* CreateLogic(const std::string& moduleName, const std::string& taskName) const
+    Return<ModuleBase*> CreateLogic(const std::string& moduleType) const
     {
-        auto it = logicFactory_.find(moduleName);
+        auto it = logicFactory_.find(moduleType);
         if (it != logicFactory_.end()) 
         {
-            return it->second(taskName);
+            return it->second();
         }
         return nullptr;
     }
 
-	QWidget* CreateUi(const std::string& moduleName, const std::string& taskName, QWidget* parent) const
+	Return<ModuleUiBase*> CreateUi(const std::string& moduleType, ModuleUiBase* parent) const
     {
-        auto it = uiFactory_.find(moduleName);
+        auto it = uiFactory_.find(moduleType);
         if (it != uiFactory_.end()) 
         {
-			return it->second(taskName, parent);
+			return it->second(parent);
         }
         return nullptr;
     }
@@ -58,38 +58,38 @@ private:
 
 VISSERVICE_NAMESPACE_END
 
-#define REGISTER_MODULE_LOGIC(ModuleName, LogicType)                        \
+#define REGISTER_MODULE_LOGIC(moduleType, logicClass)                        \
 namespace                                                                   \
 {                                                                           \
-    struct ModuleAutoRegisterLogic_##LogicType                             \
+    struct ModuleAutoRegisterLogic_##logicClass                             \
     {                                                                       \
-        ModuleAutoRegisterLogic_##LogicType()                              \
+        ModuleAutoRegisterLogic_##logicClass()                              \
         {                                                                   \
             ModuleRegistry::Instance().RegisterLogic(                      \
-                ModuleName,                                                 \
-                [](const std::string& taskName) -> ModuleBase*              \
+                moduleType,                                                 \
+                []() -> ModuleBase*                                         \
                 {                                                           \
-                    return new LogicType(taskName);                         \
+                    return new logicClass();                                 \
                 });                                                         \
         }                                                                   \
     };                                                                      \
-    static ModuleAutoRegisterLogic_##LogicType g_moduleAutoRegisterLogic_##LogicType; \
+    static ModuleAutoRegisterLogic_##logicClass g_moduleAutoRegisterLogic_##logicClass; \
 }
 
-#define REGISTER_MODULE_UI(ModuleName, UiType)                                  \
+#define REGISTER_MODULE_UI(moduleType, uiClass)                                  \
 namespace                                                                       \
 {                                                                               \
-    struct ModuleAutoRegisterUi_##UiType                                        \
+    struct ModuleAutoRegisterUi_##uiClass                                        \
     {                                                                           \
-        ModuleAutoRegisterUi_##UiType()                                         \
+        ModuleAutoRegisterUi_##uiClass()                                         \
         {                                                                       \
             ModuleRegistry::Instance().RegisterUi(                              \
-                ModuleName,                                                     \
-                [](const std::string& taskName, QWidget* parent) -> QWidget*    \
+                moduleType,                                                     \
+                [](QWidget* parent) -> QWidget*    \
                 {                                                               \
-                    return new UiType(taskName, parent);                        \
+                    return new uiClass(parent);                        \
                 });                                                             \
         }                                                                       \
     };                                                                          \
-    static ModuleAutoRegisterUi_##UiType g_moduleAutoRegisterUi_##UiType;       \
+    static ModuleAutoRegisterUi_##uiClass g_moduleAutoRegisterUi_##uiClass;       \
 }
