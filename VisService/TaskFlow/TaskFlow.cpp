@@ -16,13 +16,7 @@ ReturnVoid TaskFlow::Initialize(const TaskFlowInitParams& params)
 	params_ = params;
 	VIS_RETURN_IF_UNEXPECTED(pipelineType, GetPipeLineName(params_.topologyType_));
 	VIS_RETURN_IF_UNEXPECTED(pipeline, GlobalTaskFlowBuilder().GetPipeLine(*pipelineType));
-
-	//pipeLine_->createGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
-	//auto taskFlowGParams = pipeLine_->getGParam<TaskFlowInitGParams>("TaskFlowInitGParams");
-	//taskFlowGParams->taskName_ = params.taskName_;
-	//taskFlowGParams->deputyTaskName_ = params.deputyTaskName_;
-	//taskFlowGParams->station_ = params.station_;
-	(*pipeline)->init();
+	(*pipeline)->Initialize(params.taskName_);
 	return ReturnVoid();
 }
 
